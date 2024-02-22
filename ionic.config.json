@@ -1,0 +1,7 @@
+{
+  "name": "job-search-portal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
