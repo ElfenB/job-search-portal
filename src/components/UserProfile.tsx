@@ -1,20 +1,26 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { IonAvatar } from "@ionic/react";
 import { useMemo } from "react";
 
-type Props = {
-  img?: string;
-  username?: string;
-};
+export function UserProfile() {
+  const { user, isLoading } = useAuth0();
 
-export function UserProfile({ img, username }: Props) {
+  // If the SDK is not ready, or a user is not authenticated, exit.
+  if (isLoading || !user) return null;
+
   const userImage = useMemo(
-    () => (!img || img.length === 0 ? "https://ionicframework.com/docs/img/demos/avatar.svg" : img),
-    [img],
+    () =>
+      !user.picture || user.picture.length === 0
+        ? "https://ionicframework.com/docs/img/demos/avatar.svg"
+        : user.picture,
+    [user.picture],
   );
 
   return (
     <IonAvatar>
-      <img src={userImage} alt={username ?? "your picture"} />
+      <img src={userImage} alt={user.name ?? "your picture"} />
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
     </IonAvatar>
   );
 }

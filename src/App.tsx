@@ -16,6 +16,10 @@ import { Chats } from "./pages/Chats";
 import { Personal } from "./pages/Personal";
 import { Settings } from "./pages/Settings";
 import { Login } from "./pages/Login";
+import { useEffect } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Browser } from "@capacitor/browser";
+import { App as CapApp } from "@capacitor/app";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,13 +42,27 @@ import "./theme/variables.css";
 
 setupIonicReact();
 
-const isLoggedIn = true;
-
 export function App() {
+  // Get the callback handler from the Auth0 React hook
+  const { handleRedirectCallback, isAuthenticated } = useAuth0();
+
+  useEffect(() => {
+    // Handle the 'appUrlOpen' event and call `handleRedirectCallback`
+    CapApp.addListener("appUrlOpen", async ({ url }) => {
+      if (url.includes("state") && (url.includes("code") || url.includes("error"))) {
+        await handleRedirectCallback(url);
+      }
+      // No-op on Android
+      await Browser.close();
+    });
+  }, [handleRedirectCallback]);
+
+  console.log("isAuthenticated", isAuthenticated);
+
   return (
     <IonApp>
       <IonReactRouter>
-        {!isLoggedIn && (
+        {!isAuthenticated && (
           <>
             <Route exact path="/login">
               <Login />
@@ -57,7 +75,7 @@ export function App() {
           </>
         )}
 
-        {isLoggedIn && (
+        {isAuthenticated && (
           <IonTabs>
             <IonRouterOutlet>
               {/* Tabs */}
