@@ -8,7 +8,7 @@ export function Personal() {
         <IonToolbar>
           <IonTitle>Personal</IonTitle>
 
-          <IonButton fill="clear" slot="end" routerLink="/settings">
+          <IonButton fill="clear" slot="end" routerLink="/settings" routerDirection="forward">
             <IonIcon aria-hidden="true" icon={cog} />
           </IonButton>
         </IonToolbar>
