@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ElfenB/job-search-portal/compare/v1.0.0...v1.1.0) (2024-02-25)
+
+
+### Features
+
+* update user profile component layout and add additional user details ([0566fff](https://github.com/ElfenB/job-search-portal/commit/0566fff47acd58ccf7f69aef52897496cab21bc6))
+
 # 1.0.0 (2024-02-25)
 
 
