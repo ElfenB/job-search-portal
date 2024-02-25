@@ -42,6 +42,8 @@ import "./theme/variables.css";
 
 setupIonicReact();
 
+const isEnvDefined = import.meta.env.VITE_AUTH0_CLIENT_ID_WEB && import.meta.env.VITE_AUTH0_DOMAIN;
+
 export function App() {
   // Get the callback handler from the Auth0 React hook
   const { handleRedirectCallback, isAuthenticated } = useAuth0();
@@ -57,7 +59,13 @@ export function App() {
     });
   }, [handleRedirectCallback]);
 
-  console.log("isAuthenticated", isAuthenticated);
+  if (!isEnvDefined) {
+    return (
+      <h1 style={{ color: "red", fontFamily: "sans-serif", textAlign: "center" }}>
+        Error: Please check environment variables.
+      </h1>
+    );
+  }
 
   return (
     <IonApp>
