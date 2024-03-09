@@ -6,4 +6,7 @@ module.exports = {
     // NOTE: Prettier has to be the last one to work
     "prettier",
   ],
+  "eslint.rules.customizations": [
+    { "rule": "perfectionist/*", "severity": "warn" }
+  ]
 };
