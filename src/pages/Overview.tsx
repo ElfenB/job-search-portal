@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { OfferList } from "../components/OfferList";
 
 export function Overview() {
   return (
@@ -15,6 +16,8 @@ export function Overview() {
             <IonTitle size="large">Overview</IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <OfferList />
       </IonContent>
     </IonPage>
   );
