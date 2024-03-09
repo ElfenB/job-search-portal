@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ElfenB/job-search-portal/compare/v1.1.0...v1.2.0) (2024-03-09)
+
+
+### Features
+
+* start with offer overview ([f0ea77f](https://github.com/ElfenB/job-search-portal/commit/f0ea77f870194f14f6e59a4d09791370da4913a2))
+
 # [1.1.0](https://github.com/ElfenB/job-search-portal/compare/v1.0.0...v1.1.0) (2024-02-25)
 
 
