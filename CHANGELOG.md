@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/ElfenB/job-search-portal/compare/v1.6.3...v1.6.4) (2024-03-10)
+
+
+### Bug Fixes
+
+* Add optional dependency for Linux x64 GNU ([1c433e0](https://github.com/ElfenB/job-search-portal/commit/1c433e067ffd33a055085c8ca27c42b575660dc3))
+
 ## [1.6.3](https://github.com/ElfenB/job-search-portal/compare/v1.6.2...v1.6.3) (2024-03-10)
 
 
