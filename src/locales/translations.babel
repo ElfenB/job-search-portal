@@ -173,6 +173,21 @@
 								</translations>
 							</concept_node>
 							<concept_node>
+								<name>offernotfound</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>true</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>true</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
 								<name>overview</name>
 								<description/>
 								<comment/>

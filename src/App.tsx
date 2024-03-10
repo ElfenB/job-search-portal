@@ -92,24 +92,24 @@ export function App() {
               <Route exact path="/overview">
                 <Overview />
               </Route>
-              <Route exact path="/overview/:id">
+              <Route path="/overview/:id">
                 <OfferDetails />
               </Route>
 
               <Route exact path="/chats">
                 <Chats />
               </Route>
-              <Route exact path="/chats/:id">
+              <Route path="/chats/:id">
                 <ChatConversation />
               </Route>
-              <Route exact path="/chats/profile/:id">
+              <Route path="/chats/profile/:id">
                 <ChatProfile />
               </Route>
 
               <Route exact path="/personal">
                 <Personal />
               </Route>
-              <Route exact path="/personal/:id">
+              <Route path="/personal/:id">
                 <OfferDetails />
               </Route>
 
@@ -117,7 +117,12 @@ export function App() {
                 <Settings />
               </Route>
 
-              {/* Redirect to home page (this is also the fallback route) */}
+              {/* Redirect to home page */}
+              <Route exact path="/">
+                <Redirect to="/overview" />
+              </Route>
+
+              {/* Fallback route) */}
               <Route>
                 <Redirect to="/overview" />
               </Route>
