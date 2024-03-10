@@ -1,4 +1,3 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import {
   IonAvatar,
   IonCard,
@@ -10,6 +9,7 @@ import {
 } from "@ionic/react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { fallbackUserImage } from "./ChatList.consts";
 import type { Offer } from "./OfferCard.types";
 
 type Props = {
@@ -18,11 +18,10 @@ type Props = {
 
 export function OfferCard({ offer }: Props) {
   const { t } = useTranslation();
-  const { user } = useAuth0();
 
   const currentTab = useIonRouter().routeInfo.tab;
 
-  const { description, id: offerId, image, offerType, title } = offer;
+  const { description, id: offerId, image, offerType, person, title } = offer;
 
   const shortenedDescription = useMemo(() => {
     if (!description) {
@@ -40,11 +39,9 @@ export function OfferCard({ offer }: Props) {
         <IonCardTitle>{title}</IonCardTitle>
         <IonCardSubtitle>{t(offerType)}</IonCardSubtitle>
 
-        {user && (
-          <IonAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }}>
-            <img alt={user.name} src={user.picture} />
-          </IonAvatar>
-        )}
+        <IonAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }}>
+          <img alt={person.name} src={person.picture ?? fallbackUserImage} />
+        </IonAvatar>
       </IonCardHeader>
 
       {shortenedDescription.length > 0 && <IonCardContent>{shortenedDescription}</IonCardContent>}
