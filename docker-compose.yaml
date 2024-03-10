@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  job-search-portal:
+    container_name: job-search-portal
+    build: .
+    restart: always
+    ports:
+      - 4001:80
+    environment:
+      - VITE_AUTH0_CLIENT_ID=${VITE_AUTH0_CLIENT_ID}
+      - VITE_AUTH0_DOMAIN=${VITE_AUTH0_DOMAIN}
+      - VITE_GITHUB_URL=${VITE_GITHUB_URL}

@@ -24,18 +24,18 @@ jobs:
       - name: Semantic-Release
         run: npm run release
 
-  # deploy:
-  #   runs-on: self-hosted
+  deploy:
+    runs-on: self-hosted
 
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  #     - name: Create .env file
-  #       run: |
-  #         echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" > .env
-  #         echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
+      - name: Create .env file
+        run: |
+          echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" > .env
+          echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
 
-  #     - name: Deploy
-  #       run: |
-  #         docker compose up -d --build
+      - name: Deploy
+        run: |
+          docker compose up -d --build
