@@ -25,6 +25,7 @@ jobs:
         run: npm run release
 
   deploy:
+    needs: release
     runs-on: self-hosted
 
     steps:

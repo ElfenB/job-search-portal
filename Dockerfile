@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm clean-install
 COPY . .
 RUN npm run build
 
@@ -13,7 +13,6 @@ FROM nginx:stable-alpine as production-stage
 
 COPY --from=build-stage /app/dist /www
 COPY --from=build-stage /app/robots.txt /www
-COPY --from=build-stage /app/README.md /www
 COPY --from=build-stage /app/nginx.conf /etc/nginx
 
 EXPOSE 80
