@@ -1,3 +1,10 @@
+## [1.6.3](https://github.com/ElfenB/job-search-portal/compare/v1.6.2...v1.6.3) (2024-03-10)
+
+
+### Bug Fixes
+
+* reinstall trying to fix https://github.com/npm/cli/issues/4828 ([6b2580e](https://github.com/ElfenB/job-search-portal/commit/6b2580ee8e20edeb5a02ac625b46b99af6cd37f7))
+
 ## [1.6.2](https://github.com/ElfenB/job-search-portal/compare/v1.6.1...v1.6.2) (2024-03-10)
 
 
