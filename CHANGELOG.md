@@ -1,3 +1,10 @@
+## [1.6.5](https://github.com/ElfenB/job-search-portal/compare/v1.6.4...v1.6.5) (2024-03-10)
+
+
+### Bug Fixes
+
+* user profile display and auth methods ([8413baa](https://github.com/ElfenB/job-search-portal/commit/8413baaa28bdd6eecd8baa44af93f05128f580c4))
+
 ## [1.6.4](https://github.com/ElfenB/job-search-portal/compare/v1.6.3...v1.6.4) (2024-03-10)
 
 
