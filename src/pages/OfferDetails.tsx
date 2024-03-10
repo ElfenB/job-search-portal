@@ -16,9 +16,9 @@ export function OfferDetails() {
     setImageHeight(imageHeight === "25vh" ? undefined : "25vh");
   }, [imageHeight, setImageHeight]);
 
-  const offer = offerListMockData.find((offer) => offer.id === id);
+  const offer = offerListMockData.find((o) => o.id === id);
 
-  const { description, image, offerType, title } = offer ?? { title: "Offer not found" };
+  const { description, image, offerType, title } = offer ?? { title: t("label.offernotfound") };
 
   return (
     <IonPage>
@@ -48,8 +48,12 @@ export function OfferDetails() {
             {title} {offerType !== undefined && `(${t(offerType)})`}
           </h2>
 
-          <h3>{t("label.offerdetails")}</h3>
-          <p>{description}</p>
+          {offer?.title !== undefined && (
+            <div>
+              <h3>{t("label.offerdetails")}</h3>
+              <p>{description}</p>
+            </div>
+          )}
         </div>
 
         {/* <pre>{JSON.stringify(offer, null, 2)}</pre> */}
