@@ -1,3 +1,10 @@
+## [1.6.6](https://github.com/ElfenB/job-search-portal/compare/v1.6.5...v1.6.6) (2024-03-10)
+
+
+### Bug Fixes
+
+* dd route for offer details and use current tab in OfferCard ([4f13a69](https://github.com/ElfenB/job-search-portal/commit/4f13a6951f58905d60779282ccc3cae8d713d16a))
+
 ## [1.6.5](https://github.com/ElfenB/job-search-portal/compare/v1.6.4...v1.6.5) (2024-03-10)
 
 
