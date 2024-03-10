@@ -1,0 +1,20 @@
+{
+	"label.backbutton": "Back",
+	"label.chatnotfound": "Chat could not be found.",
+	"label.chats": "Chats",
+	"label.conversations": "Your conversations",
+	"label.delete": "Delete",
+	"label.error": "Error",
+	"label.errormessage": "Whoops ... something is wrong.",
+	"label.login": "Login",
+	"label.logout": "Logout",
+	"label.offerdetails": "Offer details",
+	"label.overview": "Overview",
+	"label.personal": "Personal",
+	"label.profiledetails": "Your details",
+	"label.settings": "Settings",
+	"label.yourpicture": "Your picture",
+	"offer": "Offer",
+	"request": "Request",
+	"welcomemessage": "Welcome to the Job Search Portal!"
+}

@@ -1,16 +1,9 @@
-import {
-  IonBackButton,
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
-import { UserProfile } from "../components/UserProfile";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Browser } from "@capacitor/browser";
+import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { useTranslation } from "react-i18next";
+import { BackButton } from "../components/BackButton";
+import { UserProfile } from "../components/UserProfile";
 
 // This should reflect the URL added earlier to your "Allowed Logout URLs" setting
 // in the Auth0 dashboard.
@@ -18,6 +11,8 @@ const logoutUri =
   "com.benelfen.jobsearchportal://elfenben.eu.auth0.com/capacitor/com.benelfen.jobsearchportal/callback";
 
 export function Settings() {
+  const { t } = useTranslation();
+
   const { logout } = useAuth0();
 
   const handleLogout = async () => {
@@ -40,13 +35,15 @@ export function Settings() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <BackButton />
           </IonButtons>
 
-          <IonTitle>Settings</IonTitle>
+          <IonTitle>{t("label.settings")}</IonTitle>
 
           <IonButtons slot="end">
-            <IonButton onClick={handleLogout}>Logout</IonButton>
+            <IonButton color="danger" onClick={handleLogout}>
+              {t("label.logout")}
+            </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>

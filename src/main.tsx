@@ -4,8 +4,12 @@ import { App } from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { authConfig } from "./authConfig";
 
+// Load translations
+import "./i18n";
+
 const container = document.getElementById("root");
 const root = createRoot(container!);
+
 root.render(
   <StrictMode>
     <Auth0Provider {...authConfig}>
