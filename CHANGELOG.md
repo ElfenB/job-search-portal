@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/ElfenB/job-search-portal/compare/v1.6.0...v1.6.1) (2024-03-10)
+
+
+### Bug Fixes
+
+* remove old test and update App.tsx and vite.config.ts ([e9bc134](https://github.com/ElfenB/job-search-portal/commit/e9bc1343eae898aa3991426345622d1cbc11f96d))
+
 # [1.6.0](https://github.com/ElfenB/job-search-portal/compare/v1.5.0...v1.6.0) (2024-03-10)
 
 
