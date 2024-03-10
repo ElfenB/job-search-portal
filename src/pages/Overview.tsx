@@ -1,6 +1,7 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { OfferList } from "../components/OfferList";
 import { useDarkMode } from "../utils/useDarkMode";
+import { offerListMockData } from "../components/OfferList.mockData";
 
 export function Overview() {
   const { darkMode } = useDarkMode();
@@ -26,7 +27,7 @@ export function Overview() {
           </IonToolbar>
         </IonHeader>
 
-        <OfferList />
+        <OfferList offerList={offerListMockData} />
       </IonContent>
     </IonPage>
   );

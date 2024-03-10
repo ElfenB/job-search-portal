@@ -1,6 +1,10 @@
 import { OfferCard } from "./OfferCard";
-import { offerListMockData } from "./OfferList.mockData";
+import { Offer } from "./OfferCard.types";
 
-export function OfferList() {
-  return offerListMockData.map((offer) => <OfferCard key={offer.id} offer={offer} />);
+type Props = {
+  offerList: Offer[];
+};
+
+export function OfferList({ offerList }: Props) {
+  return offerList.map((offer) => <OfferCard key={offer.id} offer={offer} />);
 }
