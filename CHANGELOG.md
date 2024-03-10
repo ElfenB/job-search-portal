@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/ElfenB/job-search-portal/compare/v1.5.0...v1.6.0) (2024-03-10)
+
+
+### Features
+
+* add license and deployment ([ae14663](https://github.com/ElfenB/job-search-portal/commit/ae14663c3dbc0b924fd486a99ba2286cc217eb1e))
+
 # [1.5.0](https://github.com/ElfenB/job-search-portal/compare/v1.4.0...v1.5.0) (2024-03-10)
 
 
