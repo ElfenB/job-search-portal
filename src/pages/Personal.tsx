@@ -1,5 +1,7 @@
 import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { cog } from "ionicons/icons";
+import { OfferList } from "../components/OfferList";
+import { offerListMockData } from "../components/OfferList.mockData";
 
 export function Personal() {
   return (
@@ -20,6 +22,8 @@ export function Personal() {
             <IonTitle size="large">Personal</IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <OfferList offerList={offerListMockData.sort((a, b) => a.id.localeCompare(b.id)).reverse()} />
       </IonContent>
     </IonPage>
   );
