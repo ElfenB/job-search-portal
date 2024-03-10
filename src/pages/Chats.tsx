@@ -16,6 +16,8 @@ export function Chats() {
             <IonTitle size="large">Chats</IonTitle>
           </IonToolbar>
         </IonHeader>
+
+        <ChatList />
       </IonContent>
     </IonPage>
   );
