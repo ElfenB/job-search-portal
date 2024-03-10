@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { ChatList } from "../components/ChatList";
 
 export function Chats() {
   return (
