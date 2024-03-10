@@ -12,18 +12,19 @@ export function Overview() {
         <IonToolbar>
           <IonTitle>Overview</IonTitle>
         </IonToolbar>
-
-        <img
-          style={{ position: "absolute", height: "3rem", top: "1rem", right: "1rem" }}
-          src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
-          alt="Jobber logo"
-        />
       </IonHeader>
 
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Overview</IonTitle>
+
+            <img
+              src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
+              alt="Jobber logo"
+              style={{ height: "3rem" }}
+              slot="end"
+            />
           </IonToolbar>
         </IonHeader>
 
