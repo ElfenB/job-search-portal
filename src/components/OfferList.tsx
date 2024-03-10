@@ -2,5 +2,5 @@ import { OfferCard } from "./OfferCard";
 import { offerListMockData } from "./OfferList.mockData";
 
 export function OfferList() {
-  return offerListMockData.map((offer) => <OfferCard offer={offer} />);
+  return offerListMockData.map((offer) => <OfferCard key={offer.id} offer={offer} />);
 }
