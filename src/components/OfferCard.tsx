@@ -21,7 +21,7 @@ export function OfferCard({ offer }: Props) {
   }, [description]);
 
   return (
-    <IonCard routerDirection="forward" routerLink={`/offer/${offerId}`}>
+    <IonCard routerDirection="forward" routerLink={`/overview/${offerId}`}>
       {image && <img alt={title} src={image} style={{ height: "120px", objectFit: "cover", width: "100%" }} />}
 
       <IonCardHeader>

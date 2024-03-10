@@ -94,16 +94,16 @@ export function App() {
               <Route exact path="/overview">
                 <Overview />
               </Route>
+              <Route exact path="/overview/:id">
+                <OfferDetails />
+              </Route>
+
               <Route exact path="/chats">
                 <Chats />
               </Route>
+
               <Route path="/personal">
                 <Personal />
-              </Route>
-
-              {/* Offer */}
-              <Route exact path="/offer/:id">
-                <OfferDetails />
               </Route>
 
               {/* Other routes (e.g. settings) */}
