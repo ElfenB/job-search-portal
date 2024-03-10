@@ -9,5 +9,5 @@ export const authConfig: Auth0ProviderOptions = {
   clientId: isNative ? import.meta.env.VITE_AUTH0_CLIENT_ID : import.meta.env.VITE_AUTH0_CLIENT_ID_WEB,
   domain: import.meta.env.VITE_AUTH0_DOMAIN,
   useRefreshTokens: true,
-  useRefreshTokensFallback: false,
+  useRefreshTokensFallback: !isNative // Only use fallback tokens on web
 };
