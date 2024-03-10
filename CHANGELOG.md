@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/ElfenB/job-search-portal/compare/v1.4.0...v1.5.0) (2024-03-10)
+
+
+### Bug Fixes
+
+* logo position ([6ab846d](https://github.com/ElfenB/job-search-portal/commit/6ab846dfa387d480bfdef72c19bd911a3ed46e85))
+
+
+### Features
+
+* add i18n support for translations ([ea7f32d](https://github.com/ElfenB/job-search-portal/commit/ea7f32da7c23fb259dc80d261d82e9cc3166c397))
+
 # [1.4.0](https://github.com/ElfenB/job-search-portal/compare/v1.3.0...v1.4.0) (2024-03-10)
 
 
