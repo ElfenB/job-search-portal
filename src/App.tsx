@@ -20,7 +20,6 @@ import { Login } from "./pages/Login";
 import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
 import { Personal } from "./pages/Personal";
-
 import { Settings } from "./pages/Settings";
 
 /* Theme variables */
@@ -40,6 +39,8 @@ import "@ionic/react/css/text-alignment.css";
 
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
+import { ChatConversation } from "./components/ChatConversation";
+import { ChatProfile } from "./pages/ChatProfile";
 
 setupIonicReact();
 
@@ -94,20 +95,25 @@ export function App() {
               <Route exact path="/overview">
                 <Overview />
               </Route>
-              <Route exact path="/chats">
-                <Chats />
-              </Route>
-              <Route path="/personal">
-                <Personal />
-              </Route>
-
-              {/* Offer */}
-              <Route exact path="/offer/:id">
+              <Route exact path="/overview/:id">
                 <OfferDetails />
               </Route>
 
-              {/* Other routes (e.g. settings) */}
-              <Route exact path="/settings">
+              <Route exact path="/chats">
+                <Chats />
+              </Route>
+              <Route exact path="/chats/:id">
+                <ChatConversation />
+              </Route>
+              <Route exact path="/chats/profile/:id">
+                <ChatProfile />
+              </Route>
+
+              <Route exact path="/personal">
+                <Personal />
+              </Route>
+
+              <Route exact path="/personal/settings">
                 <Settings />
               </Route>
 
