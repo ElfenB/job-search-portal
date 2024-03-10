@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/ElfenB/job-search-portal/compare/v1.2.0...v1.3.0) (2024-03-10)
+
+
+### Bug Fixes
+
+* add key ([340efe7](https://github.com/ElfenB/job-search-portal/commit/340efe7d178a85f60f358bd0f6325511d5500982))
+
+
+### Features
+
+* add ChatProfile, ChatConversation, and ChatListItem components ([fb3dfd0](https://github.com/ElfenB/job-search-portal/commit/fb3dfd09432ae147bec2133d67dae5cb58c53ae3))
+
 # [1.2.0](https://github.com/ElfenB/job-search-portal/compare/v1.1.0...v1.2.0) (2024-03-09)
 
 
