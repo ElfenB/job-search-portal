@@ -21,8 +21,8 @@ import { Chats } from "./pages/Chats";
 import { Login } from "./pages/Login";
 import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
-
 import { Personal } from "./pages/Personal";
+
 import { Settings } from "./pages/Settings";
 /* Theme variables */
 import "./theme/variables.css";

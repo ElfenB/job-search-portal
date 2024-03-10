@@ -4,6 +4,7 @@ import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToo
 import { useTranslation } from "react-i18next";
 import { BackButton } from "../components/BackButton";
 import { UserProfile } from "../components/UserProfile";
+import { isNative } from "../utils/isNative";
 
 // This should reflect the URL added earlier to your "Allowed Logout URLs" setting
 // in the Auth0 dashboard.
@@ -41,7 +42,7 @@ export function Settings() {
           <IonTitle>{t("label.settings")}</IonTitle>
 
           <IonButtons slot="end">
-            <IonButton color="danger" onClick={handleLogout}>
+            <IonButton color="danger" onClick={isNative ? handleLogout : () => logout()}>
               {t("label.logout")}
             </IonButton>
           </IonButtons>
