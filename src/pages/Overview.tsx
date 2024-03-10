@@ -1,8 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { OfferList } from "../components/OfferList";
-import { useDarkMode } from "../utils/useDarkMode";
-import { offerListMockData } from "../components/OfferList.mockData";
 import { useTranslation } from "react-i18next";
+import { OfferList } from "../components/OfferList";
+import { offerListMockData } from "../components/OfferList.mockData";
+import { useDarkMode } from "../utils/useDarkMode";
 
 export function Overview() {
   const { t } = useTranslation();
@@ -22,10 +22,10 @@ export function Overview() {
             <IonTitle size="large">{t("label.overview")}</IonTitle>
 
             <img
-              src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
               alt="Jobber logo"
-              style={{ height: "3rem" }}
               slot="end"
+              src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
+              style={{ height: "3rem" }}
             />
           </IonToolbar>
         </IonHeader>

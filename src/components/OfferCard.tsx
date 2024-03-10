@@ -1,13 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import type { Offer } from "./OfferCard.types";
 
-interface Props {
+type Props = {
   offer: Offer;
-}
+};
 
 export function OfferCard({ offer }: Props) {
+  const { t } = useTranslation();
   const { user } = useAuth0();
 
   const { description, id: offerId, image, offerType, title } = offer;
@@ -26,7 +28,7 @@ export function OfferCard({ offer }: Props) {
 
       <IonCardHeader>
         <IonCardTitle>{title}</IonCardTitle>
-        <IonCardSubtitle>{offerType}</IonCardSubtitle>
+        <IonCardSubtitle>{t(offerType)}</IonCardSubtitle>
 
         {user && (
           <IonAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }}>

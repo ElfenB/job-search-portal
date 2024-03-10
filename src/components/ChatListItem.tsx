@@ -1,14 +1,17 @@
 import { IonAvatar, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel } from "@ionic/react";
-import { Chat } from "./ChatList.types";
 import { useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { fallbackUserImage } from "./ChatList.consts";
+import type { Chat } from "./ChatList.types";
 
 type Props = {
   chat: Chat;
 };
 
 export function ChatListItem({ chat }: Props) {
-  const { recipient, lastMessage, id: chatId } = chat;
+  const { t } = useTranslation();
+
+  const { id: chatId, lastMessage, recipient } = chat;
 
   const handleDelete = useCallback(() => {
     // TODO: Implement delete chat
@@ -22,9 +25,9 @@ export function ChatListItem({ chat }: Props) {
 
   return (
     <IonItemSliding>
-      <IonItem routerLink={`/chats/${chatId}`} detail routerDirection="forward">
-        <IonAvatar slot="start" aria-hidden="true">
-          <img src={recipient.picture ?? fallbackUserImage} alt={recipient.name} />
+      <IonItem detail routerDirection="forward" routerLink={`/chats/${chatId}`}>
+        <IonAvatar aria-hidden="true" slot="start">
+          <img alt={recipient.name} src={recipient.picture ?? fallbackUserImage} />
         </IonAvatar>
 
         <IonLabel>
@@ -32,14 +35,14 @@ export function ChatListItem({ chat }: Props) {
           <p>{lastMessage.text}</p>
         </IonLabel>
 
-        <time slot="end" dateTime={formattedTime}>
+        <time dateTime={formattedTime} slot="end">
           {formattedTime}
         </time>
       </IonItem>
 
       <IonItemOptions>
         <IonItemOption color="danger" onClick={handleDelete}>
-          Delete
+          {t("label.delete")}
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>

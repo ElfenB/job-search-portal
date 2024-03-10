@@ -1,16 +1,19 @@
 import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { cog } from "ionicons/icons";
+import { useTranslation } from "react-i18next";
 import { OfferList } from "../components/OfferList";
 import { offerListMockData } from "../components/OfferList.mockData";
 
 export function Personal() {
+  const { t } = useTranslation();
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Personal</IonTitle>
+          <IonTitle>{t("label.personal")}</IonTitle>
 
-          <IonButton fill="clear" slot="end" routerLink="/personal/settings" routerDirection="forward">
+          <IonButton fill="clear" routerDirection="forward" routerLink="/personal/settings" slot="end">
             <IonIcon aria-hidden="true" icon={cog} />
           </IonButton>
         </IonToolbar>
@@ -19,7 +22,7 @@ export function Personal() {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Personal</IonTitle>
+            <IonTitle size="large">{t("label.personal")}</IonTitle>
           </IonToolbar>
         </IonHeader>
 

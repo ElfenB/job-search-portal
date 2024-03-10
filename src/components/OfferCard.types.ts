@@ -1,4 +1,4 @@
-export interface Offer {
+export type Offer = {
   description?: string;
   id: string;
   image?: string;

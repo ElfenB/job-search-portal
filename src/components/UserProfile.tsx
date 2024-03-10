@@ -1,4 +1,5 @@
-import { User, useAuth0 } from "@auth0/auth0-react";
+import type { User } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import {
   IonAvatar,
   IonCard,
@@ -12,8 +13,10 @@ import {
   IonListHeader,
 } from "@ionic/react";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
 
 export function UserProfile() {
+  const { t } = useTranslation();
   const { isLoading, user } = useAuth0();
 
   // If the SDK is not ready, or a user is not authenticated, exit.
@@ -36,12 +39,12 @@ export function UserProfile() {
       </IonCardHeader>
 
       <IonCardContent>
-        <IonAvatar style={{ height: "8rem", width: "8rem", margin: "0 auto" }}>
-          <img src={userImage} alt={user.name ?? "your picture"} />
+        <IonAvatar style={{ height: "8rem", margin: "0 auto", width: "8rem" }}>
+          <img alt={user.name ?? t("label.yourpicture")} src={userImage} />
         </IonAvatar>
 
         <IonList lines="full">
-          <IonListHeader>Your Details</IonListHeader>
+          <IonListHeader>{t("label.profiledetails")}</IonListHeader>
 
           {Object.keys(user).map((d: keyof User) => {
             // Don't show the picture, name, or email in the list.

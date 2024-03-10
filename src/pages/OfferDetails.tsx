@@ -1,28 +1,31 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useParams } from "react-router-dom";
-import { offerListMockData } from "../components/OfferList.mockData";
+import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams } from "react-router-dom";
+import { BackButton } from "../components/BackButton";
+import { offerListMockData } from "../components/OfferList.mockData";
 
 export function OfferDetails() {
+  const { t } = useTranslation();
+
   const { id } = useParams<{ id: string }>();
 
   const [imageHeight, setImageHeight] = useState<"25vh" | undefined>("25vh");
 
-  const toggleImageHeight = useCallback(
-    () => setImageHeight(imageHeight === "25vh" ? undefined : "25vh"),
-    [imageHeight, setImageHeight],
-  );
+  const toggleImageHeight = useCallback(() => {
+    setImageHeight(imageHeight === "25vh" ? undefined : "25vh");
+  }, [imageHeight, setImageHeight]);
 
   const offer = offerListMockData.find((offer) => offer.id === id);
 
-  const { title, image, description, offerType } = offer ?? { title: "Offer not found" };
+  const { description, image, offerType, title } = offer ?? { title: "Offer not found" };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <BackButton />
           </IonButtons>
 
           <IonTitle>{title}</IonTitle>
@@ -32,19 +35,20 @@ export function OfferDetails() {
       <IonContent fullscreen>
         {image && (
           <img
+            alt={title}
             onClick={toggleImageHeight}
             src={image}
-            alt={title}
-            style={{ width: "100%", objectFit: "cover", height: imageHeight }}
+            style={{ height: imageHeight, objectFit: "cover", width: "100%" }}
           />
         )}
 
         {/* TODO: Make beautiful, look on Kleinanzeigen for reference */}
         <div style={{ padding: "1rem" }}>
           <h2>
-            {title} ({offerType})
+            {title} {offerType !== undefined && `(${t(offerType)})`}
           </h2>
-          <h3>Offer details</h3>
+
+          <h3>{t("label.offerdetails")}</h3>
           <p>{description}</p>
         </div>
 

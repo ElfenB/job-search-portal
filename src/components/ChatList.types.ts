@@ -1,12 +1,12 @@
-import { User } from "@auth0/auth0-react";
+import type { User } from "@auth0/auth0-react";
 
 export type Chat = {
   id: string;
-  recipient: User;
   lastMessage: ChatMessage;
+  recipient: User;
 };
 
 type ChatMessage = {
-  text: string;
   createdAt: string;
+  text: string;
 };

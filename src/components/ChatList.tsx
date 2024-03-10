@@ -1,14 +1,17 @@
 import { IonList, IonListHeader } from "@ionic/react";
-import { ChatListItem } from "./ChatListItem";
+import { useTranslation } from "react-i18next";
 import { chats } from "./ChatList.mockData";
+import { ChatListItem } from "./ChatListItem";
 
 export function ChatList() {
+  const { t } = useTranslation();
+
   return (
     <IonList lines="full">
-      <IonListHeader>Your conversations</IonListHeader>
+      <IonListHeader>{t("label.conversations")}</IonListHeader>
 
       {chats.map((chat) => (
-        <ChatListItem key={chat.id} chat={chat} />
+        <ChatListItem chat={chat} key={chat.id} />
       ))}
     </IonList>
   );

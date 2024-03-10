@@ -1,16 +1,8 @@
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonButtons,
-  IonBackButton,
-  IonTitle,
-  IonRouterLink,
-  IonContent,
-} from "@ionic/react";
-import { fallbackUserImage } from "../components/ChatList.consts";
+import type { User } from "@auth0/auth0-react";
+import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useParams } from "react-router-dom";
-import { User } from "@auth0/auth0-react";
+import { BackButton } from "../components/BackButton";
+import { fallbackUserImage } from "../components/ChatList.consts";
 
 export function ChatProfile() {
   const { id: recipientId } = useParams<{ id: string }>();
@@ -27,17 +19,15 @@ export function ChatProfile() {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <BackButton />
           </IonButtons>
 
           <IonTitle>{recipient.name}</IonTitle>
-
-          <IonRouterLink slot="end" routerLink={`/chats/profile/${recipient.id}`}></IonRouterLink>
         </IonToolbar>
       </IonHeader>
 
       <IonContent fullscreen>
-        <img src={recipient.picture ?? fallbackUserImage} alt={recipient.name} />
+        <img alt={recipient.name} src={recipient.picture ?? fallbackUserImage} />
 
         <h1>{recipient.name}</h1>
       </IonContent>

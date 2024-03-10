@@ -1,9 +1,11 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Browser } from "@capacitor/browser";
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { useTranslation } from "react-i18next";
 import { isNative } from "../utils/isNative";
 
 export function Login() {
+  const { t } = useTranslation();
   const { loginWithRedirect } = useAuth0();
 
   const handleLogin = async () => {
@@ -22,16 +24,14 @@ export function Login() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Login</IonTitle>
+          <IonTitle>{t("label.login")}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-        <h3>Welcome to the Job Search Portal!</h3>
+        <h3>{t("welcomemessage")}</h3>
 
-        <IonButton onClick={isNative ? handleLogin : () => loginWithRedirect()}>Login</IonButton>
-
-        <p>{window.location.origin}</p>
+        <IonButton onClick={isNative ? handleLogin : () => loginWithRedirect()}>{t("label.login")}</IonButton>
       </IonContent>
     </IonPage>
   );
