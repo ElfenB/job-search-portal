@@ -20,7 +20,6 @@ import { Login } from "./pages/Login";
 import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
 import { Personal } from "./pages/Personal";
-
 import { Settings } from "./pages/Settings";
 
 /* Theme variables */
@@ -102,12 +101,11 @@ export function App() {
                 <Chats />
               </Route>
 
-              <Route path="/personal">
+              <Route exact path="/personal">
                 <Personal />
               </Route>
 
-              {/* Other routes (e.g. settings) */}
-              <Route exact path="/settings">
+              <Route exact path="/personal/settings">
                 <Settings />
               </Route>
 
