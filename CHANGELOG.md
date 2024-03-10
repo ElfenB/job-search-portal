@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/ElfenB/job-search-portal/compare/v1.3.0...v1.4.0) (2024-03-10)
+
+
+### Bug Fixes
+
+* reorder elements ([40b4907](https://github.com/ElfenB/job-search-portal/commit/40b49072f0baf42367155d88219e3a7bc088d250))
+
+
+### Features
+
+* add dark mode support to Overview component using useDarkMode hook ([2d0a5eb](https://github.com/ElfenB/job-search-portal/commit/2d0a5eb85f0f873a1a6b011823d746dbf841ec91))
+
 # [1.3.0](https://github.com/ElfenB/job-search-portal/compare/v1.2.0...v1.3.0) (2024-03-10)
 
 
