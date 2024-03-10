@@ -109,6 +109,9 @@ export function App() {
               <Route exact path="/personal">
                 <Personal />
               </Route>
+              <Route exact path="/personal/:id">
+                <OfferDetails />
+              </Route>
 
               <Route exact path="/personal/settings">
                 <Settings />

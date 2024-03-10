@@ -1,5 +1,13 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
+import {
+  IonAvatar,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  useIonRouter,
+} from "@ionic/react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import type { Offer } from "./OfferCard.types";
@@ -12,6 +20,8 @@ export function OfferCard({ offer }: Props) {
   const { t } = useTranslation();
   const { user } = useAuth0();
 
+  const currentTab = useIonRouter().routeInfo.tab;
+
   const { description, id: offerId, image, offerType, title } = offer;
 
   const shortenedDescription = useMemo(() => {
@@ -23,7 +33,7 @@ export function OfferCard({ offer }: Props) {
   }, [description]);
 
   return (
-    <IonCard routerDirection="forward" routerLink={`/overview/${offerId}`}>
+    <IonCard routerDirection="forward" routerLink={`/${currentTab}/${offerId}`}>
       {image && <img alt={title} src={image} style={{ height: "120px", objectFit: "cover", width: "100%" }} />}
 
       <IonCardHeader>
