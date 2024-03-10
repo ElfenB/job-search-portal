@@ -1,12 +1,12 @@
-import { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'com.benelfen.jobsearchportal',
-  appName: 'job-search-portal',
-  webDir: 'dist',
+  appId: "com.benelfen.jobsearchportal",
+  appName: "job-search-portal",
   server: {
-    androidScheme: 'https'
-  }
+    androidScheme: "https",
+  },
+  webDir: "dist",
 };
 
 export default config;

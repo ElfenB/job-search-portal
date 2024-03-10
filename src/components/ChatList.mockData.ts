@@ -10,7 +10,7 @@ export const chats: Chat[] = [
     recipient: {
       name: "John Doe",
       picture: "https://i.pravatar.cc/300",
-    }
+    },
   },
   {
     id: "2",
@@ -21,7 +21,7 @@ export const chats: Chat[] = [
     recipient: {
       name: "Jane Doe",
       picture: "https://i.pravatar.cc/400",
-    }
+    },
   },
   {
     id: "3",
@@ -32,7 +32,7 @@ export const chats: Chat[] = [
     recipient: {
       name: "John Smith",
       picture: "https://i.pravatar.cc/500",
-    }
+    },
   },
   {
     id: "4",
@@ -43,7 +43,7 @@ export const chats: Chat[] = [
     recipient: {
       name: "Jane Smith",
       picture: "https://i.pravatar.cc/600",
-    }
+    },
   },
   {
     id: "5",
@@ -54,6 +54,6 @@ export const chats: Chat[] = [
     recipient: {
       name: "John Johnson",
       picture: "https://i.pravatar.cc/700",
-    }
+    },
   },
 ];

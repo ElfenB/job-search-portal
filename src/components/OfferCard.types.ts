@@ -4,4 +4,4 @@ export type Offer = {
   image?: string;
   offerType: "offer" | "request";
   title: string;
-}
+};
