@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/ElfenB/job-search-portal/compare/v1.6.1...v1.6.2) (2024-03-10)
+
+
+### Bug Fixes
+
+* Update release workflow and Dockerfile ([bb76b80](https://github.com/ElfenB/job-search-portal/commit/bb76b8030350fb2e93594af2e3bd40bd2ba1693e))
+
 ## [1.6.1](https://github.com/ElfenB/job-search-portal/compare/v1.6.0...v1.6.1) (2024-03-10)
 
 
