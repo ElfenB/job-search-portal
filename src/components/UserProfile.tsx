@@ -55,7 +55,8 @@ export function UserProfile() {
             return (
               <IonItem key={d}>
                 <IonLabel>
-                  {d}: {user[d]}
+                  {/* Stringify to also show boolean values */}
+                  {d}: {JSON.stringify(user[d]).replace(/"/g, "")}
                 </IonLabel>
               </IonItem>
             );

@@ -6,7 +6,7 @@ import { isNative } from "../utils/isNative";
 
 export function Login() {
   const { t } = useTranslation();
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithPopup, loginWithRedirect } = useAuth0();
 
   const handleLogin = async () => {
     await loginWithRedirect({
@@ -31,7 +31,7 @@ export function Login() {
       <IonContent>
         <h3>{t("welcomemessage")}</h3>
 
-        <IonButton onClick={isNative ? handleLogin : () => loginWithRedirect()}>{t("label.login")}</IonButton>
+        <IonButton onClick={isNative ? handleLogin : () => loginWithPopup()}>{t("label.login")}</IonButton>
       </IonContent>
     </IonPage>
   );
