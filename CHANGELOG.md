@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/ElfenB/job-search-portal/compare/v1.6.6...v1.7.0) (2024-03-11)
+
+
+### Features
+
+* renamed application for the user ([1f8ed8a](https://github.com/ElfenB/job-search-portal/commit/1f8ed8a8643ec1096f3fc6699cd421a8718d0b51))
+
 ## [1.6.6](https://github.com/ElfenB/job-search-portal/compare/v1.6.5...v1.6.6) (2024-03-10)
 
 
