@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from "@ionic/react";
 import { cog } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 import { fallbackUserImage } from "../components/ChatList.consts";
@@ -16,10 +16,6 @@ export function Personal() {
       <IonHeader>
         <IonToolbar>
           <IonTitle>{t("label.personal")}</IonTitle>
-
-          <IonButton fill="clear" routerDirection="forward" routerLink="/personal/settings" slot="end">
-            <IonIcon aria-hidden="true" icon={cog} />
-          </IonButton>
         </IonToolbar>
       </IonHeader>
 
@@ -27,6 +23,15 @@ export function Personal() {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{t("label.personal")}</IonTitle>
+
+            <IonRouterLink
+              routerDirection="forward"
+              routerLink="/personal/settings"
+              slot="end"
+              style={{ margin: "auto", marginRight: "0.5rem" }}
+            >
+              <IonIcon aria-hidden="true" icon={cog} style={{ fontSize: "2rem" }} />
+            </IonRouterLink>
           </IonToolbar>
         </IonHeader>
 
