@@ -1,6 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Browser } from "@capacitor/browser";
-import { IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import {
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonLabel,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import { logoGithub } from "ionicons/icons";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { BackButton } from "../components/BackButton";
 import { UserProfile } from "../components/UserProfile";
@@ -31,6 +43,8 @@ export function Settings() {
     });
   };
 
+  const appVersion = useMemo(() => import.meta.env.VITE_APP_VERSION, []);
+
   return (
     <IonPage>
       <IonHeader>
@@ -51,6 +65,14 @@ export function Settings() {
 
       <IonContent>
         <UserProfile />
+
+        <div style={{ alignItems: "center", display: "flex", flexDirection: "column" }}>
+          <IonButton fill="clear" onClick={() => window.open("https://github.com/ElfenB/job-search-portal")}>
+            <IonIcon icon={logoGithub} size="large" />
+          </IonButton>
+
+          {appVersion && <IonLabel color="medium">v{appVersion}</IonLabel>}
+        </div>
       </IonContent>
     </IonPage>
   );
