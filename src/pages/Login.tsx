@@ -29,9 +29,20 @@ export function Login() {
       </IonHeader>
 
       <IonContent>
-        <h3>{t("welcomemessage")}</h3>
+        <div
+          style={{
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+            height: "100%",
+            justifyContent: "center",
+            paddingBottom: "10vh",
+          }}
+        >
+          <h3>{t("welcomemessage")}</h3>
 
-        <IonButton onClick={isNative ? handleLogin : () => loginWithPopup()}>{t("label.login")}</IonButton>
+          <IonButton onClick={isNative ? handleLogin : () => loginWithPopup()}>{t("label.login")}</IonButton>
+        </div>
       </IonContent>
     </IonPage>
   );
