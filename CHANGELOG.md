@@ -1,3 +1,16 @@
+# [1.9.0](https://github.com/ElfenB/job-search-portal/compare/v1.8.0...v1.9.0) (2024-03-22)
+
+
+### Bug Fixes
+
+* layout centered ([0372934](https://github.com/ElfenB/job-search-portal/commit/0372934ed1240e25046b95512c2a7b7a2e109216))
+* settings icon not shown on desktop ([3017bd9](https://github.com/ElfenB/job-search-portal/commit/3017bd9ba5a22d057385165a9f6218c6794a79a1))
+
+
+### Features
+
+* added link to code on github and version number ([cee5696](https://github.com/ElfenB/job-search-portal/commit/cee56963b97c9f9b52138476c4f3d7d93239e081))
+
 # [1.8.0](https://github.com/ElfenB/job-search-portal/compare/v1.7.0...v1.8.0) (2024-03-22)
 
 
