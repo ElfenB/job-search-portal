@@ -1,3 +1,16 @@
+# [1.8.0](https://github.com/ElfenB/job-search-portal/compare/v1.7.0...v1.8.0) (2024-03-22)
+
+
+### Bug Fixes
+
+* pathname ([289590d](https://github.com/ElfenB/job-search-portal/commit/289590d3601f2808e21a041c13333b0578b12e84))
+* routing issue and added loading screen ([dec12ae](https://github.com/ElfenB/job-search-portal/commit/dec12ae2529479918b7344717d1fc3ce014c9edb))
+
+
+### Features
+
+* updates ([930824f](https://github.com/ElfenB/job-search-portal/commit/930824f780c8e3816c3eb56f5ac114c06496c804))
+
 # [1.7.0](https://github.com/ElfenB/job-search-portal/compare/v1.6.6...v1.7.0) (2024-03-11)
 
 
