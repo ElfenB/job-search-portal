@@ -1,12 +1,4 @@
-import {
-  IonAvatar,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  useIonRouter,
-} from "@ionic/react";
+import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { fallbackUserImage } from "./ChatList.consts";
@@ -19,8 +11,6 @@ type Props = {
 export function OfferCard({ offer }: Props) {
   const { t } = useTranslation();
 
-  const currentTab = useIonRouter().routeInfo.tab;
-
   const { description, id: offerId, image, offerType, person, title } = offer;
 
   const shortenedDescription = useMemo(() => {
@@ -32,7 +22,7 @@ export function OfferCard({ offer }: Props) {
   }, [description]);
 
   return (
-    <IonCard routerDirection="forward" routerLink={`/${currentTab}/${offerId}`}>
+    <IonCard routerDirection="forward" routerLink={`${window.location.pathname}/${offerId}`}>
       {image && <img alt={title} src={image} style={{ height: "120px", objectFit: "cover", width: "100%" }} />}
 
       <IonCardHeader>
