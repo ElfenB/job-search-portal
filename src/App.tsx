@@ -18,15 +18,16 @@ import { Redirect, Route } from "react-router-dom";
 import { ChatConversation } from "./components/ChatConversation";
 import { ChatProfile } from "./pages/ChatProfile";
 import { Chats } from "./pages/Chats";
+import { LoadingScreen } from "./pages/LoadingScreen";
 import { Login } from "./pages/Login";
 import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
-import { Personal } from "./pages/Personal";
 
+import { Personal } from "./pages/Personal";
 import { Settings } from "./pages/Settings";
+
 /* Theme variables */
 import "./theme/variables.css";
-
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 import "@ionic/react/css/display.css";
@@ -34,9 +35,9 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/float-elements.css";
 /* Basic CSS for apps built with Ionic */
 import "@ionic/react/css/normalize.css";
+
 /* Optional CSS utils that can be commented out */
 import "@ionic/react/css/padding.css";
-
 import "@ionic/react/css/structure.css";
 import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
@@ -48,7 +49,7 @@ const isEnvDefined = import.meta.env.VITE_AUTH0_CLIENT_ID_WEB && import.meta.env
 
 export function App() {
   // Get the callback handler from the Auth0 React hook
-  const { handleRedirectCallback, isAuthenticated } = useAuth0();
+  const { handleRedirectCallback, isAuthenticated, isLoading } = useAuth0();
 
   useEffect(() => {
     // Handle the 'appUrlOpen' event and call `handleRedirectCallback`
@@ -67,6 +68,10 @@ export function App() {
         Error: Please check environment variables.
       </h1>
     );
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />;
   }
 
   return (
@@ -92,7 +97,7 @@ export function App() {
               <Route exact path="/overview">
                 <Overview />
               </Route>
-              <Route path="/overview/:id">
+              <Route exact path="/overview/:id">
                 <OfferDetails />
               </Route>
 
@@ -122,8 +127,8 @@ export function App() {
                 <Redirect to="/overview" />
               </Route>
 
-              {/* Fallback route) */}
-              <Route>
+              {/* Redirect when authenticated */}
+              <Route exact path="/login">
                 <Redirect to="/overview" />
               </Route>
             </IonRouterOutlet>

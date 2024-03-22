@@ -128,6 +128,21 @@
 								</translations>
 							</concept_node>
 							<concept_node>
+								<name>loading</name>
+								<description/>
+								<comment/>
+								<translations>
+									<translation>
+										<language>de-DE</language>
+										<approved>true</approved>
+									</translation>
+									<translation>
+										<language>en-US</language>
+										<approved>true</approved>
+									</translation>
+								</translations>
+							</concept_node>
+							<concept_node>
 								<name>login</name>
 								<description/>
 								<comment/>
