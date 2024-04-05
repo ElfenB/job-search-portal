@@ -25,6 +25,11 @@
     "@capacitor/status-bar": "5.0.7",
     "@ionic/react": "^7.8.1",
     "@ionic/react-router": "^7.8.1",
+    "@tanstack/react-query": "^5.29.0",
+    "@tanstack/react-query-devtools": "^5.29.0",
+    "@trpc/client": "^11.0.0-rc.332",
+    "@trpc/react-query": "^11.0.0-rc.332",
+    "@trpc/server": "^11.0.0-rc.332",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
     "i18next": "^23.10.1",
@@ -34,7 +39,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
     "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@boehringer-ingelheim/eslint-config": "^4.2.0",
