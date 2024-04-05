@@ -1,10 +1,17 @@
+import { trpc } from "../api/trpc";
 import { OfferCard } from "./OfferCard";
-import type { Offer } from "./OfferCard.types";
+import { OfferListSkeleton } from "./OfferListSkeleton";
 
-type Props = {
-  offerList: Offer[];
-};
+export function OfferList() {
+  const { data, error, isPending } = trpc.job.list.useQuery();
 
-export function OfferList({ offerList }: Props) {
-  return offerList.map((offer) => <OfferCard key={offer.id} offer={offer} />);
+  if (isPending) {
+    return <OfferListSkeleton />;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  return data.map((offer) => <OfferCard key={offer.id} offer={offer} />);
 }

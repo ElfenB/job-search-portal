@@ -1,17 +1,22 @@
+import type { User } from "@auth0/auth0-react";
 import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import type { JobOffer } from "../server/routers/jobRouter.types";
 import { fallbackUserImage } from "./ChatList.consts";
-import type { Offer } from "./OfferCard.types";
 
 type Props = {
-  offer: Offer;
+  offer: JobOffer;
 };
 
 export function OfferCard({ offer }: Props) {
   const { t } = useTranslation();
 
-  const { description, id: offerId, image, offerType, person, title } = offer;
+  const { description, id: offerId, image, offerType, title, userId } = offer;
+
+  // FIXME: This is a mock function that should be replaced with a real API call to Auth0
+  // const person = getUserFromId(userId);
+  const person = { name: `John Doe (${userId})`, picture: fallbackUserImage } as User;
 
   const shortenedDescription = useMemo(() => {
     if (!description) {

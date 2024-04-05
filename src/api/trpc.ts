@@ -7,7 +7,8 @@ export const trpc = createTRPCReact<AppRouter>()
 export const trpcClient = trpc.createClient({
   links: [
     httpBatchLink({
-      url: "/api/trpc",
+      // url: "/api/trpc",
+      url: 'http://localhost:3000',
 
       // Possible to pass headers here
       // async headers() {

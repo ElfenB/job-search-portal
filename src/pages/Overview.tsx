@@ -1,7 +1,6 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import { OfferList } from "../components/OfferList";
-import { offerListMockData } from "../components/OfferList.mockData";
 import { useDarkMode } from "../utils/useDarkMode";
 
 export function Overview() {
@@ -30,7 +29,7 @@ export function Overview() {
           </IonToolbar>
         </IonHeader>
 
-        <OfferList offerList={offerListMockData} />
+        <OfferList />
       </IonContent>
     </IonPage>
   );
