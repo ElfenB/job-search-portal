@@ -46,7 +46,7 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy Database
-        run: docker compose -f postgres/docker-compose.yaml up -d
+        run: docker compose -f postgres/docker-compose.yaml --env-file .env up -d
 
   migrate-db:
     # Node must be install on this runner
