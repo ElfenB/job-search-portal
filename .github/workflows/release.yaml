@@ -37,7 +37,7 @@ jobs:
           echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" >> .env
 
   deploy-database:
-    needs: check-env
+    needs: write-env
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -50,7 +50,7 @@ jobs:
 
   migrate-db:
     # Node must be install on this runner
-    needs: [release, deploy-database]
+    needs: deploy-database
     runs-on: self-hosted
 
     steps:
@@ -84,7 +84,7 @@ jobs:
           docker compose up -d --build
 
   release:
-    needs: check-env
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
