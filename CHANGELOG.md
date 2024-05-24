@@ -1,3 +1,11 @@
+## [1.10.5](https://github.com/ElfenB/job-search-portal/compare/v1.10.4...v1.10.5) (2024-05-24)
+
+
+### Bug Fixes
+
+* merged env file creation into one job ([f7fe6a2](https://github.com/ElfenB/job-search-portal/commit/f7fe6a27989a58506bef73997dee9825eac82419))
+* move release to the end ([5020b95](https://github.com/ElfenB/job-search-portal/commit/5020b953824c51371cf7defd40c413c60f7ae938))
+
 ## [1.10.4](https://github.com/ElfenB/job-search-portal/compare/v1.10.3...v1.10.4) (2024-05-24)
 
 
