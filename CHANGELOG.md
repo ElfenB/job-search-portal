@@ -1,3 +1,11 @@
+## [1.10.4](https://github.com/ElfenB/job-search-portal/compare/v1.10.3...v1.10.4) (2024-05-24)
+
+
+### Bug Fixes
+
+* add prod script for migrations ([80b5916](https://github.com/ElfenB/job-search-portal/commit/80b5916245b21f36825e21fd3395702882f7dd2b))
+* install deps again for this job ([8ce2e15](https://github.com/ElfenB/job-search-portal/commit/8ce2e15ca8717df43ee4238f8ac7684b36d0ef11))
+
 ## [1.10.3](https://github.com/ElfenB/job-search-portal/compare/v1.10.2...v1.10.3) (2024-05-24)
 
 
