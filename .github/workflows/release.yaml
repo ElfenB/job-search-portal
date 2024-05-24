@@ -39,7 +39,7 @@ jobs:
           echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" > .env
 
       - name: Deploy Database
-        run: docker compose up -d
+        run: docker compose -f postgres/docker-compose.yaml up -d
 
   release:
     needs: check-env
