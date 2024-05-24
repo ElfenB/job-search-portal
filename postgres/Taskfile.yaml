@@ -1,0 +1,25 @@
+version: "3"
+
+tasks:
+  prepare:
+    cmds:
+      - helm repo add bitnami https://charts.bitnami.com/bitnami
+      - helm repo update
+
+  deploy:
+    desc: "Deploy postgres into postgres namespace in current cluster"
+    deps: [prepare]
+    cmds:
+      - kubectl create ns postgres || true
+      - helm upgrade --install --namespace postgres --set global.postgresql.auth.postgresPassword=adminpass --version 12.1.6 -f values.yaml  postgres bitnami/postgresql
+
+  get-pass:
+    desc: "Get postgres password"
+    cmds:
+      - export POSTGRES_PASSWORD=$(kubectl get secret --namespace postgres postgres-postgresql -o jsonpath="{.data.postgres-password}" | base64 -d)
+      - echo $POSTGRES_PASSWORD
+
+  port-forward:
+    desc: "Port forward postgres service to localhost"
+    cmds:
+      - kubectl port-forward --namespace postgres svc/postgres-postgresql 5432:5432
