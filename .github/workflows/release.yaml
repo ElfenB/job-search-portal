@@ -27,7 +27,7 @@ jobs:
 
   write-env:
     needs: check-env
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Write Environment Variables
         run: |
