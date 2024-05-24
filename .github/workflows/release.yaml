@@ -25,18 +25,6 @@ jobs:
             exit 1
           fi
 
-  write-env:
-    needs: check-env
-    runs-on: self-hosted
-    steps:
-      - name: Write Environment Variables
-        run: |
-          echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" >> .env
-          echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
-          echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" >> .env
-      - name: Check location
-        run: pwd
-
   deploy-database:
     needs: write-env
     runs-on: self-hosted
@@ -47,7 +35,9 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy Database
-        run: POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} docker compose -f postgres/docker-compose.yaml up -d
+        env:
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+        run: docker compose -f postgres/docker-compose.yaml up -d
 
   migrate-db:
     # Node must be install on this runner
@@ -81,8 +71,11 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy
-        run: |
-          docker compose up -d --build
+        env:
+          VITE_AUTH0_CLIENT_ID_WEB: ${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}
+          VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
+          DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
+        run: docker compose up -d --build
 
   release:
     needs: deploy
