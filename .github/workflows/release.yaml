@@ -95,8 +95,5 @@ jobs:
       - name: Install Dependencies
         run: npm clean-install
 
-      - name: Prisma Generate
-        run: npm run db:generate
-
       - name: Semantic-Release
         run: npm run release

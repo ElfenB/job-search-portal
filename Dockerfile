@@ -6,6 +6,7 @@ COPY package*.json ./
 
 RUN npm clean-install
 COPY . .
+RUN npm run db:generate
 RUN npm run build
 
 # production stage
