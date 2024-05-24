@@ -1,3 +1,19 @@
+# [1.10.0](https://github.com/ElfenB/job-search-portal/compare/v1.9.0...v1.10.0) (2024-05-24)
+
+
+### Bug Fixes
+
+* added superjson as transformer for date support ([b04758c](https://github.com/ElfenB/job-search-portal/commit/b04758cc5642f22bad6b5df55cf797eaea682825))
+
+
+### Features
+
+* adapted gh actions workflow ([b656c82](https://github.com/ElfenB/job-search-portal/commit/b656c820f3ed66c5f2c040cfe2f0e784c8a43c65))
+* added local postgres deployment ([d0e9a56](https://github.com/ElfenB/job-search-portal/commit/d0e9a5673f0509508f6747a6f1d69cf7ba997e03))
+* connected database with prisma ([e364bbe](https://github.com/ElfenB/job-search-portal/commit/e364bbebe1481e75a9a9d8afbcced76bd2310af3))
+* first connection from backend to frontend ([86d2577](https://github.com/ElfenB/job-search-portal/commit/86d25777cd6db39fbb1def522055c18122ac93d7))
+* initial integration of trpc api ([2530238](https://github.com/ElfenB/job-search-portal/commit/253023801671b474f3ce8ddc95ba2dc1bed094c9))
+
 # [1.9.0](https://github.com/ElfenB/job-search-portal/compare/v1.8.0...v1.9.0) (2024-03-22)
 
 
