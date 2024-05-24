@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres
+    container_name: postgres-jobber
+    restart: always
+    # set shared memory limit when using docker-compose (default: 128mb)
+    shm_size: 265mb
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

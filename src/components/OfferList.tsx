@@ -1,10 +1,33 @@
+import { useAuth0 } from "@auth0/auth0-react";
+import { useOfferListData } from "../useHooks/useOfferListData";
+import { CreateOfferCard } from "./CreateOfferCard";
 import { OfferCard } from "./OfferCard";
-import type { Offer } from "./OfferCard.types";
+import { OfferListSkeleton } from "./OfferListSkeleton";
 
 type Props = {
-  offerList: Offer[];
+  personal?: boolean;
 };
 
-export function OfferList({ offerList }: Props) {
-  return offerList.map((offer) => <OfferCard key={offer.id} offer={offer} />);
+export function OfferList({ personal }: Props) {
+  const { user } = useAuth0();
+
+  const { data, error, isPending } = useOfferListData(user?.sub ?? "", personal);
+
+  if (isPending) {
+    return <OfferListSkeleton />;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  return (
+    <>
+      {personal && <CreateOfferCard />}
+
+      {data.map((offer) => (
+        <OfferCard key={offer.id} offer={offer} />
+      ))}
+    </>
+  );
 }

@@ -12,7 +12,12 @@
     "test.unit": "vitest",
     "lint": "DEBUG=eslint:cli-engine eslint --fix .",
     "prettier": "prettier --write --ignore-unknown .",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "dev:server": "tsx watch src/server",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
@@ -25,8 +30,15 @@
     "@capacitor/status-bar": "5.0.7",
     "@ionic/react": "^7.8.1",
     "@ionic/react-router": "^7.8.1",
+    "@prisma/client": "^5.14.0",
+    "@tanstack/react-query": "^5.29.0",
+    "@tanstack/react-query-devtools": "^5.29.0",
+    "@trpc/client": "^11.0.0-rc.332",
+    "@trpc/react-query": "^11.0.0-rc.332",
+    "@trpc/server": "^11.0.0-rc.332",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
+    "cors": "^2.8.5",
     "i18next": "^23.10.1",
     "i18next-browser-languagedetector": "^7.2.0",
     "ionicons": "^7.3.0",
@@ -34,7 +46,9 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
     "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "superjson": "^2.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@boehringer-ingelheim/eslint-config": "^4.2.0",
@@ -46,6 +60,7 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
     "@testing-library/user-event": "^14.5.2",
+    "@types/cors": "^2.8.17",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-legacy": "^5.3.2",
@@ -55,8 +70,10 @@
     "eslint-plugin-react": "^7.34.1",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
+    "prisma": "^5.14.0",
     "semantic-release": "^23.0.5",
     "terser": "^5.29.2",
+    "tsx": "^4.7.2",
     "typescript": "^5.4.3",
     "vite": "^5.2.6",
     "vitest": "^1.4.0"

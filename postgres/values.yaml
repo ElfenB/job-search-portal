@@ -1,0 +1,2 @@
+postgresqlExtendedConf:
+  passwordEncryption: scram-sha-256

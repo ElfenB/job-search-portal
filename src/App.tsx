@@ -22,9 +22,9 @@ import { LoadingScreen } from "./pages/LoadingScreen";
 import { Login } from "./pages/Login";
 import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
-
 import { Personal } from "./pages/Personal";
 import { Settings } from "./pages/Settings";
+import { ToastBar } from "./components/ToastBar";
 
 /* Theme variables */
 import "./theme/variables.css";
@@ -152,6 +152,8 @@ export function App() {
           </IonTabs>
         )}
       </IonReactRouter>
+
+      <ToastBar />
     </IonApp>
   );
 }

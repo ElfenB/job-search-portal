@@ -1,22 +1,42 @@
-import type { Offer } from "./OfferCard.types";
+/* eslint-disable arrow-body-style */
+/* eslint-disable @typescript-eslint/require-await */
 
-export const offerListMockData: Offer[] = [
+import type { JobOffer } from "./jobRouter.types"
+
+export const dbMock = {
+  jobs: {
+    create: async (job: Omit<JobOffer, "id">) => {
+      const newJob = { ...job, id: String(jobsMock.length + 1) }
+      jobsMock.push(newJob)
+      return newJob
+    },
+    findById: async (id: string) => {
+      return jobsMock.find((j) => j.id === id)
+    },
+    findMany: async () => {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      return jobsMock
+    }
+  },
+}
+
+const jobsMock: JobOffer[] = [
   {
     description:
       "Professional house cleaning services tailored to your needs. We'll leave your home spotless and fresh.",
     id: "1",
     image: "https://via.placeholder.com/300",
     offerType: "offer",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/300" },
-    title: "House Cleaning"
+    title: "House Cleaning",
+    authorId: "1"
   },
   {
     description:
       "Need assistance with your garden? Our experienced team can help you with planting, pruning, and maintaining your outdoor space.",
     id: "2",
     offerType: "request",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/400" },
-    title: "Gardening Help"
+    title: "Gardening Help",
+    authorId: "1"
   },
   {
     description:
@@ -24,8 +44,8 @@ export const offerListMockData: Offer[] = [
     id: "3",
     image: "https://via.placeholder.com/400",
     offerType: "offer",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/200" },
-    title: "Painting Services"
+    title: "Painting Services",
+    authorId: "1"
   },
   {
     description:
@@ -33,16 +53,16 @@ export const offerListMockData: Offer[] = [
     id: "4",
     image: "https://via.placeholder.com/500",
     offerType: "request",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/500" },
-    title: "Delivery Assistance"
+    title: "Delivery Assistance",
+    authorId: "1"
   },
   {
     description:
       "Going away? Trust our experienced pet sitters to provide loving care for your furry friends while you're gone.",
     id: "5",
     offerType: "offer",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/800" },
-    title: "Pet Sitting"
+    title: "Pet Sitting",
+    authorId: "1"
   },
   {
     description:
@@ -50,8 +70,8 @@ export const offerListMockData: Offer[] = [
     id: "6",
     image: "https://via.placeholder.com/600",
     offerType: "request",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/600" },
-    title: "Moving Help"
+    title: "Moving Help",
+    authorId: "1"
   },
   {
     description:
@@ -59,8 +79,8 @@ export const offerListMockData: Offer[] = [
     id: "7",
     image: "https://via.placeholder.com/700",
     offerType: "offer",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/700" },
-    title: "Event Setup"
+    title: "Event Setup",
+    authorId: "1"
   },
   {
     description:
@@ -68,24 +88,24 @@ export const offerListMockData: Offer[] = [
     id: "8",
     image: "https://via.placeholder.com/800",
     offerType: "request",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/900" },
-    title: "Furniture Assembly"
+    title: "Furniture Assembly",
+    authorId: "1"
   },
   {
     description:
       "From minor repairs to home improvement projects, our handyman services are here to help. Trust us to tackle any task with precision and expertise.",
     id: "9",
     offerType: "offer",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/800" },
-    title: "Handyman Services"
+    title: "Handyman Services",
+    authorId: "1"
   },
   {
-    description:
-      "Need academic support? Our qualified tutors provide personalized assistance to help you excel in your studies.",
+    description: "Need help with your studies? Our tutors provide expert guidance and support to help you succeed.",
+
     id: "10",
     image: "https://via.placeholder.com/900",
     offerType: "request",
-    person: { name: "John Doe", picture: "https://i.pravatar.cc/700" },
-    title: "Tutoring Assistance"
+    title: "Tutoring Assistance",
+    authorId: "1"
   },
 ];
