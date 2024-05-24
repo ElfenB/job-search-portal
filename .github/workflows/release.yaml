@@ -6,7 +6,43 @@ on:
       - main
 
 jobs:
+  check-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Environment Variables
+        run: |
+          if [ -z "${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" ]; then
+            echo "VITE_AUTH0_CLIENT_ID_WEB is not set"
+            exit 1
+          fi
+
+          if [ -z "${{ secrets.VITE_AUTH0_DOMAIN }}" ]; then
+            echo "VITE_AUTH0_DOMAIN is not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.POSTGRES_PASSWORD }}" ]; then
+            echo "POSTGRES_PASSWORD is not set"
+            exit 1
+          fi
+
+  deploy-database:
+    needs: check-env
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create .env file
+        run: |
+          echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" > .env
+
+      - name: Deploy Database
+        run: docker compose up -d
+
   release:
+    needs: check-env
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,8 +60,25 @@ jobs:
       - name: Semantic-Release
         run: npm run release
 
+  migrate-db:
+    needs: [release, deploy-database]
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create .env file
+        run: |
+          echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" > .env
+
+      - name: Migrate Database
+        run: npm run migrate
+
   deploy:
-    needs: release
+    needs: migrate-db
     runs-on: self-hosted
 
     steps:
