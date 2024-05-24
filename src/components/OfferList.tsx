@@ -1,9 +1,17 @@
-import { trpc } from "../api/trpc";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useOfferListData } from "../useHooks/useOfferListData";
+import { CreateOfferCard } from "./CreateOfferCard";
 import { OfferCard } from "./OfferCard";
 import { OfferListSkeleton } from "./OfferListSkeleton";
 
-export function OfferList() {
-  const { data, error, isPending } = trpc.job.list.useQuery();
+type Props = {
+  personal?: boolean;
+};
+
+export function OfferList({ personal }: Props) {
+  const { user } = useAuth0();
+
+  const { data, error, isPending } = useOfferListData(user?.sub ?? "", personal);
 
   if (isPending) {
     return <OfferListSkeleton />;
@@ -13,5 +21,13 @@ export function OfferList() {
     return <div>Error: {error.message}</div>;
   }
 
-  return data.map((offer) => <OfferCard key={offer.id} offer={offer} />);
+  return (
+    <>
+      {personal && <CreateOfferCard />}
+
+      {data.map((offer) => (
+        <OfferCard key={offer.id} offer={offer} />
+      ))}
+    </>
+  );
 }

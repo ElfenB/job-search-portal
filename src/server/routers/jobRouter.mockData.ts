@@ -28,7 +28,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/300",
     offerType: "offer",
     title: "House Cleaning",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -36,7 +36,7 @@ const jobsMock: JobOffer[] = [
     id: "2",
     offerType: "request",
     title: "Gardening Help",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -45,7 +45,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/400",
     offerType: "offer",
     title: "Painting Services",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -54,7 +54,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/500",
     offerType: "request",
     title: "Delivery Assistance",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -62,7 +62,7 @@ const jobsMock: JobOffer[] = [
     id: "5",
     offerType: "offer",
     title: "Pet Sitting",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -71,7 +71,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/600",
     offerType: "request",
     title: "Moving Help",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -80,7 +80,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/700",
     offerType: "offer",
     title: "Event Setup",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -89,7 +89,7 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/800",
     offerType: "request",
     title: "Furniture Assembly",
-    userId: "1"
+    authorId: "1"
   },
   {
     description:
@@ -97,7 +97,7 @@ const jobsMock: JobOffer[] = [
     id: "9",
     offerType: "offer",
     title: "Handyman Services",
-    userId: "1"
+    authorId: "1"
   },
   {
     description: "Need help with your studies? Our tutors provide expert guidance and support to help you succeed.",
@@ -106,6 +106,6 @@ const jobsMock: JobOffer[] = [
     image: "https://via.placeholder.com/900",
     offerType: "request",
     title: "Tutoring Assistance",
-    userId: "1"
+    authorId: "1"
   },
 ];
