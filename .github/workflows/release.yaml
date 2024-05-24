@@ -58,6 +58,8 @@ jobs:
         run: npm clean-install
 
       - name: Migrate Database
+        env:
+          DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
         run: npm run db:migrate
 
   deploy:
