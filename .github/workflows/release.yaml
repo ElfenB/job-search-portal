@@ -33,7 +33,6 @@ jobs:
         run: |
           echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" >> .env
           echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
-          echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
           echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" >> .env
       - name: Check location
         run: pwd
@@ -48,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy Database
-        run: docker compose -f postgres/docker-compose.yaml --env-file .env up -d
+        run: POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} docker compose -f postgres/docker-compose.yaml up -d
 
   migrate-db:
     # Node must be install on this runner
