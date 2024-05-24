@@ -1,3 +1,10 @@
+## [1.10.8](https://github.com/ElfenB/job-search-portal/compare/v1.10.7...v1.10.8) (2024-05-24)
+
+
+### Bug Fixes
+
+* env vars ([775a220](https://github.com/ElfenB/job-search-portal/commit/775a2203df9ead6d8ee80f8a09d0f7cdee8ff886))
+
 ## [1.10.7](https://github.com/ElfenB/job-search-portal/compare/v1.10.6...v1.10.7) (2024-05-24)
 
 
