@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/ElfenB/job-search-portal/compare/v1.10.0...v1.10.1) (2024-05-24)
+
+
+### Bug Fixes
+
+* corrected compose file location for database ([a66dabf](https://github.com/ElfenB/job-search-portal/commit/a66dabfbf4cb3aff816e40832bcfe3672747cef4))
+
 # [1.10.0](https://github.com/ElfenB/job-search-portal/compare/v1.9.0...v1.10.0) (2024-05-24)
 
 
