@@ -35,6 +35,8 @@ jobs:
           echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
           echo "POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}" >> .env
           echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" >> .env
+      - name: Check location
+        run: pwd
 
   deploy-database:
     needs: write-env
