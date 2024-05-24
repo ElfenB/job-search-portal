@@ -1,3 +1,10 @@
+## [1.10.6](https://github.com/ElfenB/job-search-portal/compare/v1.10.5...v1.10.6) (2024-05-24)
+
+
+### Bug Fixes
+
+* corrected env file location ([84c13ed](https://github.com/ElfenB/job-search-portal/commit/84c13edee19ea74a3a5a1fb0bf7706adca51983a))
+
 ## [1.10.5](https://github.com/ElfenB/job-search-portal/compare/v1.10.4...v1.10.5) (2024-05-24)
 
 
