@@ -75,7 +75,7 @@ jobs:
           echo "DATABASE_URL=postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber" > .env
 
       - name: Migrate Database
-        run: npm run migrate
+        run: npm run db:migrate
 
   deploy:
     needs: migrate-db
