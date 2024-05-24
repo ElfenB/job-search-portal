@@ -1,3 +1,19 @@
+## [1.10.7](https://github.com/ElfenB/job-search-portal/compare/v1.10.6...v1.10.7) (2024-05-24)
+
+
+### Bug Fixes
+
+* add env for migration ([0b3cd77](https://github.com/ElfenB/job-search-portal/commit/0b3cd77d1d43d4d511ad6009cc1796e6d523731a))
+* added generate stage ([7aaa8ae](https://github.com/ElfenB/job-search-portal/commit/7aaa8aeebfbb36a37abfb0354e03ac5dde923d0f))
+* added ports to database container ([f1202a2](https://github.com/ElfenB/job-search-portal/commit/f1202a2004c1056aedeecf7a5a1c33b15d06f967))
+* env variables ([3a67564](https://github.com/ElfenB/job-search-portal/commit/3a67564d7e8bdd699fba5650f19962d9ee5ae5eb))
+* move env in front of command ([c241028](https://github.com/ElfenB/job-search-portal/commit/c241028a72f5893d1de870f5556a547cf4e3fb06))
+* move generate statement ([2edd8c1](https://github.com/ElfenB/job-search-portal/commit/2edd8c136bc9e39803befff31e981a1da06ad9b1))
+* order of jobs ([c178cea](https://github.com/ElfenB/job-search-portal/commit/c178ceab9ca1910cafa57af0aa6a9234e3f15a3a))
+* resolve deps ([8ecb5b2](https://github.com/ElfenB/job-search-portal/commit/8ecb5b2f74a88484f4f6a43bf399ced5f08974f4))
+* switch everything to self-hosted ([e59f9cf](https://github.com/ElfenB/job-search-portal/commit/e59f9cf6128bbcffb49597105bc7e903af0462cb))
+* switch runner for write env job ([a97a81a](https://github.com/ElfenB/job-search-portal/commit/a97a81a6086f60ec27346503f21603a61044617e))
+
 ## [1.10.6](https://github.com/ElfenB/job-search-portal/compare/v1.10.5...v1.10.6) (2024-05-24)
 
 
