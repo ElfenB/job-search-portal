@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/ElfenB/job-search-portal/compare/v1.10.1...v1.10.2) (2024-05-24)
+
+
+### Bug Fixes
+
+* switch out container images ([9c3b01f](https://github.com/ElfenB/job-search-portal/commit/9c3b01f1dcbe48759dcd87a680e74363653790c2))
+
 ## [1.10.1](https://github.com/ElfenB/job-search-portal/compare/v1.10.0...v1.10.1) (2024-05-24)
 
 
