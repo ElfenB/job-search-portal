@@ -5,5 +5,7 @@ services:
     restart: always
     # set shared memory limit when using docker-compose (default: 128mb)
     shm_size: 265mb
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
