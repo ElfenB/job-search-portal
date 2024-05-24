@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/ElfenB/job-search-portal/compare/v1.10.2...v1.10.3) (2024-05-24)
+
+
+### Bug Fixes
+
+* script name ([f6df5cf](https://github.com/ElfenB/job-search-portal/commit/f6df5cfe28090e633736390dc48fb2c0280c992b))
+
 ## [1.10.2](https://github.com/ElfenB/job-search-portal/compare/v1.10.1...v1.10.2) (2024-05-24)
 
 
