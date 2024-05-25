@@ -15,8 +15,8 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import { chatbox, home, person } from "ionicons/icons";
 import { Redirect, Route } from "react-router-dom";
-import { ChatConversation } from "./components/ChatConversation";
 import { ToastBar } from "./components/ToastBar";
+import { ChatConversation } from "./pages/ChatConversation";
 import { ChatProfile } from "./pages/ChatProfile";
 import { Chats } from "./pages/Chats";
 import { LoadingScreen } from "./pages/LoadingScreen";

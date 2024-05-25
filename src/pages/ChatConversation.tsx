@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   IonAvatar,
   IonButtons,
@@ -8,13 +9,12 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-import { ErrorPage } from "../pages/Error404";
-import { BackButton } from "./BackButton";
-import { fallbackUserImage } from "./ChatList.consts";
-import { chats } from "./ChatList.mockData";
+import { BackButton } from "../components/BackButton";
+import { fallbackUserImage } from "../components/ChatList.consts";
+import { chats } from "../components/ChatList.mockData";
+import { ErrorPage } from "./Error404";
 
 export function ChatConversation() {
   const { t } = useTranslation();
