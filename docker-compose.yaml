@@ -11,8 +11,22 @@ services:
       VITE_AUTH0_CLIENT_ID_WEB: ${VITE_AUTH0_CLIENT_ID_WEB}
       VITE_AUTH0_DOMAIN: ${VITE_AUTH0_DOMAIN}
 
+  db:
+    image: postgres
+    container_name: jobber-postgres
+    restart: always
+    # set shared memory limit when using docker-compose (default: 128mb)
+    shm_size: 265mb
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+
   server:
     container_name: jobber-server
+    depends_on:
+      - db
     build:
       context: .
       dockerfile: Dockerfile.server
@@ -20,5 +34,5 @@ services:
     ports:
       - 3000:3000
     environment:
-      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/postgres?schema=jobber
       CORS_WHITELIST: ${CORS_WHITELIST}
