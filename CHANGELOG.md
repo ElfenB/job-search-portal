@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/ElfenB/job-search-portal/compare/v1.11.0...v1.11.1) (2024-05-25)
+
+
+### Bug Fixes
+
+* env variables for frontend ([2213e62](https://github.com/ElfenB/job-search-portal/commit/2213e62eef5b3c7ddf58b3d3697669ee098026b9))
+
 # [1.11.0](https://github.com/ElfenB/job-search-portal/compare/v1.10.8...v1.11.0) (2024-05-25)
 
 
