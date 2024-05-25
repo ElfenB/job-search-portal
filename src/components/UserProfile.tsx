@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { User } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import {
@@ -12,23 +13,22 @@ import {
   IonList,
   IonListHeader,
 } from "@ionic/react";
-import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 export function UserProfile() {
   const { t } = useTranslation();
   const { isLoading, user } = useAuth0();
 
-  // If the SDK is not ready, or a user is not authenticated, exit.
-  if (isLoading || !user) return null;
-
   const userImage = useMemo(
     () =>
-      !user.picture || user.picture.length === 0
+      !user?.picture || user.picture.length === 0
         ? "https://ionicframework.com/docs/img/demos/avatar.svg"
         : user.picture,
-    [user.picture],
+    [user?.picture],
   );
+
+  // If the SDK is not ready, or a user is not authenticated, exit.
+  if (isLoading || !user) return null;
 
   return (
     <IonCard>
