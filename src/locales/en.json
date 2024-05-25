@@ -15,6 +15,7 @@
 	"label.loading": "Loading",
 	"label.login": "Login",
 	"label.logout": "Logout",
+	"label.noOffersFound": "No entries found.",
 	"label.offerdetails": "Offer details",
 	"label.offernotfound": "Offer not found",
 	"label.offerType": "Offer type",

@@ -1,5 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useTranslation } from "react-i18next";
 import { useOfferListData } from "../useHooks/useOfferListData";
+import { ContentPlaceholderMessage } from "./ContentPlaceholderMessage";
 import { CreateOfferCard } from "./CreateOfferCard";
 import { OfferCard } from "./OfferCard";
 import { OfferListSkeleton } from "./OfferListSkeleton";
@@ -9,6 +11,7 @@ type Props = {
 };
 
 export function OfferList({ personal }: Props) {
+  const { t } = useTranslation();
   const { user } = useAuth0();
 
   const { data, error, isPending } = useOfferListData(user?.sub ?? "", personal);
@@ -18,11 +21,11 @@ export function OfferList({ personal }: Props) {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <ContentPlaceholderMessage color="red" message={`${t("label.error")}: ${error.message}`} />;
   }
 
   if (data.length === 0) {
-    return <div>No offers found</div>;
+    return <ContentPlaceholderMessage message={t("label.noOffersFound")} />;
   }
 
   return (

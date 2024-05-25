@@ -15,6 +15,7 @@
 	"label.loading": "Wird geladen",
 	"label.login": "Login",
 	"label.logout": "Abmelden",
+	"label.noOffersFound": "Keine Einträge gefunden.",
 	"label.offerdetails": "Angebotsdetails",
 	"label.offernotfound": "Angebot konnte nicht gefunden werden",
 	"label.offerType": "Angebotstyp",
