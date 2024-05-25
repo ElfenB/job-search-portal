@@ -1,9 +1,8 @@
 import { useMemo } from "react";
-import type { User } from "@auth0/auth0-react";
-import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from "@ionic/react";
 import type { Offer } from "@prisma/client";
 import { useTranslation } from "react-i18next";
-import { fallbackUserImage } from "./ChatList.consts";
+import { UserAvatar } from "./UserAvatar";
 
 type Props = {
   offer: Offer;
@@ -15,10 +14,6 @@ export function OfferCard({ offer }: Props) {
   const { authorId, description, id: offerId, image, offerType, title } = offer;
 
   const currentLocation = useMemo(() => window.location.pathname, []);
-
-  // FIXME: This is a mock function that should be replaced with a real API call to Auth0
-  // const person = getUserFromId(authorId);
-  const person = { name: `John Doe (${authorId})`, picture: fallbackUserImage } as User;
 
   const shortenedDescription = useMemo(() => {
     if (!description) {
@@ -36,9 +31,7 @@ export function OfferCard({ offer }: Props) {
         <IonCardTitle>{title}</IonCardTitle>
         <IonCardSubtitle>{t(offerType)}</IonCardSubtitle>
 
-        <IonAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }}>
-          <img alt={person.name} src={person.picture ?? fallbackUserImage} />
-        </IonAvatar>
+        <UserAvatar userId={authorId} />
       </IonCardHeader>
 
       {shortenedDescription.length > 0 && <IonCardContent>{shortenedDescription}</IonCardContent>}

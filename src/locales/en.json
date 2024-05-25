@@ -11,6 +11,7 @@
 	"label.error": "Error",
 	"label.errormessage": "Whoops ... something is wrong.",
 	"label.formErrorEmptyValues": "Please fill out all fields.",
+	"label.avatarPlaceholder": "Avatar",
 	"label.loading": "Loading",
 	"label.login": "Login",
 	"label.logout": "Logout",

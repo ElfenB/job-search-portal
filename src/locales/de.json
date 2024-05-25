@@ -11,6 +11,7 @@
 	"label.error": "Fehler",
 	"label.errormessage": "Ups ... etwas ist schief gelaufen.",
 	"label.formErrorEmptyValues": "Bitte fülle alle Felder aus.",
+	"label.avatarPlaceholder": "Profilbild",
 	"label.loading": "Wird geladen",
 	"label.login": "Login",
 	"label.logout": "Abmelden",
