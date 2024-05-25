@@ -1,13 +1,35 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from "@ionic/react";
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonPage,
+  IonRouterLink,
+  IonTitle,
+  IonToolbar,
+  RefresherEventDetail,
+} from "@ionic/react";
 import { cog } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 import { OfferList } from "../components/OfferList";
+import { trpc } from "../api/trpc";
+import { useCallback } from "react";
+import { RefreshDragger } from "../components/RefreshDragger";
 
 export function Personal() {
   const { t } = useTranslation();
 
   const { user } = useAuth0();
+
+  const utils = trpc.useUtils();
+
+  const handleRefresh = useCallback(
+    async (e: CustomEvent<RefresherEventDetail>) => {
+      await utils.job.listMy.invalidate();
+      e.detail.complete();
+    },
+    [utils.job.list, utils.job.listMy],
+  );
 
   return (
     <IonPage>
@@ -27,6 +49,8 @@ export function Personal() {
       </IonHeader>
 
       <IonContent fullscreen>
+        <RefreshDragger onRefresh={handleRefresh} />
+
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{t("label.personal")}</IonTitle>

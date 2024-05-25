@@ -21,6 +21,10 @@ export function OfferList({ personal }: Props) {
     return <div>Error: {error.message}</div>;
   }
 
+  if (data.length === 0) {
+    return <div>No offers found</div>;
+  }
+
   return (
     <>
       {personal && <CreateOfferCard />}
