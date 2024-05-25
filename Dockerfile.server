@@ -1,0 +1,26 @@
+FROM node:20-alpine AS build
+WORKDIR /app
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+COPY tsconfig.json tsconfig.json
+COPY src ./src
+COPY prisma ./prisma
+
+RUN npm clean-install
+RUN npm run build-server
+
+# Run Prisma generate to ensure the query engine is available
+RUN npm run db:generate
+
+FROM node:20-alpine
+WORKDIR /app
+
+COPY --from=build /app/dist/index.js ./index.js
+
+# Copy the Prisma engine files
+COPY --from=build /app/node_modules/.prisma /app/node_modules/.prisma
+COPY --from=build /app/node_modules/@prisma /app/node_modules/@prisma
+
+EXPOSE 3000
+CMD ["node", "index.js"]

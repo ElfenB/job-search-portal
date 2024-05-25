@@ -8,6 +8,7 @@
     "predev": "npm install",
     "dev": "vite",
     "build": "tsc && vite build",
+    "build-server": "esbuild src/server/index.ts --bundle --platform=node --outdir=dist",
     "preview": "vite preview",
     "test.unit": "vitest",
     "lint": "DEBUG=eslint:cli-engine eslint --fix .",

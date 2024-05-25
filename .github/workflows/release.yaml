@@ -20,13 +20,28 @@ jobs:
             echo "VITE_AUTH0_DOMAIN is not set"
             exit 1
           fi
+          if [ -z "${{ secrets.POSTGRES_USER }}" ]; then
+            echo "POSTGRES_USER is not set"
+            exit 1
+          fi
           if [ -z "${{ secrets.POSTGRES_PASSWORD }}" ]; then
             echo "POSTGRES_PASSWORD is not set"
             exit 1
           fi
+          if [ -z "${{ secrets.CORS_WHITELIST }}" ]; then
+            echo "CORS_WHITELIST is not set"
+            exit 1
+          fi
+
+  docker-prune:
+    needs: check-env
+    runs-on: self-hosted
+    steps:
+      - name: Prune Docker
+        run: docker system prune -af
 
   deploy-database:
-    needs: check-env
+    needs: docker-prune
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -36,11 +51,11 @@ jobs:
 
       - name: Deploy Database
         env:
+          POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
         run: docker compose -f postgres/docker-compose.yaml up -d
 
   migrate-db:
-    # Node must be install on this runner
     needs: deploy-database
     runs-on: self-hosted
 
@@ -59,7 +74,7 @@ jobs:
 
       - name: Migrate Database
         env:
-          DATABASE_URL: postgresql://postgres:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
+          DATABASE_URL: postgresql://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
         run: npm run db:migrate
 
   deploy:
@@ -72,12 +87,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create .env file
-        run: |
-          echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" > .env
-          echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
-
       - name: Deploy
+        env:
+          VITE_AUTH0_CLIENT_ID_WEB: ${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}
+          VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
+          DATABASE_URL: postgresql://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
+          CORS_WHITELIST: ${{ secrets.CORS_WHITELIST }}
         run: docker compose up -d --build
 
   release:
