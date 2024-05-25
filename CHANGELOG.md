@@ -1,3 +1,11 @@
+## [1.12.1](https://github.com/ElfenB/job-search-portal/compare/v1.12.0...v1.12.1) (2024-05-25)
+
+
+### Bug Fixes
+
+* integrate database into compose ([ec11c94](https://github.com/ElfenB/job-search-portal/commit/ec11c9479455e00961dde47083be2be5b8d247fd))
+* switch order ([9d54f21](https://github.com/ElfenB/job-search-portal/commit/9d54f211dfaec03045e59965424228c97bb3715b))
+
 # [1.12.0](https://github.com/ElfenB/job-search-portal/compare/v1.11.2...v1.12.0) (2024-05-25)
 
 
