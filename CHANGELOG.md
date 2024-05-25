@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/ElfenB/job-search-portal/compare/v1.10.8...v1.11.0) (2024-05-25)
+
+
+### Features
+
+* added backend deployment ([bdf624a](https://github.com/ElfenB/job-search-portal/commit/bdf624a0f5f80daef1a8e9745beddfdedbe218c6))
+
 ## [1.10.8](https://github.com/ElfenB/job-search-portal/compare/v1.10.7...v1.10.8) (2024-05-24)
 
 
