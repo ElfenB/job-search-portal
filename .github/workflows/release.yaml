@@ -87,10 +87,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Write env-file for frontend
+        run: |
+          echo "VITE_AUTH0_CLIENT_ID_WEB=${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}" >> .env
+          echo "VITE_AUTH0_DOMAIN=${{ secrets.VITE_AUTH0_DOMAIN }}" >> .env
+
       - name: Deploy
         env:
-          VITE_AUTH0_CLIENT_ID_WEB: ${{ secrets.VITE_AUTH0_CLIENT_ID_WEB }}
-          VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
           DATABASE_URL: postgresql://${{ secrets.POSTGRES_USER }}:${{ secrets.POSTGRES_PASSWORD }}@localhost:5432/postgres?schema=jobber
           CORS_WHITELIST: ${{ secrets.CORS_WHITELIST }}
         run: docker compose up -d --build
