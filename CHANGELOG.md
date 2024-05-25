@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/ElfenB/job-search-portal/compare/v1.11.1...v1.11.2) (2024-05-25)
+
+
+### Bug Fixes
+
+* don't crash on cors ([11fa669](https://github.com/ElfenB/job-search-portal/commit/11fa66974499812d25a17fc9d5e4c5f0fe151275))
+
 ## [1.11.1](https://github.com/ElfenB/job-search-portal/compare/v1.11.0...v1.11.1) (2024-05-25)
 
 
