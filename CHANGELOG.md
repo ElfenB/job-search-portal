@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/ElfenB/job-search-portal/compare/v1.11.2...v1.12.0) (2024-05-25)
+
+
+### Features
+
+* switched to express as api server ([464be86](https://github.com/ElfenB/job-search-portal/commit/464be86e2f66ac86bbbc51b74f0499aff1793ed7))
+
 ## [1.11.2](https://github.com/ElfenB/job-search-portal/compare/v1.11.1...v1.11.2) (2024-05-25)
 
 
