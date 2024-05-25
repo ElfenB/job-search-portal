@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/ElfenB/job-search-portal/compare/v1.12.1...v1.12.2) (2024-05-25)
+
+
+### Bug Fixes
+
+* added backend url for native ([7e067cf](https://github.com/ElfenB/job-search-portal/commit/7e067cf0f40b51d78882e9bb2bb19edc9b36d743))
+
 ## [1.12.1](https://github.com/ElfenB/job-search-portal/compare/v1.12.0...v1.12.1) (2024-05-25)
 
 

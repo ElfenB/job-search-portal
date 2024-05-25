@@ -2,7 +2,7 @@
   "name": "job-search-portal",
   "description": "Ionic application for job search portal",
   "private": true,
-  "version": "1.12.1",
+  "version": "1.12.2",
   "type": "module",
   "scripts": {
     "predev": "npm install",
