@@ -5,7 +5,7 @@ import type { AppRouter } from "../server";
 
 function getBaseUrl(): string {
   if (import.meta.env.MODE === 'development') {
-    return 'http://localhost:3000';
+    return 'http://localhost:3000/api/trpc';
   }
   return "/api/trpc";
 }

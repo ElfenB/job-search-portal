@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 
-import { createHTTPServer } from '@trpc/server/adapters/standalone';
+import * as trpcExpress from '@trpc/server/adapters/express';
 import cors from 'cors';
+import express from 'express';
 import { jobRouter } from './routers/jobRouter';
 import { corsOptions } from './server.utils';
 import { router } from "./trpc";
@@ -13,15 +14,12 @@ const appRouter = router({
 // Router type signature
 export type AppRouter = typeof appRouter
 
-const server = createHTTPServer({
-  middleware: cors(corsOptions),
-  router: appRouter
-})
+const app = express();
 
-server.listen(3000)
+app.use(cors(corsOptions));
+
+app.use('/api/trpc', trpcExpress.createExpressMiddleware({ router: appRouter }));
+
+app.listen(3000);
 
 console.log('Server is running on http://localhost:3000')
-
-// TODO: Add deployment for backend
-// TODO: Run everything using helm charts
-// TODO: Add authentication?

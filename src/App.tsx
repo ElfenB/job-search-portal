@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { App as CapApp } from "@capacitor/app";
 import { Browser } from "@capacitor/browser";
@@ -13,9 +14,9 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { chatbox, home, person } from "ionicons/icons";
-import { useEffect } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { ChatConversation } from "./components/ChatConversation";
+import { ToastBar } from "./components/ToastBar";
 import { ChatProfile } from "./pages/ChatProfile";
 import { Chats } from "./pages/Chats";
 import { LoadingScreen } from "./pages/LoadingScreen";
@@ -24,7 +25,6 @@ import { OfferDetails } from "./pages/OfferDetails";
 import { Overview } from "./pages/Overview";
 import { Personal } from "./pages/Personal";
 import { Settings } from "./pages/Settings";
-import { ToastBar } from "./components/ToastBar";
 
 /* Theme variables */
 import "./theme/variables.css";
