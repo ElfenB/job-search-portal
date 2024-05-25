@@ -47,7 +47,11 @@ export function ChatConversation() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>{/* TODO: Implement chat */}</IonContent>
+      <IonContent fullscreen>
+        <h1>Your chat with: {recipient.name}</h1>
+        <p>TODO: Implement chat</p>
+        {/* TODO: Implement chat */}
+      </IonContent>
     </IonPage>
   );
 }
