@@ -57,7 +57,6 @@ export function ValidatedFormInput({ children, label, maxLength, name, onChange,
       className={`${isValid && "ion-valid"} ${isValid === false && "ion-invalid"} ${isTouched && "ion-touched"}`}
       counter={maxLength !== undefined && inputValue.length > maxLength * 0.8} // only show counter if 80% of maxLength is reached
       errorText={t("label.formValidationError")}
-      fill="solid"
       label={label}
       labelPlacement="floating"
       maxlength={maxLength}
