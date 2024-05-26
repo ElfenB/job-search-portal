@@ -1,4 +1,5 @@
-import { IonRefresher, IonRefresherContent, RefresherEventDetail } from "@ionic/react";
+import type { RefresherEventDetail } from "@ionic/react";
+import { IonRefresher, IonRefresherContent } from "@ionic/react";
 
 type Props = {
   onRefresh: (event: CustomEvent<RefresherEventDetail>) => void;

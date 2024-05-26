@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Browser } from "@capacitor/browser";
 import {
@@ -12,7 +13,6 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { logoGithub } from "ionicons/icons";
-import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { BackButton } from "../components/BackButton";
 import { UserProfile } from "../components/UserProfile";

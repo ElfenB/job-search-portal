@@ -1,11 +1,11 @@
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 
 type Props = {
-  message: string;
   color?: string;
+  message: string;
   style?: CSSProperties;
 };
 
-export function ContentPlaceholderMessage({ message, color, style }: Props) {
-  return <div style={{ padding: "1rem", color, ...style }}>{message}</div>;
+export function ContentPlaceholderMessage({ color, message, style }: Props) {
+  return <div style={{ color, padding: "1rem", ...style }}>{message}</div>;
 }

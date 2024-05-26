@@ -11,7 +11,7 @@ export function ChatList() {
       <IonListHeader>{t("label.conversations")}</IonListHeader>
 
       {chats.map((chat) => (
-        <ChatListItem chat={chat} key={chat.id} />
+        <ChatListItem key={chat.id} chat={chat} />
       ))}
     </IonList>
   );

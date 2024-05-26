@@ -1,10 +1,11 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, RefresherEventDetail } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { OfferList } from "../components/OfferList";
-import { useDarkMode } from "../utils/useDarkMode";
 import { useCallback } from "react";
+import type { RefresherEventDetail } from "@ionic/react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
+import { useTranslation } from "react-i18next";
 import { trpc } from "../api/trpc";
+import { OfferList } from "../components/OfferList";
 import { RefreshDragger } from "../components/RefreshDragger";
+import { useDarkMode } from "../utils/useDarkMode";
 
 export function Overview() {
   const { t } = useTranslation();
