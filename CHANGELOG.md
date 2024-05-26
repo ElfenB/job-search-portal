@@ -1,3 +1,10 @@
+## [1.13.2](https://github.com/ElfenB/job-search-portal/compare/v1.13.1...v1.13.2) (2024-05-26)
+
+
+### Bug Fixes
+
+* env into compose ([4e191f3](https://github.com/ElfenB/job-search-portal/commit/4e191f310ac03a7e74b5d29e41693c9988667409))
+
 ## [1.13.1](https://github.com/ElfenB/job-search-portal/compare/v1.13.0...v1.13.1) (2024-05-26)
 
 
