@@ -43,7 +43,7 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
         ) : (
           <IonText color="primary" style={{ fontWeight: "bold" }}>
             <p>
-              {money} {currency} ({paymentType ?? t("label.paymentTypeNotSpecified")})
+              {money} {currency} ({t(paymentType ?? "label.paymentTypeNotSpecified")})
             </p>
           </IonText>
         )}
