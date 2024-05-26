@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/ElfenB/job-search-portal/compare/v1.17.0...v1.18.0) (2024-05-26)
+
+
+### Features
+
+* added translations ([832d8ad](https://github.com/ElfenB/job-search-portal/commit/832d8adf25156239e38fc6d8b7989eb249a60977))
+
 # [1.17.0](https://github.com/ElfenB/job-search-portal/compare/v1.16.0...v1.17.0) (2024-05-26)
 
 
