@@ -22,7 +22,7 @@ model Offer {
   title       String   @db.VarChar(255)
   image       String?  @db.Text
   offerType   String   @db.VarChar(255)
-  description String?
+  description String?  @db.Text
   published   Boolean  @default(true)
   authorId    String   @db.VarChar(255)
   money       Float?   @db.DoublePrecision
