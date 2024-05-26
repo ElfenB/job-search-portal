@@ -1,31 +1,35 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+/* Ionic generator: https://ionicframework.com/docs/theming/color-generator */
+/* Palette generator: https://coolors.co/048a81-06d6a0-54c6eb-8a89c0-cda2ab */
+/* Contrast checker: https://webaim.org/resources/contrastchecker */
+
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
-  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary: #038260;
+  --ion-color-primary-rgb: 3, 130, 96;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3171e0;
-  --ion-color-primary-tint: #4c8dff;
+  --ion-color-primary-shade: #037254;
+  --ion-color-primary-tint: #1c8f70;
 
   /** secondary **/
-  --ion-color-secondary: #3dc2ff;
-  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary: #12799b;
+  --ion-color-secondary-rgb: 18, 121, 155;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #36abe0;
-  --ion-color-secondary-tint: #50c8ff;
+  --ion-color-secondary-shade: #106a88;
+  --ion-color-secondary-tint: #2a86a5;
 
   /** tertiary **/
-  --ion-color-tertiary: #5260ff;
-  --ion-color-tertiary-rgb: 82, 96, 255;
+  --ion-color-tertiary: #048178;
+  --ion-color-tertiary-rgb: 4, 129, 120;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #4854e0;
-  --ion-color-tertiary-tint: #6370ff;
+  --ion-color-tertiary-shade: #04726a;
+  --ion-color-tertiary-tint: #1d8e86;
 
   /** success **/
   --ion-color-success: #2dd36f;
@@ -235,7 +239,7 @@ http://ionicframework.com/docs/theming/ */
 }
 
 html {
-  /* For more information on dynamic font scaling, visit the documentation: 
+  /* For more information on dynamic font scaling, visit the documentation:
   https://ionicframework.com/docs/layout/dynamic-font-scaling */
   --ion-dynamic-font: var(--ion-default-dynamic-font);
 }

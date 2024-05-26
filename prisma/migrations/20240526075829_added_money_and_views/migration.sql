@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Offer" ADD COLUMN     "money" DOUBLE PRECISION,
+ADD COLUMN     "views" INTEGER DEFAULT 0;

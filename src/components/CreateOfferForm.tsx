@@ -117,6 +117,8 @@ export function CreateOfferForm({ onClose }: Props) {
             />
           </IonItem>
 
+          {/* TODO: Save language/country of the user to then filter on only your location */}
+
           {/* TODO: Image integration */}
           {/* <IonItem>
           <IonLabel>{t("label.image")}</IonLabel>

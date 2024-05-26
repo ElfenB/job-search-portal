@@ -31,7 +31,7 @@ export function OfferCard({ offer }: Props) {
         <IonCardTitle>{title}</IonCardTitle>
         <IonCardSubtitle>{t(offerType)}</IonCardSubtitle>
 
-        <UserAvatar userId={authorId} />
+        <UserAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }} userId={authorId} />
       </IonCardHeader>
 
       {shortenedDescription.length > 0 && <IonCardContent>{shortenedDescription}</IonCardContent>}
