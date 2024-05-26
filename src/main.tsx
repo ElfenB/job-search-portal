@@ -23,6 +23,8 @@ root.render(
   </StrictMode>,
 );
 
+// TODO: Auth0 caching (stay logged in)
+// TODO: Updates!
 // TODO: Add chat functionality (BE and FE) ==> Search for library
 // TODO: Enable image upload for offers
 // TODO: Double-check translations
