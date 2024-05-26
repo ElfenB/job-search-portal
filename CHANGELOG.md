@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/ElfenB/job-search-portal/compare/v1.15.0...v1.16.0) (2024-05-26)
+
+
+### Features
+
+* increment views count when fetching offer by ID ([97ae82f](https://github.com/ElfenB/job-search-portal/commit/97ae82f884ec33eabbaeb388dc9a18831b7da56f))
+
 # [1.15.0](https://github.com/ElfenB/job-search-portal/compare/v1.14.0...v1.15.0) (2024-05-26)
 
 
