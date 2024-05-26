@@ -4,10 +4,14 @@ import { publicProcedure, router } from "../trpc"
 import { JobOfferInput } from "./jobRouter.types"
 
 export const jobRouter = router({
-  byId: publicProcedure.input(z.number()).query(async ({ input }) => prisma.offer.findUnique({ where: { id: input } })),
-  create: publicProcedure.input(JobOfferInput).mutation(async ({ input }) => prisma.offer.create({ data: input })),
-  delete: publicProcedure.input(z.number()).mutation(async ({ input }) => prisma.offer.delete({ where: { id: input } })),
-  list: publicProcedure.input(z.string()).query(async ({ input }) => prisma.offer.findMany({ where: { NOT: { authorId: input } } })),
-  listAll: publicProcedure.query(async () => prisma.offer.findMany()),
-  listMy: publicProcedure.input(z.string()).query(async ({ input }) => prisma.offer.findMany({ where: { authorId: input } })),
+  byId: publicProcedure.input(z.number()).query(async ({ input }) => {
+    // Increment views count by 1 when fetching offer
+    await prisma.offer.update({ where: { id: input }, data: { views: { increment: 1 } } })
+    return await prisma.offer.findUnique({ where: { id: input } })
+  }),
+  create: publicProcedure.input(JobOfferInput).mutation(async ({ input }) => await prisma.offer.create({ data: input })),
+  delete: publicProcedure.input(z.number()).mutation(async ({ input }) => await prisma.offer.delete({ where: { id: input } })),
+  list: publicProcedure.input(z.string()).query(async ({ input }) => await prisma.offer.findMany({ where: { NOT: { authorId: input } } })),
+  listAll: publicProcedure.query(async () => await prisma.offer.findMany()),
+  listMy: publicProcedure.input(z.string()).query(async ({ input }) => await prisma.offer.findMany({ where: { authorId: input } })),
 })
