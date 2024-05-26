@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/ElfenB/job-search-portal/compare/v1.13.3...v1.14.0) (2024-05-26)
+
+
+### Bug Fixes
+
+* callback deps array ([db59f18](https://github.com/ElfenB/job-search-portal/commit/db59f18701e5a786ca7609071db4c6c1d6041bbe))
+
+
+### Features
+
+* new theme and updated offer details ([3912494](https://github.com/ElfenB/job-search-portal/commit/3912494ed4ff9975a58c55c64c2ecebadcf072e6))
+
 ## [1.13.3](https://github.com/ElfenB/job-search-portal/compare/v1.13.2...v1.13.3) (2024-05-26)
 
 
