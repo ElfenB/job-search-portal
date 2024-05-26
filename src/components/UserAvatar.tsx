@@ -17,7 +17,7 @@ export function UserAvatar({ style, userId, withName = false }: Props) {
   const { data: person } = trpc.user.byId.useQuery(userId);
 
   const img = useMemo(() => {
-    if (!person || !(person.picture.length === 0)) {
+    if (!person || person.picture.length === 0) {
       return fallbackUserImage;
     }
     return person.picture;
