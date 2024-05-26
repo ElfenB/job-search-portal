@@ -1,3 +1,11 @@
+## [1.13.1](https://github.com/ElfenB/job-search-portal/compare/v1.13.0...v1.13.1) (2024-05-26)
+
+
+### Bug Fixes
+
+* add missing env variables ([ef95958](https://github.com/ElfenB/job-search-portal/commit/ef959587200b613a19985b3b755fa6dc167ca03f))
+* removed deprecated package ([5f334ba](https://github.com/ElfenB/job-search-portal/commit/5f334ba48e47da8d76cd6ed493bee6a4c05845ac))
+
 # [1.13.0](https://github.com/ElfenB/job-search-portal/compare/v1.12.2...v1.13.0) (2024-05-25)
 
 
