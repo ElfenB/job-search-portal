@@ -1,3 +1,10 @@
+## [1.13.3](https://github.com/ElfenB/job-search-portal/compare/v1.13.2...v1.13.3) (2024-05-26)
+
+
+### Bug Fixes
+
+* create offers when no offers available ([983490f](https://github.com/ElfenB/job-search-portal/commit/983490f640973658e80021eaac9ede555d594ae5))
+
 ## [1.13.2](https://github.com/ElfenB/job-search-portal/compare/v1.13.1...v1.13.2) (2024-05-26)
 
 
