@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/ElfenB/job-search-portal/compare/v1.16.0...v1.17.0) (2024-05-26)
+
+
+### Features
+
+* removed solid fill ([a018610](https://github.com/ElfenB/job-search-portal/commit/a018610df41368c49df1cc8afbd12520a30c3a32))
+
 # [1.16.0](https://github.com/ElfenB/job-search-portal/compare/v1.15.0...v1.16.0) (2024-05-26)
 
 
