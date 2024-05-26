@@ -1,3 +1,15 @@
+# [1.15.0](https://github.com/ElfenB/job-search-portal/compare/v1.14.0...v1.15.0) (2024-05-26)
+
+
+### Bug Fixes
+
+* invert logic to show image ([1ac94ea](https://github.com/ElfenB/job-search-portal/commit/1ac94ea876bba25d13ee086ff621b989af9aaf1b))
+
+
+### Features
+
+* updated form ([f14733c](https://github.com/ElfenB/job-search-portal/commit/f14733c9bf3d2052b75fdb2c7424bb84b9fd0f66))
+
 # [1.14.0](https://github.com/ElfenB/job-search-portal/compare/v1.13.3...v1.14.0) (2024-05-26)
 
 
