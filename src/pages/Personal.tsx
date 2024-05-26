@@ -1,19 +1,11 @@
+import { useCallback } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import {
-  IonContent,
-  IonHeader,
-  IonIcon,
-  IonPage,
-  IonRouterLink,
-  IonTitle,
-  IonToolbar,
-  RefresherEventDetail,
-} from "@ionic/react";
+import type { RefresherEventDetail } from "@ionic/react";
+import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from "@ionic/react";
 import { cog } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
-import { OfferList } from "../components/OfferList";
 import { trpc } from "../api/trpc";
-import { useCallback } from "react";
+import { OfferList } from "../components/OfferList";
 import { RefreshDragger } from "../components/RefreshDragger";
 
 export function Personal() {
@@ -28,7 +20,7 @@ export function Personal() {
       await utils.job.listMy.invalidate();
       e.detail.complete();
     },
-    [utils.job.list, utils.job.listMy],
+    [utils.job.listMy],
   );
 
   return (
