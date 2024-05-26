@@ -1,3 +1,18 @@
+# [1.13.0](https://github.com/ElfenB/job-search-portal/compare/v1.12.2...v1.13.0) (2024-05-25)
+
+
+### Bug Fixes
+
+* memo conditional ([a2975ae](https://github.com/ElfenB/job-search-portal/commit/a2975ae5f612c263365e2a6b1962dcb73857ee8c))
+* memo deps array ([87cd895](https://github.com/ElfenB/job-search-portal/commit/87cd89555e5fd03b78f104d424d8e6f78375c659))
+
+
+### Features
+
+* added refresh dragger ([a590a7f](https://github.com/ElfenB/job-search-portal/commit/a590a7f8425d331b2c1277eba52ae3502549372b))
+* added user endpoint to get images and names ([b68f766](https://github.com/ElfenB/job-search-portal/commit/b68f766b0f949abecf7e286def8840dae7b10fb6))
+* placeholder message content item ([c3627d7](https://github.com/ElfenB/job-search-portal/commit/c3627d74671d745704e1efe3b8a31595319d4744))
+
 ## [1.12.2](https://github.com/ElfenB/job-search-portal/compare/v1.12.1...v1.12.2) (2024-05-25)
 
 
