@@ -24,13 +24,11 @@ export function OfferList({ personal }: Props) {
     return <ContentPlaceholderMessage color="red" message={`${t("label.error")}: ${error.message}`} />;
   }
 
-  if (data.length === 0) {
-    return <ContentPlaceholderMessage message={t("label.noOffersFound")} />;
-  }
-
   return (
     <>
       {personal && <CreateOfferCard />}
+
+      {data.length === 0 && <ContentPlaceholderMessage message={t("label.noOffersFound")} />}
 
       {data.map((offer) => (
         <OfferCard key={offer.id} offer={offer} />
