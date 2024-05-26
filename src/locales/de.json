@@ -40,6 +40,9 @@
   "label.submit": "Absenden",
   "label.title": "Titel",
   "label.yourpicture": "Dein Profilbild",
+  "hourly": "stündlich",
+  "monthly": "monatlich",
+  "fixed": "Festpreis",
   "offer": "Angebot",
   "request": "Gesuch",
   "welcomemessage": "Willkommen bei Jobber!"

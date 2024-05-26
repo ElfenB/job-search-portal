@@ -40,6 +40,9 @@
   "label.submit": "Submit",
   "label.title": "Title",
   "label.yourpicture": "Your picture",
+  "hourly": "hourly",
+  "monthly": "monthly",
+  "fixed": "fixed",
   "offer": "Offer",
   "request": "Request",
   "welcomemessage": "Welcome to Jobber!"
