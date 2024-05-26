@@ -22,3 +22,8 @@ root.render(
     </Auth0Provider>
   </StrictMode>,
 );
+
+// TODO: Add chat functionality (BE and FE) ==> Search for library
+// TODO: Enable image upload for offers
+// TODO: Double-check translations
+// TODO: Add translation for India

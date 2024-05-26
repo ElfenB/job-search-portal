@@ -60,6 +60,9 @@ jobs:
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           CORS_WHITELIST: ${{ secrets.CORS_WHITELIST }}
+          VITE_AUTH0_DOMAIN: ${{ secrets.VITE_AUTH0_DOMAIN }}
+          AUTH0_CLIENT_ID_API: ${{ secrets.AUTH0_CLIENT_ID_API }}
+          AUTH0_CLIENT_SECRET_API: ${{ secrets.AUTH0_CLIENT_SECRET_API }}
         run: docker compose up -d --build
 
   migrate-db:
