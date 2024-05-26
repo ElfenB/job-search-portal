@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/ElfenB/job-search-portal/compare/v1.18.0...v1.18.1) (2024-05-26)
+
+
+### Bug Fixes
+
+* translation for payment type ([2425fbb](https://github.com/ElfenB/job-search-portal/commit/2425fbba5c063be3729dedd7c92f4eaeca8d3c44))
+
 # [1.18.0](https://github.com/ElfenB/job-search-portal/compare/v1.17.0...v1.18.0) (2024-05-26)
 
 
