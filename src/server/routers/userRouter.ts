@@ -15,5 +15,5 @@ export const userRouter = router({
         throw new Error();
       }
     }
-  })
-})
+  }),
+});

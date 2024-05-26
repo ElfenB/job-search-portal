@@ -10,4 +10,4 @@ export const JobOfferInput = z.object({
   offerType: z.union([z.literal("offer"), z.literal("request")]),
   paymentType: z.string().optional(),
   title: z.string(),
-})
+});
