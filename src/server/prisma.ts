@@ -4,9 +4,9 @@
  */
 import { PrismaClient } from "@prisma/client";
 
-const prismaGlobal = global as typeof global & {
+const prismaGlobal = global as {
   prisma?: PrismaClient;
-};
+} & typeof global;
 
 export const prisma: PrismaClient =
   prismaGlobal.prisma ??

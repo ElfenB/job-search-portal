@@ -7,6 +7,7 @@ import { isValidFormInput } from "./CreateOfferForm.utils";
 
 type Props = {
   children?: JSX.Element;
+  initialValue?: string;
   label: string;
   maxLength?: number;
   name: string;
@@ -28,14 +29,24 @@ type Props = {
   validators: Validator[];
 };
 
-export function ValidatedFormInput({ children, label, maxLength, name, onChange, style, type, validators }: Props) {
+export function ValidatedFormInput({
+  children,
+  initialValue,
+  label,
+  maxLength,
+  name,
+  onChange,
+  style,
+  type,
+  validators,
+}: Props) {
   const { t } = useTranslation();
 
   const [isTouched, setIsTouched] = useState(false);
   const [isValid, setIsValid] = useState<boolean>();
 
   // Only used to calculate if counter should be shown
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
 
   const validate = (e: Event) => {
     const value = (e.target as HTMLInputElement).value;
@@ -62,6 +73,7 @@ export function ValidatedFormInput({ children, label, maxLength, name, onChange,
       maxlength={maxLength}
       style={style}
       type={type}
+      value={inputValue}
       onIonBlur={() => {
         setIsTouched(true);
       }}

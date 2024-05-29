@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { IonButton, IonItem, IonList, IonSelect, IonSelectOption, IonText, IonTextarea } from "@ionic/react";
 import { useTranslation } from "react-i18next";
@@ -56,6 +56,17 @@ export function CreateOfferForm({ onClose }: Props) {
   const [formData, setFormData] = useState<typeof initialFormData>(initialFormData);
   const isFormValid = useMemo(() => Object.values(formData).every((value) => value.isValid), [formData]);
 
+  const userLang = navigator.language || navigator.languages[0];
+  const userCountry = userLang.split("-")[1];
+
+  useEffect(() => {
+    console.log("here", userCountry);
+    setFormData((prev) => ({
+      ...prev,
+      location: { isValid: true, v: userCountry },
+    }));
+  }, [userCountry]);
+
   const handleFormChange = useCallback((name: string, value: string, isValid: boolean) => {
     setFormData((prev) => ({
       ...prev,
@@ -69,14 +80,11 @@ export function CreateOfferForm({ onClose }: Props) {
       return;
     }
 
-    const userLang = navigator.language || navigator.languages[0];
-    const userCountry = userLang.split("-")[1];
-
     await mutateAsync({
       authorId: user?.sub ?? "",
       currency: formData.currency.v,
       description: formData.description.v ?? "",
-      location: userCountry,
+      location: formData.location.v ?? userCountry,
       money: Number(formData.money.v),
       offerType: formData.offerType.v,
       paymentType: formData.paymentType.v,
@@ -88,6 +96,7 @@ export function CreateOfferForm({ onClose }: Props) {
   }, [
     formData.currency.v,
     formData.description.v,
+    formData.location.v,
     formData.money.v,
     formData.offerType.v,
     formData.paymentType.v,
@@ -98,6 +107,7 @@ export function CreateOfferForm({ onClose }: Props) {
     openToast,
     t,
     user?.sub,
+    userCountry,
   ]);
 
   if (error) {
@@ -124,6 +134,24 @@ export function CreateOfferForm({ onClose }: Props) {
             />
           </IonItem>
 
+          <IonItem lines="none">
+            <IonSelect
+              interface="popover"
+              label={t("label.offerType")}
+              labelPlacement="floating"
+              style={borderStyle}
+              onIonChange={(e) => {
+                setFormData((prev) => ({
+                  ...prev,
+                  offerType: { isValid: true, v: String(e.target.value) as "offer" | "request" },
+                }));
+              }}
+            >
+              <IonSelectOption value="offer">{t("offer")}</IonSelectOption>
+              <IonSelectOption value="request">{t("request")}</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+
           <CreateOfferFormMoney value={formData.currency.v} onChange={handleFormChange} />
 
           <IonItem lines="none">
@@ -148,21 +176,14 @@ export function CreateOfferForm({ onClose }: Props) {
           </IonItem>
 
           <IonItem lines="none">
-            <IonSelect
-              interface="popover"
-              label={t("label.offerType")}
-              labelPlacement="floating"
-              style={borderStyle}
-              onIonChange={(e) => {
-                setFormData((prev) => ({
-                  ...prev,
-                  offerType: { isValid: true, v: String(e.target.value) as "offer" | "request" },
-                }));
-              }}
-            >
-              <IonSelectOption value="offer">{t("offer")}</IonSelectOption>
-              <IonSelectOption value="request">{t("request")}</IonSelectOption>
-            </IonSelect>
+            <ValidatedFormInput
+              initialValue={userCountry}
+              label={t("label.location")}
+              name="location"
+              type="text"
+              validators={["isNonEmptyString"]}
+              onChange={handleFormChange}
+            />
           </IonItem>
 
           <IonItem lines="none">
