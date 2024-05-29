@@ -1,3 +1,10 @@
+## [1.19.2](https://github.com/ElfenB/job-search-portal/compare/v1.19.1...v1.19.2) (2024-05-29)
+
+
+### Bug Fixes
+
+* try to redirect to backend ([cd47ae8](https://github.com/ElfenB/job-search-portal/commit/cd47ae874e39348d204d3905aa213f2d14f5607e))
+
 ## [1.19.1](https://github.com/ElfenB/job-search-portal/compare/v1.19.0...v1.19.1) (2024-05-29)
 
 
