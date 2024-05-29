@@ -1,3 +1,10 @@
+## [1.19.1](https://github.com/ElfenB/job-search-portal/compare/v1.19.0...v1.19.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* only author can see delete button ([3ffb4cb](https://github.com/ElfenB/job-search-portal/commit/3ffb4cbd7cbbe3f234a314f552f2b5358cea18c3))
+
 # [1.19.0](https://github.com/ElfenB/job-search-portal/compare/v1.18.1...v1.19.0) (2024-05-29)
 
 
