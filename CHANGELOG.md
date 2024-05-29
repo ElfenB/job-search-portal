@@ -1,3 +1,11 @@
+# [1.19.0](https://github.com/ElfenB/job-search-portal/compare/v1.18.1...v1.19.0) (2024-05-29)
+
+
+### Features
+
+* added caching for auth token ([a1e63f7](https://github.com/ElfenB/job-search-portal/commit/a1e63f7183bc8448b743f2d95401f160fdbaf085))
+* ionic capacitor updates ([a21c20d](https://github.com/ElfenB/job-search-portal/commit/a21c20da009846882ffa792ea3972c8aae24a170))
+
 ## [1.18.1](https://github.com/ElfenB/job-search-portal/compare/v1.18.0...v1.18.1) (2024-05-26)
 
 
