@@ -1,11 +1,11 @@
-import { useCallback } from "react";
-import type { RefresherEventDetail } from "@ionic/react";
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { trpc } from "../api/trpc";
-import { OfferList } from "../components/OfferList";
-import { RefreshDragger } from "../components/RefreshDragger";
-import { useDarkMode } from "../utils/useDarkMode";
+import { useCallback } from 'react';
+import type { RefresherEventDetail } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { trpc } from '../api/trpc';
+import { OfferList } from '../components/OfferList';
+import { RefreshDragger } from '../components/RefreshDragger';
+import { useDarkMode } from '../utils/useDarkMode';
 
 export function Overview() {
   const { t } = useTranslation();
@@ -25,7 +25,7 @@ export function Overview() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{t("label.overview")}</IonTitle>
+          <IonTitle>{t('label.overview')}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -34,13 +34,13 @@ export function Overview() {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{t("label.overview")}</IonTitle>
+            <IonTitle size="large">{t('label.overview')}</IonTitle>
 
             <img
               alt="Jobber logo"
               slot="end"
-              src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
-              style={{ height: "3rem" }}
+              src={darkMode ? '/jobber-dark.svg' : '/jobber.svg'}
+              style={{ height: '3rem' }}
             />
           </IonToolbar>
         </IonHeader>

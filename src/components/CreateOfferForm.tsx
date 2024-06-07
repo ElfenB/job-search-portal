@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { IonButton, IonItem, IonList, IonSelect, IonSelectOption, IonText, IonTextarea } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { trpc } from "../api/trpc";
-import { useToast } from "../useHooks/useOpenToast";
-import { CreateOfferFormMoney } from "./CreateOfferFormMoney";
-import { ValidatedFormInput } from "./ValidatedFormInput";
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { IonButton, IonItem, IonList, IonSelect, IonSelectOption, IonText, IonTextarea } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { trpc } from '../api/trpc';
+import { useToast } from '../useHooks/useOpenToast';
+import { CreateOfferFormMoney } from './CreateOfferFormMoney';
+import { ValidatedFormInput } from './ValidatedFormInput';
 
-const borderStyle = { borderBottom: "0.55px solid var(--border-color)" };
+const borderStyle = { borderBottom: '0.55px solid var(--border-color)' };
 
 // isValid option used for form validation
 type NewOffer = {
@@ -17,22 +17,22 @@ type NewOffer = {
   image: { isValid: boolean; v?: string };
   location: { isValid: boolean; v?: string };
   money: { isValid: boolean; v?: number };
-  offerType: { isValid: boolean; v: "offer" | "request" };
+  offerType: { isValid: boolean; v: 'offer' | 'request' };
   paymentType: { isValid: boolean; v?: string };
   title: { isValid: boolean; v: string };
 };
 
 // Optional values are valid by default
 const initialFormData: NewOffer = {
-  authorId: { isValid: true, v: "" },
-  currency: { isValid: true, v: "€" },
-  description: { isValid: true, v: "" },
+  authorId: { isValid: true, v: '' },
+  currency: { isValid: true, v: '€' },
+  description: { isValid: true, v: '' },
   image: { isValid: true, v: undefined },
   location: { isValid: true, v: undefined },
   money: { isValid: true, v: undefined },
-  offerType: { isValid: false, v: "offer" },
+  offerType: { isValid: false, v: 'offer' },
   paymentType: { isValid: true, v: undefined },
-  title: { isValid: false, v: "" },
+  title: { isValid: false, v: '' },
 };
 
 type Props = {
@@ -57,7 +57,7 @@ export function CreateOfferForm({ onClose }: Props) {
   const isFormValid = useMemo(() => Object.values(formData).every((value) => value.isValid), [formData]);
 
   const userLang = navigator.language || navigator.languages[0];
-  const userCountry = userLang.split("-")[1];
+  const userCountry = userLang.split('-')[1];
 
   useEffect(() => {
     setFormData((prev) => ({
@@ -75,14 +75,14 @@ export function CreateOfferForm({ onClose }: Props) {
 
   const handleSubmit = useCallback(async () => {
     if (!isFormValid) {
-      openToast({ color: "danger", message: t("label.formErrorEmptyValues") });
+      openToast({ color: 'danger', message: t('label.formErrorEmptyValues') });
       return;
     }
 
     await mutateAsync({
-      authorId: user?.sub ?? "",
+      authorId: user?.sub ?? '',
       currency: formData.currency.v,
-      description: formData.description.v ?? "",
+      description: formData.description.v ?? '',
       location: formData.location.v ?? userCountry,
       money: Number(formData.money.v),
       offerType: formData.offerType.v,
@@ -112,7 +112,7 @@ export function CreateOfferForm({ onClose }: Props) {
   if (error) {
     return (
       <div>
-        <p>{t("label.errormessage")}</p>
+        <p>{t('label.errormessage')}</p>
         <p>{error.message}</p>
       </div>
     );
@@ -120,15 +120,15 @@ export function CreateOfferForm({ onClose }: Props) {
 
   return (
     <>
-      <IonList lines="full" style={{ marginBottom: "1rem" }}>
+      <IonList lines="full" style={{ marginBottom: '1rem' }}>
         <form>
           <IonItem lines="none">
             <ValidatedFormInput
-              label={t("label.title")}
+              label={t('label.title')}
               maxLength={255}
               name="title"
               type="text"
-              validators={["isNonEmptyString"]}
+              validators={['isNonEmptyString']}
               onChange={handleFormChange}
             />
           </IonItem>
@@ -136,18 +136,18 @@ export function CreateOfferForm({ onClose }: Props) {
           <IonItem lines="none">
             <IonSelect
               interface="popover"
-              label={t("label.offerType")}
+              label={t('label.offerType')}
               labelPlacement="floating"
               style={borderStyle}
               onIonChange={(e) => {
                 setFormData((prev) => ({
                   ...prev,
-                  offerType: { isValid: true, v: String(e.target.value) as "offer" | "request" },
+                  offerType: { isValid: true, v: String(e.target.value) as 'offer' | 'request' },
                 }));
               }}
             >
-              <IonSelectOption value="offer">{t("offer")}</IonSelectOption>
-              <IonSelectOption value="request">{t("request")}</IonSelectOption>
+              <IonSelectOption value="offer">{t('offer')}</IonSelectOption>
+              <IonSelectOption value="request">{t('request')}</IonSelectOption>
             </IonSelect>
           </IonItem>
 
@@ -156,7 +156,7 @@ export function CreateOfferForm({ onClose }: Props) {
           <IonItem lines="none">
             <IonSelect
               interface="popover"
-              label={t("label.paymentType")}
+              label={t('label.paymentType')}
               labelPlacement="floating"
               name="paymentType"
               style={borderStyle}
@@ -168,19 +168,19 @@ export function CreateOfferForm({ onClose }: Props) {
                 }));
               }}
             >
-              <IonSelectOption value="monthly">{t("label.paymentMonthly")}</IonSelectOption>
-              <IonSelectOption value="hourly">{t("label.paymentHourly")}</IonSelectOption>
-              <IonSelectOption value="fixed">{t("label.paymentFixed")}</IonSelectOption>
+              <IonSelectOption value="monthly">{t('label.paymentMonthly')}</IonSelectOption>
+              <IonSelectOption value="hourly">{t('label.paymentHourly')}</IonSelectOption>
+              <IonSelectOption value="fixed">{t('label.paymentFixed')}</IonSelectOption>
             </IonSelect>
           </IonItem>
 
           <IonItem lines="none">
             <ValidatedFormInput
               initialValue={userCountry}
-              label={t("label.location")}
+              label={t('label.location')}
               name="location"
               type="text"
-              validators={["isNonEmptyString"]}
+              validators={['isNonEmptyString']}
               onChange={handleFormChange}
             />
           </IonItem>
@@ -188,7 +188,7 @@ export function CreateOfferForm({ onClose }: Props) {
           <IonItem lines="none">
             <IonTextarea
               autoGrow
-              label={t("label.description")}
+              label={t('label.description')}
               labelPlacement="floating"
               style={borderStyle}
               onIonInput={(e) => {
@@ -209,12 +209,12 @@ export function CreateOfferForm({ onClose }: Props) {
       </IonList>
 
       <IonButton disabled={isPending || !isFormValid} type="submit" onClick={handleSubmit}>
-        {t("label.submit")}
+        {t('label.submit')}
       </IonButton>
 
       {!isFormValid && (
         <IonText color="warning">
-          <p style={{ marginTop: "1rem" }}>{t("label.fillAllFields")}</p>
+          <p style={{ marginTop: '1rem' }}>{t('label.fillAllFields')}</p>
         </IonText>
       )}
     </>

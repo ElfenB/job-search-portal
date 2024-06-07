@@ -23,12 +23,11 @@ root.render(
   </StrictMode>,
 );
 
-// TODO: Updates!
-// TODO: Add chat functionality (BE and FE) ==> Search for library
+// TODO: Add chat functionality (BE and FE) ==> Look for libraries
 // TODO: Enable image upload for offers
 // TODO: Double-check translations
 // TODO: Add translation for India
-// TODO: Lotty animations for launch screen
+// TODO: Lottie animations for launch screen
 // TODO: Simple wireframe drawings for the app (with screen-recording)
 
 // Feedback:

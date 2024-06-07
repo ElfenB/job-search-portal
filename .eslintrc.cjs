@@ -14,6 +14,6 @@ module.exports = {
     'perfectionist/sort-object-types': 'warn',
     'perfectionist/sort-jsx-props': 'warn',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-    "@typescript-eslint/restrict-template-expressions": "off",
+    '@typescript-eslint/restrict-template-expressions': 'off',
   },
 };

@@ -1,7 +1,9 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Browser } from '@capacitor/browser';
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import Lottie from 'lottie-react';
 import { useTranslation } from 'react-i18next';
+import hand from '../lotties/hand.json';
 import { isNative } from '../utils/isNative';
 
 export function Login() {
@@ -28,7 +30,7 @@ export function Login() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent fullscreen>
         <div
           style={{
             alignItems: 'center',
@@ -39,7 +41,11 @@ export function Login() {
             paddingBottom: '10vh',
           }}
         >
+          <Lottie animationData={hand} autoplay loop style={{ width: '10rem' }} />
+
           <h3>{t('welcomemessage')}</h3>
+
+          <div style={{ height: '3rem' }} />
 
           <IonButton onClick={isNative ? handleLogin : () => loginWithPopup()}>{t('label.login')}</IonButton>
         </div>
