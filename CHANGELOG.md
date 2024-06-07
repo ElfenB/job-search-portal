@@ -1,3 +1,12 @@
+# [1.21.0](https://github.com/ElfenB/job-search-portal/compare/v1.20.0...v1.21.0) (2024-06-07)
+
+
+### Features
+
+* added tunnel script for database in cluster locally ([c6d3348](https://github.com/ElfenB/job-search-portal/commit/c6d3348864e4aeb830d91e5e4e90913fa2cd30d1))
+* major updates and prettier/lint updates ([d9ef17b](https://github.com/ElfenB/job-search-portal/commit/d9ef17b8c802ce9dc770b9abd560ddb16a031cb6))
+* update deps ([b16e52b](https://github.com/ElfenB/job-search-portal/commit/b16e52bc060f0be9fa968d544b58566b8b8a59b6))
+
 # [1.20.0](https://github.com/ElfenB/job-search-portal/compare/v1.19.2...v1.20.0) (2024-05-29)
 
 
