@@ -23,7 +23,7 @@ root.render(
   </StrictMode>,
 );
 
-// TODO: Updates! ==> Probably disable nvm lazy load to have ionic integration in VS Code working
+// TODO: Updates!
 // TODO: Add chat functionality (BE and FE) ==> Search for library
 // TODO: Enable image upload for offers
 // TODO: Double-check translations

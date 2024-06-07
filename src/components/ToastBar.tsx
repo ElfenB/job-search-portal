@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { IonToast } from "@ionic/react";
-import { ToastContext } from "./ToastBarContext";
+import { useContext } from 'react';
+import { IonToast } from '@ionic/react';
+import { ToastContext } from './ToastBarContext';
 
 export function ToastBar() {
   const { closeToast, color, duration, isToastOpen, message } = useContext(ToastContext);

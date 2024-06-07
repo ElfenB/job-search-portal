@@ -1,7 +1,7 @@
-import { z } from "zod";
-import { prisma } from "../prisma";
-import { publicProcedure, router } from "../trpc";
-import { JobOfferInput } from "./jobRouter.types";
+import { z } from 'zod';
+import { prisma } from '../prisma';
+import { publicProcedure, router } from '../trpc';
+import { JobOfferInput } from './jobRouter.types';
 
 export const jobRouter = router({
   byId: publicProcedure.input(z.number()).query(async ({ input }) => {

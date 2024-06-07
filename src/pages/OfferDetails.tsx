@@ -1,12 +1,12 @@
-import { useCallback } from "react";
-import { IonButtons, IonContent, IonHeader, IonLoading, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
+import { useCallback } from 'react';
+import { IonButtons, IonContent, IonHeader, IonLoading, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
-import { trpc } from "../api/trpc";
-import { BackButton } from "../components/BackButton";
-import { OfferDetailsView } from "../components/OfferDetailsView";
-import { useToast } from "../useHooks/useOpenToast";
+import { trpc } from '../api/trpc';
+import { BackButton } from '../components/BackButton';
+import { OfferDetailsView } from '../components/OfferDetailsView';
+import { useToast } from '../useHooks/useOpenToast';
 
 export function OfferDetails() {
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ export function OfferDetails() {
     mutateAsync,
   } = trpc.job.delete.useMutation({
     onError() {
-      openToast({ color: "danger", message: `${t("label.error")}: ${errorMutate?.message}` });
+      openToast({ color: 'danger', message: `${t('label.error')}: ${errorMutate?.message}` });
     },
     async onSuccess() {
       await utils.job.listAll.invalidate();
@@ -45,7 +45,7 @@ export function OfferDetails() {
   }
 
   if (error !== null || !data) {
-    return <IonPage>{t("error.errorLoadingOffer")}</IonPage>;
+    return <IonPage>{t('error.errorLoadingOffer')}</IonPage>;
   }
 
   return (

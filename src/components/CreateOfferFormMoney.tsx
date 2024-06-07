@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { IonItem, IonSelect, IonSelectOption } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { ValidatedFormInput } from "./ValidatedFormInput";
+import { useState } from 'react';
+import { IonItem, IonSelect, IonSelectOption } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { ValidatedFormInput } from './ValidatedFormInput';
 
 type Props = {
   onChange: (name: string, value: string, isValid: boolean) => void;
@@ -16,12 +16,12 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
   const handleSelectChange = (e: Event) => {
     const value = (e.target as HTMLInputElement).value;
 
-    if (value === "other") {
+    if (value === 'other') {
       setCustomCurrency(true);
-      onChange("currency", "other", false);
+      onChange('currency', 'other', false);
     } else {
       setCustomCurrency(false);
-      onChange("currency", value, true);
+      onChange('currency', value, true);
     }
   };
 
@@ -31,10 +31,10 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
     <div>
       <IonItem lines="none">
         <ValidatedFormInput
-          label={t("label.money")}
+          label={t('label.money')}
           name="money"
           type="number"
-          validators={["isPositiveNumber"]}
+          validators={['isPositiveNumber']}
           onChange={onChange}
         >
           <IonSelect
@@ -42,14 +42,14 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
             labelPlacement="floating"
             name="currency"
             slot="end"
-            value={customCurrency ? "other" : value}
+            value={customCurrency ? 'other' : value}
             onIonChange={handleSelectChange}
           >
             <IonSelectOption value="€">€</IonSelectOption>
             <IonSelectOption value="$">$</IonSelectOption>
             <IonSelectOption value="£">£</IonSelectOption>
             <IonSelectOption value="₹">₹</IonSelectOption>
-            <IonSelectOption value="other">{t("label.currencyOther")}</IonSelectOption>
+            <IonSelectOption value="other">{t('label.currencyOther')}</IonSelectOption>
           </IonSelect>
         </ValidatedFormInput>
       </IonItem>
@@ -58,11 +58,11 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
       {customCurrency && (
         <IonItem lines="none">
           <ValidatedFormInput
-            label={t("label.currency")}
+            label={t('label.currency')}
             maxLength={3}
             name="currency"
             type="text"
-            validators={["isNonEmptyString"]}
+            validators={['isNonEmptyString']}
             onChange={onChange}
           />
         </IonItem>

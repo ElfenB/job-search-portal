@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import type { User } from "@auth0/auth0-react";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useMemo } from 'react';
+import type { User } from '@auth0/auth0-react';
+import { useAuth0 } from '@auth0/auth0-react';
 import {
   IonAvatar,
   IonCard,
@@ -12,8 +12,8 @@ import {
   IonLabel,
   IonList,
   IonListHeader,
-} from "@ionic/react";
-import { useTranslation } from "react-i18next";
+} from '@ionic/react';
+import { useTranslation } from 'react-i18next';
 
 export function UserProfile() {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ export function UserProfile() {
   const userImage = useMemo(
     () =>
       !user?.picture || user.picture.length === 0
-        ? "https://ionicframework.com/docs/img/demos/avatar.svg"
+        ? 'https://ionicframework.com/docs/img/demos/avatar.svg'
         : user.picture,
     [user?.picture],
   );
@@ -39,16 +39,16 @@ export function UserProfile() {
       </IonCardHeader>
 
       <IonCardContent>
-        <IonAvatar style={{ height: "8rem", margin: "0 auto", width: "8rem" }}>
-          <img alt={user.name ?? t("label.yourpicture")} src={userImage} />
+        <IonAvatar style={{ height: '8rem', margin: '0 auto', width: '8rem' }}>
+          <img alt={user.name ?? t('label.yourpicture')} src={userImage} />
         </IonAvatar>
 
         <IonList lines="full">
-          <IonListHeader>{t("label.profiledetails")}</IonListHeader>
+          <IonListHeader>{t('label.profiledetails')}</IonListHeader>
 
           {Object.keys(user).map((d: keyof User) => {
             // Don't show the picture, name, or email in the list.
-            if (d === "picture" || d === "name" || d === "email") {
+            if (d === 'picture' || d === 'name' || d === 'email') {
               return null;
             }
 
@@ -56,7 +56,7 @@ export function UserProfile() {
               <IonItem key={d}>
                 <IonLabel>
                   {/* Stringify to also show boolean values */}
-                  {d}: {JSON.stringify(user[d]).replace(/"/g, "")}
+                  {d}: {JSON.stringify(user[d]).replace(/"/g, '')}
                 </IonLabel>
               </IonItem>
             );

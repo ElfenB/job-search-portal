@@ -1,5 +1,5 @@
-import type { CSSProperties } from "react";
-import { IonIcon, IonText } from "@ionic/react";
+import type { CSSProperties } from 'react';
+import { IonIcon, IonText } from '@ionic/react';
 
 type Props = {
   children?: null | string;
@@ -13,9 +13,9 @@ export function InfoItem({ children, icon, style }: Props) {
   }
 
   return (
-    <IonText color="medium" style={{ alignItems: "center", display: "flex", ...style }}>
+    <IonText color="medium" style={{ alignItems: 'center', display: 'flex', ...style }}>
       <IonIcon icon={icon} />
-      <span style={{ marginLeft: "4px" }}>{children}</span>
+      <span style={{ marginLeft: '4px' }}>{children}</span>
     </IonText>
   );
 }

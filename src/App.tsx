@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { App as CapApp } from "@capacitor/app";
-import { Browser } from "@capacitor/browser";
+import { useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { App as CapApp } from '@capacitor/app';
+import { Browser } from '@capacitor/browser';
 import {
   IonApp,
   IonIcon,
@@ -11,37 +11,37 @@ import {
   IonTabButton,
   IonTabs,
   setupIonicReact,
-} from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import { chatbox, home, person } from "ionicons/icons";
-import { Redirect, Route } from "react-router-dom";
-import { ToastBar } from "./components/ToastBar";
-import { ChatConversation } from "./pages/ChatConversation";
-import { ChatProfile } from "./pages/ChatProfile";
-import { Chats } from "./pages/Chats";
-import { LoadingScreen } from "./pages/LoadingScreen";
-import { Login } from "./pages/Login";
-import { OfferDetails } from "./pages/OfferDetails";
-import { Overview } from "./pages/Overview";
-import { Personal } from "./pages/Personal";
-import { Settings } from "./pages/Settings";
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import { chatbox, home, person } from 'ionicons/icons';
+import { Redirect, Route } from 'react-router-dom';
+import { ToastBar } from './components/ToastBar';
+import { ChatConversation } from './pages/ChatConversation';
+import { ChatProfile } from './pages/ChatProfile';
+import { Chats } from './pages/Chats';
+import { LoadingScreen } from './pages/LoadingScreen';
+import { Login } from './pages/Login';
+import { OfferDetails } from './pages/OfferDetails';
+import { Overview } from './pages/Overview';
+import { Personal } from './pages/Personal';
+import { Settings } from './pages/Settings';
 
 /* Theme variables */
-import "./theme/variables.css";
+import './theme/variables.css';
 /* Core CSS required for Ionic components to work properly */
-import "@ionic/react/css/core.css";
-import "@ionic/react/css/display.css";
-import "@ionic/react/css/flex-utils.css";
-import "@ionic/react/css/float-elements.css";
+import '@ionic/react/css/core.css';
+import '@ionic/react/css/display.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/float-elements.css';
 /* Basic CSS for apps built with Ionic */
-import "@ionic/react/css/normalize.css";
+import '@ionic/react/css/normalize.css';
 
 /* Optional CSS utils that can be commented out */
-import "@ionic/react/css/padding.css";
-import "@ionic/react/css/structure.css";
-import "@ionic/react/css/text-alignment.css";
-import "@ionic/react/css/text-transformation.css";
-import "@ionic/react/css/typography.css";
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/typography.css';
 
 setupIonicReact();
 
@@ -53,8 +53,8 @@ export function App() {
 
   useEffect(() => {
     // Handle the 'appUrlOpen' event and call `handleRedirectCallback`
-    void CapApp.addListener("appUrlOpen", async ({ url }) => {
-      if (url.includes("state") && (url.includes("code") || url.includes("error"))) {
+    void CapApp.addListener('appUrlOpen', async ({ url }) => {
+      if (url.includes('state') && (url.includes('code') || url.includes('error'))) {
         await handleRedirectCallback(url);
       }
       // No-op on Android
@@ -64,7 +64,7 @@ export function App() {
 
   if (!isEnvDefined) {
     return (
-      <h1 style={{ color: "red", fontFamily: "sans-serif", textAlign: "center" }}>
+      <h1 style={{ color: 'red', fontFamily: 'sans-serif', textAlign: 'center' }}>
         Error: Please check environment variables.
       </h1>
     );

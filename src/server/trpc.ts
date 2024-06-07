@@ -1,6 +1,6 @@
-import { initTRPC } from "@trpc/server";
-import superjson from "superjson";
-import type { AppContext } from ".";
+import { initTRPC } from '@trpc/server';
+import superjson from 'superjson';
+import type { AppContext } from '.';
 
 // Initialize tRPC backend
 const t = initTRPC.context<AppContext>().create({

@@ -1,4 +1,4 @@
-import { trpc } from "../api/trpc";
+import { trpc } from '../api/trpc';
 
 export function useOfferListData(userId: string, personal?: boolean) {
   if (personal) {

@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 import {
   IonAvatar,
   IonButtons,
@@ -8,13 +8,13 @@ import {
   IonRouterLink,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { useParams } from "react-router-dom";
-import { BackButton } from "../components/BackButton";
-import { fallbackUserImage } from "../components/ChatList.consts";
-import { chats } from "../components/ChatList.mockData";
-import { ErrorPage } from "./Error404";
+} from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { BackButton } from '../components/BackButton';
+import { fallbackUserImage } from '../components/ChatList.consts';
+import { chats } from '../components/ChatList.mockData';
+import { ErrorPage } from './Error404';
 
 export function ChatConversation() {
   const { t } = useTranslation();
@@ -24,7 +24,7 @@ export function ChatConversation() {
   const chat = useMemo(() => chats.find((chat) => chat.id === chatId), [chatId]);
 
   if (!chat) {
-    return <ErrorPage message={t("label.chatnotfound")} />;
+    return <ErrorPage message={t('label.chatnotfound')} />;
   }
 
   const { recipient } = chat;
@@ -40,7 +40,7 @@ export function ChatConversation() {
           <IonTitle>{recipient.name}</IonTitle>
 
           <IonRouterLink routerLink={`/chats/profile/${recipient.id}`} slot="end">
-            <IonAvatar style={{ padding: "0.3rem" }}>
+            <IonAvatar style={{ padding: '0.3rem' }}>
               <img alt={recipient.name} src={recipient.picture ?? fallbackUserImage} />
             </IonAvatar>
           </IonRouterLink>

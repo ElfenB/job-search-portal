@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { publicProcedure, router } from "../trpc";
+import { z } from 'zod';
+import { publicProcedure, router } from '../trpc';
 
 export const userRouter = router({
   byId: publicProcedure.input(z.string()).query(async ({ ctx, input }) => {

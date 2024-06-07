@@ -18,7 +18,7 @@ export function Overview() {
       await utils.job.list.invalidate();
       e.detail.complete();
     },
-    [utils.job.list, utils.job.listMy],
+    [utils.job.list],
   );
 
   return (

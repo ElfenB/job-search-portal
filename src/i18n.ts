@@ -1,9 +1,10 @@
-import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import { initReactI18next } from "react-i18next";
+// eslint-disable-next-line import/no-named-as-default -- only default import possible
+import i18n from 'i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
 
-import de from "./locales/de.json";
-import en from "./locales/en.json";
+import de from './locales/de.json';
+import en from './locales/en.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -14,11 +15,12 @@ void i18n
   .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    fallbackLng: "en",
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // react already safes from xss
     },
     resources,
   });
 
+// eslint-disable-next-line import/no-unused-modules -- Is used in main.tsx
 export default i18n;

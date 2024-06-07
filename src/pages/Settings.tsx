@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import { Browser } from "@capacitor/browser";
+import { useMemo } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Browser } from '@capacitor/browser';
 import {
   IonButton,
   IonButtons,
@@ -11,17 +11,17 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-} from "@ionic/react";
-import { logoGithub } from "ionicons/icons";
-import { useTranslation } from "react-i18next";
-import { BackButton } from "../components/BackButton";
-import { UserProfile } from "../components/UserProfile";
-import { isNative } from "../utils/isNative";
+} from '@ionic/react';
+import { logoGithub } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
+import { BackButton } from '../components/BackButton';
+import { UserProfile } from '../components/UserProfile';
+import { isNative } from '../utils/isNative';
 
 // This should reflect the URL added earlier to your "Allowed Logout URLs" setting
 // in the Auth0 dashboard.
 const logoutUri =
-  "com.benelfen.jobsearchportal://elfenben.eu.auth0.com/capacitor/com.benelfen.jobsearchportal/callback";
+  'com.benelfen.jobsearchportal://elfenben.eu.auth0.com/capacitor/com.benelfen.jobsearchportal/callback';
 
 export function Settings() {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ export function Settings() {
         // Redirect using Capacitor's Browser plugin
         await Browser.open({
           url,
-          windowName: "_self",
+          windowName: '_self',
         });
       },
     });
@@ -53,11 +53,11 @@ export function Settings() {
             <BackButton />
           </IonButtons>
 
-          <IonTitle>{t("label.settings")}</IonTitle>
+          <IonTitle>{t('label.settings')}</IonTitle>
 
           <IonButtons slot="end">
             <IonButton color="danger" onClick={isNative ? handleLogout : () => logout()}>
-              {t("label.logout")}
+              {t('label.logout')}
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -66,8 +66,8 @@ export function Settings() {
       <IonContent>
         <UserProfile />
 
-        <div style={{ alignItems: "center", display: "flex", flexDirection: "column" }}>
-          <IonButton fill="clear" onClick={() => window.open("https://github.com/ElfenB/job-search-portal")}>
+        <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
+          <IonButton fill="clear" onClick={() => window.open('https://github.com/ElfenB/job-search-portal')}>
             <IonIcon icon={logoGithub} size="large" />
           </IonButton>
 

@@ -1,8 +1,8 @@
-import type { User } from "@auth0/auth0-react";
-import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useParams } from "react-router-dom";
-import { BackButton } from "../components/BackButton";
-import { fallbackUserImage } from "../components/ChatList.consts";
+import type { User } from '@auth0/auth0-react';
+import { IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useParams } from 'react-router-dom';
+import { BackButton } from '../components/BackButton';
+import { fallbackUserImage } from '../components/ChatList.consts';
 
 export function ChatProfile() {
   const { id: recipientId } = useParams<{ id: string }>();
@@ -10,7 +10,7 @@ export function ChatProfile() {
   // TODO: Fetch user from API
   const recipient: User = {
     id: recipientId,
-    name: "Johnny Test",
+    name: 'Johnny Test',
     picture: undefined,
   };
 

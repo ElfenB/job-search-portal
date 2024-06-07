@@ -1,8 +1,8 @@
-import { createContext, useCallback, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { createContext, useCallback, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const stub = (): never => {
-  throw new Error("You forgot to wrap your component in <ToastProvider>.");
+  throw new Error('You forgot to wrap your component in <ToastProvider>.');
 };
 
 export type OpenToastArgs = { color?: string; duration?: number; message?: string };
@@ -21,7 +21,7 @@ const initialContext: ToastContextType = {
   color: undefined,
   duration: 5000,
   isToastOpen: false,
-  message: "",
+  message: '',
   openToast: stub,
 };
 
@@ -37,8 +37,8 @@ export function ToastProvider({ children }: { children: JSX.Element }) {
 
   const openToast = useCallback(
     // Fallback to default values if not provided
-    ({ color = initialContext.color, duration = initialContext.duration, message = "" }: OpenToastArgs) => {
-      setMessage(message || t("label.error"));
+    ({ color = initialContext.color, duration = initialContext.duration, message = '' }: OpenToastArgs) => {
+      setMessage(message || t('label.error'));
       setColor(color);
       setDuration(duration);
 

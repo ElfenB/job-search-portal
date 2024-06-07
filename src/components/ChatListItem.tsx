@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from "react";
-import { IonAvatar, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { fallbackUserImage } from "./ChatList.consts";
-import type { Chat } from "./ChatList.types";
+import { useCallback, useMemo } from 'react';
+import { IonAvatar, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { fallbackUserImage } from './ChatList.consts';
+import type { Chat } from './ChatList.types';
 
 type Props = {
   chat: Chat;
@@ -15,11 +15,11 @@ export function ChatListItem({ chat }: Props) {
 
   const handleDelete = useCallback(() => {
     // TODO: Implement delete chat
-    console.log("Delete chat with", recipient.name);
+    console.log('Delete chat with', recipient.name);
   }, [recipient.name]);
 
   const formattedTime = useMemo(
-    () => new Date(lastMessage.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+    () => new Date(lastMessage.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     [lastMessage.createdAt],
   );
 
@@ -42,7 +42,7 @@ export function ChatListItem({ chat }: Props) {
 
       <IonItemOptions>
         <IonItemOption color="danger" onClick={handleDelete}>
-          {t("label.delete")}
+          {t('label.delete')}
         </IonItemOption>
       </IonItemOptions>
     </IonItemSliding>

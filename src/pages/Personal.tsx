@@ -1,12 +1,12 @@
-import { useCallback } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import type { RefresherEventDetail } from "@ionic/react";
-import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from "@ionic/react";
-import { cog } from "ionicons/icons";
-import { useTranslation } from "react-i18next";
-import { trpc } from "../api/trpc";
-import { OfferList } from "../components/OfferList";
-import { RefreshDragger } from "../components/RefreshDragger";
+import { useCallback } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import type { RefresherEventDetail } from '@ionic/react';
+import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from '@ionic/react';
+import { cog } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
+import { trpc } from '../api/trpc';
+import { OfferList } from '../components/OfferList';
+import { RefreshDragger } from '../components/RefreshDragger';
 
 export function Personal() {
   const { t } = useTranslation();
@@ -27,15 +27,15 @@ export function Personal() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{t("label.personal")}</IonTitle>
+          <IonTitle>{t('label.personal')}</IonTitle>
 
           <IonRouterLink
             routerDirection="forward"
             routerLink="/personal/settings"
             slot="end"
-            style={{ margin: "auto 0.5rem auto 0" }}
+            style={{ margin: 'auto 0.5rem auto 0' }}
           >
-            <IonIcon aria-hidden="true" icon={cog} style={{ fontSize: "2rem" }} />
+            <IonIcon aria-hidden="true" icon={cog} style={{ fontSize: '2rem' }} />
           </IonRouterLink>
         </IonToolbar>
       </IonHeader>
@@ -45,11 +45,11 @@ export function Personal() {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{t("label.personal")}</IonTitle>
+            <IonTitle size="large">{t('label.personal')}</IonTitle>
           </IonToolbar>
         </IonHeader>
 
-        {user ? <OfferList personal /> : <div>{t("error.userNotLoggedIn")}</div>}
+        {user ? <OfferList personal /> : <div>{t('error.userNotLoggedIn')}</div>}
       </IonContent>
     </IonPage>
   );

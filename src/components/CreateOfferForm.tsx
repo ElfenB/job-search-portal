@@ -60,7 +60,6 @@ export function CreateOfferForm({ onClose }: Props) {
   const userCountry = userLang.split("-")[1];
 
   useEffect(() => {
-    console.log("here", userCountry);
     setFormData((prev) => ({
       ...prev,
       location: { isValid: true, v: userCountry },

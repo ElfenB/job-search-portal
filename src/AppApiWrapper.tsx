@@ -1,7 +1,7 @@
-import { QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { queryClient, trpc, trpcClient } from "./api/trpc";
-import { App } from "./App";
+import { QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { queryClient, trpc, trpcClient } from './api/trpc';
+import { App } from './App';
 
 export function AppApiWrapper() {
   return (

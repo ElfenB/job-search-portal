@@ -1,3 +1,3 @@
-import { Capacitor } from "@capacitor/core";
+import { Capacitor } from '@capacitor/core';
 
-export const isNative = Capacitor.getPlatform() !== "web";
+export const isNative = Capacitor.getPlatform() !== 'web';
