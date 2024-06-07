@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/ElfenB/job-search-portal/compare/v1.21.0...v1.22.0) (2024-06-07)
+
+
+### Features
+
+* added lottie animation to login screen ([0acbc6b](https://github.com/ElfenB/job-search-portal/commit/0acbc6b1beec12e2fdb914729c2e103ee76447af))
+
 # [1.21.0](https://github.com/ElfenB/job-search-portal/compare/v1.20.0...v1.21.0) (2024-06-07)
 
 
