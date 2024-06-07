@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/ElfenB/job-search-portal/compare/v1.19.2...v1.20.0) (2024-05-29)
+
+
+### Features
+
+* added possibility to change location ([fc90d9e](https://github.com/ElfenB/job-search-portal/commit/fc90d9e6013548b174600e9af1ba816067cab7e7))
+
 ## [1.19.2](https://github.com/ElfenB/job-search-portal/compare/v1.19.1...v1.19.2) (2024-05-29)
 
 
