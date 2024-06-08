@@ -1,13 +1,13 @@
-import { IonText } from "@ionic/react";
-import { useTranslation } from "react-i18next";
+import { IonText } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
 
 type Props = {
-  money: number | null;
-  currency: string | null;
-  paymentType: string | null;
+  currency: null | string;
+  money: null | number;
+  paymentType: null | string;
 };
 
-export function MoneyDisplay({ money, currency, paymentType }: Props) {
+export function MoneyDisplay({ currency, money, paymentType }: Props) {
   const { t } = useTranslation();
 
   if (money === null) {
@@ -15,9 +15,9 @@ export function MoneyDisplay({ money, currency, paymentType }: Props) {
   }
 
   return (
-    <IonText color="primary" style={{ fontWeight: "bold" }}>
+    <IonText color="primary" style={{ fontWeight: 'bold' }}>
       <p>
-        {money} {currency} ({t(paymentType ?? "label.paymentTypeNotSpecified")})
+        {money} {currency} ({t(paymentType ?? 'label.paymentTypeNotSpecified')})
       </p>
     </IonText>
   );

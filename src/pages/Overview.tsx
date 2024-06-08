@@ -1,19 +1,19 @@
-import { useCallback } from "react";
-import type { RefresherEventDetail } from "@ionic/react";
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { trpc } from "../api/trpc";
-import { OfferList } from "../components/OfferList";
-import { RefreshDragger } from "../components/RefreshDragger";
-import { useDarkMode } from "../utils/useDarkMode";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useCallback } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import type { RefresherEventDetail } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { trpc } from '../api/trpc';
+import { OfferList } from '../components/OfferList';
+import { RefreshDragger } from '../components/RefreshDragger';
+import { useDarkMode } from '../utils/useDarkMode';
 
 export function Overview() {
   const { t } = useTranslation();
   const { darkMode } = useDarkMode();
   const { user } = useAuth0();
 
-  const offers = trpc.job.list.useQuery(user?.sub ?? "");
+  const offers = trpc.job.list.useQuery(user?.sub ?? '');
 
   const utils = trpc.useUtils();
 
@@ -29,7 +29,7 @@ export function Overview() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{t("label.overview")}</IonTitle>
+          <IonTitle>{t('label.overview')}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -38,13 +38,13 @@ export function Overview() {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">{t("label.overview")}</IonTitle>
+            <IonTitle size="large">{t('label.overview')}</IonTitle>
 
             <img
               alt="Jobber logo"
               slot="end"
-              src={darkMode ? "/jobber-dark.svg" : "/jobber.svg"}
-              style={{ height: "3rem" }}
+              src={darkMode ? '/jobber-dark.svg' : '/jobber.svg'}
+              style={{ height: '3rem' }}
             />
           </IonToolbar>
         </IonHeader>

@@ -1,10 +1,10 @@
-import type { CSSProperties } from "react";
-import { useState } from "react";
-import { IonText } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { trpc } from "../api/trpc";
-import { UserAvatar } from "./UserAvatar";
-import { UserProfileModal } from "./UserProfileModal";
+import type { CSSProperties } from 'react';
+import { useState } from 'react';
+import { IonText } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { trpc } from '../api/trpc';
+import { UserAvatar } from './UserAvatar';
+import { UserProfileModal } from './UserProfileModal';
 
 type Props = {
   style?: CSSProperties;
@@ -22,7 +22,7 @@ export function UserAvatarWithText({ style, userId }: Props) {
     <>
       <div
         role="button"
-        style={{ display: "flex", ...style, alignItems: "center", ...style }}
+        style={{ display: 'flex', ...style, alignItems: 'center', ...style }}
         tabIndex={0}
         onClick={() => {
           setIsModalOpen(true);
@@ -33,13 +33,13 @@ export function UserAvatarWithText({ style, userId }: Props) {
       >
         <UserAvatar userId={userId} />
 
-        <div style={{ marginLeft: "0.5rem" }}>
+        <div style={{ marginLeft: '0.5rem' }}>
           <IonText color="secondary">
-            <span style={{ display: "block" }}>{person?.name ?? t("label.avatarPlaceholder")}</span>
+            <span style={{ display: 'block' }}>{person?.name ?? t('label.avatarPlaceholder')}</span>
           </IonText>
 
           <IonText color="medium">
-            <span style={{ display: "block" }}>{person?.email}</span>
+            <span style={{ display: 'block' }}>{person?.email}</span>
           </IonText>
         </div>
       </div>

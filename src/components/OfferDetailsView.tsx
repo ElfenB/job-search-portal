@@ -1,14 +1,14 @@
-import { useCallback, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import type { Offer } from "@prisma/client";
-import { calendarOutline, eye, locationOutline } from "ionicons/icons";
-import { useTranslation } from "react-i18next";
-import { DangerZone } from "./DangerZone";
-import { Divider } from "./Divider";
-import { InfoItem } from "./InfoItem";
-import { MoneyDisplay } from "./MoneyDisplay";
-import { OfferDetailsSection } from "./OfferDetailsSection";
-import { UserAvatarWithText } from "./UserAvatarWithText";
+import { useCallback, useState } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import type { Offer } from '@prisma/client';
+import { calendarOutline, eye, locationOutline } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
+import { DangerZone } from './DangerZone';
+import { Divider } from './Divider';
+import { InfoItem } from './InfoItem';
+import { MoneyDisplay } from './MoneyDisplay';
+import { OfferDetailsSection } from './OfferDetailsSection';
+import { UserAvatarWithText } from './UserAvatarWithText';
 
 type Props = {
   offer: Offer;
@@ -22,17 +22,17 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
   const { authorId, createdAt, currency, description, image, location, money, offerType, paymentType, title, views } =
     offer;
 
-  const [imageHeight, setImageHeight] = useState<"25vh" | undefined>("25vh");
+  const [imageHeight, setImageHeight] = useState<'25vh' | undefined>('25vh');
 
   const toggleImageHeight = useCallback(() => {
-    setImageHeight(imageHeight === "25vh" ? undefined : "25vh");
+    setImageHeight(imageHeight === '25vh' ? undefined : '25vh');
   }, [imageHeight, setImageHeight]);
 
   return (
     <>
       {image && (
         <div role="button" tabIndex={0} onClick={toggleImageHeight} onKeyDown={toggleImageHeight}>
-          <img alt={title} src={image} style={{ height: imageHeight, objectFit: "cover", width: "100%" }} />
+          <img alt={title} src={image} style={{ height: imageHeight, objectFit: 'cover', width: '100%' }} />
         </div>
       )}
 
@@ -44,9 +44,9 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
         <MoneyDisplay currency={currency} money={money} paymentType={paymentType} />
 
         <InfoItem icon={locationOutline}>{location}</InfoItem>
-        <div style={{ display: "flex", marginTop: "1rem" }}>
+        <div style={{ display: 'flex', marginTop: '1rem' }}>
           <InfoItem icon={calendarOutline}>{createdAt.toLocaleDateString()}</InfoItem>
-          <InfoItem icon={eye} style={{ marginLeft: "1rem" }}>
+          <InfoItem icon={eye} style={{ marginLeft: '1rem' }}>
             {String(views)}
           </InfoItem>
         </div>
@@ -55,11 +55,11 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
       <Divider />
 
       <OfferDetailsSection>
-        {title === "" ? (
+        {title === '' ? (
           <></>
         ) : (
           <div>
-            <h3>{t("label.offerdetails")}</h3>
+            <h3>{t('label.offerdetails')}</h3>
             <p>{description}</p>
           </div>
         )}

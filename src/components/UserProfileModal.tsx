@@ -1,6 +1,6 @@
-import { IonButton, IonButtons, IonHeader, IonModal, IonTitle, IonToolbar } from "@ionic/react";
-import { useTranslation } from "react-i18next";
-import { UserProfileModalContent } from "./UserProfileModalContent";
+import { IonButton, IonButtons, IonHeader, IonModal, IonTitle, IonToolbar } from '@ionic/react';
+import { useTranslation } from 'react-i18next';
+import { UserProfileModalContent } from './UserProfileModalContent';
 
 type Props = {
   id: string;
@@ -16,10 +16,10 @@ export function UserProfileModal({ id, isOpen, onClose }: Props) {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="end">
-            <IonButton onClick={onClose}>{t("label.close")}</IonButton>
+            <IonButton onClick={onClose}>{t('label.close')}</IonButton>
           </IonButtons>
 
-          <IonTitle>{t("label.profiledetails")}</IonTitle>
+          <IonTitle>{t('label.profiledetails')}</IonTitle>
         </IonToolbar>
       </IonHeader>
 

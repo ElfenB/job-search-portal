@@ -22,5 +22,7 @@ export const jobRouter = router({
   listMy: publicProcedure
     .input(z.string())
     .query(async ({ input }) => await prisma.offer.findMany({ where: { authorId: input } })),
-  listUser: publicProcedure.input(z.string()).query(async ({ input }) => await prisma.offer.findMany({ where: { authorId: input } })),
+  listUser: publicProcedure
+    .input(z.string())
+    .query(async ({ input }) => await prisma.offer.findMany({ where: { authorId: input } })),
 });
