@@ -3,6 +3,7 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle }
 import type { Offer } from "@prisma/client";
 import { useTranslation } from "react-i18next";
 import { UserAvatar } from "./UserAvatar";
+import { MoneyDisplay } from "./MoneyDisplay";
 
 type Props = {
   offer: Offer;
@@ -34,7 +35,13 @@ export function OfferCard({ offer }: Props) {
         <UserAvatar style={{ position: "absolute", right: "1rem", top: "1rem" }} userId={authorId} />
       </IonCardHeader>
 
-      {shortenedDescription.length > 0 && <IonCardContent>{shortenedDescription}</IonCardContent>}
+      {shortenedDescription.length > 0 && (
+        <IonCardContent>
+          <MoneyDisplay money={offer.money} currency={offer.currency} paymentType={offer.paymentType} />
+
+          {shortenedDescription}
+        </IonCardContent>
+      )}
     </IonCard>
   );
 }

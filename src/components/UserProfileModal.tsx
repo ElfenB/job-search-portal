@@ -16,6 +16,8 @@ import {
 import { checkmarkCircleSharp } from "ionicons/icons";
 import { useTranslation } from "react-i18next";
 import { trpc } from "../api/trpc";
+import { OfferList } from "./OfferList";
+import { Divider } from "./Divider";
 
 type Props = {
   id: string;
@@ -27,6 +29,8 @@ export function UserProfileModal({ id, isOpen, onClose }: Props) {
   const { t } = useTranslation();
 
   const { data: person, error, isPending } = trpc.user.byId.useQuery(id);
+
+  const offers = trpc.job.listUser.useQuery(id);
 
   if (isPending) {
     return (
@@ -94,13 +98,21 @@ export function UserProfileModal({ id, isOpen, onClose }: Props) {
           )}
 
           {person.logins_count && (
-            <IonItem>
+            <IonItem lines="none">
               <IonLabel>
                 <b>{t("label.loginscount")}:</b> {person.logins_count}
               </IonLabel>
             </IonItem>
           )}
         </IonList>
+
+        <Divider />
+
+        <IonList>
+          <IonListHeader>{t("label.offers")}</IonListHeader>
+        </IonList>
+
+        <OfferList data={offers} />
       </IonContent>
     </IonModal>
   );
