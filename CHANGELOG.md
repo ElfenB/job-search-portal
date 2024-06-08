@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/ElfenB/job-search-portal/compare/v1.22.0...v1.23.0) (2024-06-08)
+
+
+### Features
+
+* added more display logic ([e86b6c7](https://github.com/ElfenB/job-search-portal/commit/e86b6c76fabc70bea933e2218d204888d310771e))
+* implemented user overview ([74c3fe0](https://github.com/ElfenB/job-search-portal/commit/74c3fe0baf12ca7afc39e38b83f8ffd4a829b32a))
+
 # [1.22.0](https://github.com/ElfenB/job-search-portal/compare/v1.21.0...v1.22.0) (2024-06-07)
 
 
