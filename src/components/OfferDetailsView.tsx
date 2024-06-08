@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 import { DangerZone } from "./DangerZone";
 import { Divider } from "./Divider";
 import { InfoItem } from "./InfoItem";
-import { OfferDetailsSection } from "./OfferDetailsSection";
-import { UserAvatar } from "./UserAvatar";
 import { MoneyDisplay } from "./MoneyDisplay";
+import { OfferDetailsSection } from "./OfferDetailsSection";
+import { UserAvatarWithText } from "./UserAvatarWithText";
 
 type Props = {
   offer: Offer;
@@ -41,7 +41,7 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
           {title} {`(${t(offerType)})`}
         </h2>
 
-        <MoneyDisplay money={money} currency={currency} paymentType={paymentType} />
+        <MoneyDisplay currency={currency} money={money} paymentType={paymentType} />
 
         <InfoItem icon={locationOutline}>{location}</InfoItem>
         <div style={{ display: "flex", marginTop: "1rem" }}>
@@ -68,7 +68,7 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
       <Divider />
 
       <OfferDetailsSection>
-        <UserAvatar userId={authorId} withName />
+        <UserAvatarWithText userId={authorId} />
       </OfferDetailsSection>
 
       {user?.sub === authorId && (
