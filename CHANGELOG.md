@@ -1,3 +1,11 @@
+## [1.23.1](https://github.com/ElfenB/job-search-portal/compare/v1.23.0...v1.23.1) (2024-06-08)
+
+
+### Bug Fixes
+
+* dependency cycle ([8cbe471](https://github.com/ElfenB/job-search-portal/commit/8cbe4716b70c859cda44f9d885f89d9a239bd930))
+* disable click on display only items in profile ([5090759](https://github.com/ElfenB/job-search-portal/commit/509075990895e7fa6f5ef20e002f1aefce485dcc))
+
 # [1.23.0](https://github.com/ElfenB/job-search-portal/compare/v1.22.0...v1.23.0) (2024-06-08)
 
 
