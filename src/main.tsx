@@ -41,5 +41,4 @@ root.render(
 // - Categories to search for offers
 // - Star functionality for offers (cart, wishlist, etc.)
 // - User profile with qualifications (like in LinkedIn)
-// - Number of logins in profile unrelevant
 // - One click offer-apply-process (send over CV, etc.)
