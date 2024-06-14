@@ -1,3 +1,13 @@
+# [1.24.0](https://github.com/ElfenB/job-search-portal/compare/v1.23.1...v1.24.0) (2024-06-14)
+
+
+### Features
+
+* added client side search ([19d1e34](https://github.com/ElfenB/job-search-portal/commit/19d1e3411c23038918690defc73fd459a898eb27))
+* added validation for decimals ([00f54af](https://github.com/ElfenB/job-search-portal/commit/00f54aff86843b54e1a6ef8f8ccc282ed6fd1a73))
+* made logo clickable and translated tabs ([e651702](https://github.com/ElfenB/job-search-portal/commit/e651702e20eec1f926f8a55e6b97b5965e0a2b09))
+* removed number of logins (because not relevant) ([4bcfa1b](https://github.com/ElfenB/job-search-portal/commit/4bcfa1b28ebc425e1bd1653f26502da3196f81da))
+
 ## [1.23.1](https://github.com/ElfenB/job-search-portal/compare/v1.23.0...v1.23.1) (2024-06-08)
 
 
