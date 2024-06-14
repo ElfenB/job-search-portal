@@ -32,7 +32,6 @@ root.render(
 
 // Weiterhin ist mir aufgefallen:
 // •⁠ Job bearbeiten klappt nicht
-// •⁠ man kann als Zahlen unendlich viele Nachkommastellen reinschreiben
 
 // Bewertungssystem für User
 

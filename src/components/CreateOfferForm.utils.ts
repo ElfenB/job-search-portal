@@ -11,9 +11,13 @@ export function isValidFormInput(value: number | string, validators: Validator[]
 }
 
 const validatorLib = {
+  hasMaxTwoDecimals: (value: number) => {
+    const [, decimals] = value.toString().split('.');
+    return decimals.length <= 2;
+  },
   isNonEmptyString: (value: string) => typeof value === 'string' && value.trim().length > 0,
   isNumber: (value: number) => !isNaN(value),
-  isPositiveNumber: (value: number) => !isNaN(value) && value > 0,
+  isPositiveNumber: (value: number) => !isNaN(value) && value > 0
 };
 
 type ValidatorLib = typeof validatorLib;

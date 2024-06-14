@@ -25,8 +25,6 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
     }
   };
 
-  // TODO: Check form validation, perhaps useEffect is needed here
-
   return (
     <div>
       <IonItem lines="none">
@@ -34,7 +32,7 @@ export function CreateOfferFormMoney({ onChange, value }: Props) {
           label={t('label.money')}
           name="money"
           type="number"
-          validators={['isPositiveNumber']}
+          validators={['isPositiveNumber', 'hasMaxTwoDecimals']}
           onChange={onChange}
         >
           <IonSelect
