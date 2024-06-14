@@ -14,6 +14,7 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { chatbox, home, person } from 'ionicons/icons';
+import { useTranslation } from 'react-i18next';
 import { Redirect, Route } from 'react-router-dom';
 import { ToastBar } from './components/ToastBar';
 import { ChatConversation } from './pages/ChatConversation';
@@ -24,8 +25,8 @@ import { Login } from './pages/Login';
 import { OfferDetails } from './pages/OfferDetails';
 import { Overview } from './pages/Overview';
 import { Personal } from './pages/Personal';
-import { Settings } from './pages/Settings';
 
+import { Settings } from './pages/Settings';
 /* Theme variables */
 import './theme/variables.css';
 /* Core CSS required for Ionic components to work properly */
@@ -33,9 +34,9 @@ import '@ionic/react/css/core.css';
 import '@ionic/react/css/display.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/float-elements.css';
+
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
-
 /* Optional CSS utils that can be commented out */
 import '@ionic/react/css/padding.css';
 import '@ionic/react/css/structure.css';
@@ -48,6 +49,8 @@ setupIonicReact();
 const isEnvDefined = import.meta.env.VITE_AUTH0_CLIENT_ID_WEB && import.meta.env.VITE_AUTH0_DOMAIN;
 
 export function App() {
+  const { t } = useTranslation();
+
   // Get the callback handler from the Auth0 React hook
   const { handleRedirectCallback, isAuthenticated, isLoading } = useAuth0();
 
@@ -135,17 +138,17 @@ export function App() {
             <IonTabBar slot="bottom">
               <IonTabButton href="/overview" tab="overview">
                 <IonIcon aria-hidden="true" icon={home} />
-                <IonLabel>Overview</IonLabel>
+                <IonLabel>{t('tab.overview')}</IonLabel>
               </IonTabButton>
 
               <IonTabButton href="/chats" tab="chats">
                 <IonIcon aria-hidden="true" icon={chatbox} />
-                <IonLabel>Chats</IonLabel>
+                <IonLabel>{t('tab.chats')}</IonLabel>
               </IonTabButton>
 
               <IonTabButton href="/personal" tab="personal">
                 <IonIcon aria-hidden="true" icon={person} />
-                <IonLabel>Personal</IonLabel>
+                <IonLabel>{t('tab.personal')}</IonLabel>
               </IonTabButton>
             </IonTabBar>
           </IonTabs>

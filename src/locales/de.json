@@ -1,5 +1,7 @@
 {
   "error.userNotLoggedIn": "Benutzer ist nicht angemeldet.",
+  "fixed": "Festpreis",
+  "hourly": "stündlich",
   "label.avatarPlaceholder": "Profilbild",
   "label.backbutton": "Zurück",
   "label.cancel": "Abbrechen",
@@ -47,10 +49,11 @@
   "label.submit": "Absenden",
   "label.title": "Titel",
   "label.yourpicture": "Dein Profilbild",
-  "hourly": "stündlich",
   "monthly": "monatlich",
-  "fixed": "Festpreis",
   "offer": "Angebot",
   "request": "Gesuch",
+  "tab.overview": "Übersicht",
+  "tab.chats": "Chats",
+  "tab.personal": "Persönlich",
   "welcomemessage": "Willkommen bei Jobber!"
 }

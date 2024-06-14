@@ -1,16 +1,18 @@
 import { useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import type { RefresherEventDetail } from '@ionic/react';
-import { IonContent, IonHeader, IonIcon, IonPage, IonRouterLink, IonTitle, IonToolbar } from '@ionic/react';
-import { cog } from 'ionicons/icons';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
 import { useTranslation } from 'react-i18next';
 import { trpc } from '../api/trpc';
+import { GoToSettings } from '../components/GoToSettings';
 import { OfferList } from '../components/OfferList';
 import { RefreshDragger } from '../components/RefreshDragger';
 
 export function Personal() {
   const { t } = useTranslation();
   const { user } = useAuth0();
+
+  const isIos = isPlatform('ios');
 
   const myOffers = trpc.job.listMy.useQuery(user?.sub ?? '');
 
@@ -30,14 +32,7 @@ export function Personal() {
         <IonToolbar>
           <IonTitle>{t('label.personal')}</IonTitle>
 
-          <IonRouterLink
-            routerDirection="forward"
-            routerLink="/personal/settings"
-            slot="end"
-            style={{ margin: 'auto 0.5rem auto 0' }}
-          >
-            <IonIcon aria-hidden="true" icon={cog} style={{ fontSize: '2rem' }} />
-          </IonRouterLink>
+          {!isIos && <GoToSettings />}
         </IonToolbar>
       </IonHeader>
 
@@ -47,6 +42,8 @@ export function Personal() {
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{t('label.personal')}</IonTitle>
+
+            {isIos && <GoToSettings />}
           </IonToolbar>
         </IonHeader>
 

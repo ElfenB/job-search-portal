@@ -1,5 +1,7 @@
 {
   "error.userNotLoggedIn": "User is not logged in.",
+  "fixed": "fixed",
+  "hourly": "hourly",
   "label.avatarPlaceholder": "Avatar",
   "label.backbutton": "Back",
   "label.cancel": "Cancel",
@@ -47,10 +49,11 @@
   "label.submit": "Submit",
   "label.title": "Title",
   "label.yourpicture": "Your picture",
-  "hourly": "hourly",
   "monthly": "monthly",
-  "fixed": "fixed",
   "offer": "Offer",
   "request": "Request",
+  "tab.overview": "Overview",
+  "tab.chats": "Chats",
+  "tab.personal": "Personal",
   "welcomemessage": "Welcome to Jobber!"
 }

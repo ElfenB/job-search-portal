@@ -30,16 +30,16 @@ root.render(
 // TODO: Lottie animations for launch screen
 // TODO: Simple wireframe drawings for the app (with screen-recording)
 
-// Feedback:
-// "Bugs"/ToDos:
-// 1. Ich kann zb dein Gesuch löschen ✅
-// 2. ich sehe bei mir kein richtiges Profilbild, vielleicht kann man da einen nicht personalisierten Standard einfügen? ✅
-// 3. siehst du mein Gesuch in der Overview? Ich nämlich nicht ✅
-
 // Weiterhin ist mir aufgefallen:
 // •⁠ Job bearbeiten klappt nicht
 // •⁠ man kann als Zahlen unendlich viele Nachkommastellen reinschreiben
-// •⁠ Leider kann man nicht auf die Profile von den anderen klicken
-// •⁠ den Ort kann man nicht mit angeben (?) ✅
 
-// Preis auf Cards anzeigen (für mehr Farbe)
+// Bewertungssystem für User
+
+// USER FEEDBACK:
+// - Search bar for offers
+// - Categories to search for offers
+// - Star functionality for offers (cart, wishlist, etc.)
+// - User profile with qualifications (like in LinkedIn)
+// - Number of logins in profile unrelevant
+// - One click offer-apply-process (send over CV, etc.)

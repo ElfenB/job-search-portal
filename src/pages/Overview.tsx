@@ -1,17 +1,18 @@
 import { useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import type { RefresherEventDetail } from '@ionic/react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, isPlatform } from '@ionic/react';
 import { useTranslation } from 'react-i18next';
 import { trpc } from '../api/trpc';
+import { Logo } from '../components/Logo';
 import { OfferList } from '../components/OfferList';
 import { RefreshDragger } from '../components/RefreshDragger';
-import { useDarkMode } from '../utils/useDarkMode';
 
 export function Overview() {
   const { t } = useTranslation();
-  const { darkMode } = useDarkMode();
   const { user } = useAuth0();
+
+  const isIos = isPlatform('ios');
 
   const offers = trpc.job.list.useQuery(user?.sub ?? '');
 
@@ -30,6 +31,8 @@ export function Overview() {
       <IonHeader>
         <IonToolbar>
           <IonTitle>{t('label.overview')}</IonTitle>
+
+          {!isIos && <Logo slot="end" />}
         </IonToolbar>
       </IonHeader>
 
@@ -40,12 +43,7 @@ export function Overview() {
           <IonToolbar>
             <IonTitle size="large">{t('label.overview')}</IonTitle>
 
-            <img
-              alt="Jobber logo"
-              slot="end"
-              src={darkMode ? '/jobber-dark.svg' : '/jobber.svg'}
-              style={{ height: '3rem' }}
-            />
+            {isIos && <Logo slot="end" />}
           </IonToolbar>
         </IonHeader>
 
