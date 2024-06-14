@@ -36,7 +36,6 @@ root.render(
 // Bewertungssystem für User
 
 // USER FEEDBACK:
-// - Search bar for offers
 // - Categories to search for offers
 // - Star functionality for offers (cart, wishlist, etc.)
 // - User profile with qualifications (like in LinkedIn)
