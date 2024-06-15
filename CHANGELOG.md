@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/ElfenB/job-search-portal/compare/v1.24.0...v1.25.0) (2024-06-15)
+
+
+### Features
+
+* added draw-io architecture diagram ([d3371ce](https://github.com/ElfenB/job-search-portal/commit/d3371cef91c460fd5384eb1c1bb044678effc0d5))
+
 # [1.24.0](https://github.com/ElfenB/job-search-portal/compare/v1.23.1...v1.24.0) (2024-06-14)
 
 
