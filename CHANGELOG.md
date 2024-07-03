@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/ElfenB/job-search-portal/compare/v1.25.0...v1.25.1) (2024-07-03)
+
+
+### Bug Fixes
+
+* decimal logic ([2bc86d6](https://github.com/ElfenB/job-search-portal/commit/2bc86d64cf10dd9d74ec90d881ea13cccdf1d2c4))
+
 # [1.25.0](https://github.com/ElfenB/job-search-portal/compare/v1.24.0...v1.25.0) (2024-06-15)
 
 
