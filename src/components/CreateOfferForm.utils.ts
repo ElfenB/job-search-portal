@@ -12,8 +12,12 @@ export function isValidFormInput(value: number | string, validators: Validator[]
 
 const validatorLib = {
   hasMaxTwoDecimals: (value: number) => {
-    const [, decimals] = value.toString().split('.');
-    return decimals.length <= 2;
+    const [, decimalsDot] = value.toString().split('.');
+    const [, decimalsComma] = value.toString().split(',');
+    if (!decimalsDot && !decimalsComma) {
+      return true;
+    }
+    return decimalsDot ? decimalsDot.length <= 2 : decimalsComma.length <= 2;
   },
   isNonEmptyString: (value: string) => typeof value === 'string' && value.trim().length > 0,
   isNumber: (value: number) => !isNaN(value),
