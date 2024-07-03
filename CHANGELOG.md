@@ -1,3 +1,10 @@
+## [1.25.2](https://github.com/ElfenB/job-search-portal/compare/v1.25.1...v1.25.2) (2024-07-03)
+
+
+### Bug Fixes
+
+* data not being updated ([0057f74](https://github.com/ElfenB/job-search-portal/commit/0057f741d9cae5196e879c36672fe0e3355a4691))
+
 ## [1.25.1](https://github.com/ElfenB/job-search-portal/compare/v1.25.0...v1.25.1) (2024-07-03)
 
 
