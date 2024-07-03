@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Offer } from '@prisma/client';
 import type { UseTRPCQueryResult } from '@trpc/react-query/dist/shared/hooks/types';
 import { TRPCError } from '@trpc/server';
@@ -21,6 +21,12 @@ export function OfferList({ data: query, disableItemClick, personal }: Props) {
   const { data, error, isPending } = query;
 
   const [filteredOffers, setFilteredOffers] = useState(data ?? []);
+
+  useEffect(() => {
+    if (data) {
+      setFilteredOffers(data);
+    }
+  }, [data]);
 
   if (isPending) {
     return <OfferListSkeleton />;
