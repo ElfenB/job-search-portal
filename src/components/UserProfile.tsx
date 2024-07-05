@@ -14,6 +14,7 @@ import {
   IonListHeader,
 } from '@ionic/react';
 import { useTranslation } from 'react-i18next';
+import { Rating } from './Rating';
 
 export function UserProfile() {
   const { t } = useTranslation();
@@ -45,6 +46,10 @@ export function UserProfile() {
 
         <IonList lines="full">
           <IonListHeader>{t('label.profiledetails')}</IonListHeader>
+
+          <IonItem>
+            <Rating disableInteraction userId={user.sub ?? ''} />
+          </IonItem>
 
           {Object.keys(user).map((d: keyof User) => {
             // Don't show the picture, name, or email in the list.

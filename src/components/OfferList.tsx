@@ -12,10 +12,11 @@ import { SearchBar } from './SearchBar';
 type Props = {
   data: UseTRPCQueryResult<Offer[], unknown>;
   disableItemClick?: boolean;
+  disableSearch?: boolean;
   personal?: boolean;
 };
 
-export function OfferList({ data: query, disableItemClick, personal }: Props) {
+export function OfferList({ data: query, disableItemClick, disableSearch, personal }: Props) {
   const { t } = useTranslation();
 
   const { data, error, isPending } = query;
@@ -43,7 +44,7 @@ export function OfferList({ data: query, disableItemClick, personal }: Props) {
     <>
       {personal && <CreateOfferCard />}
 
-      {!personal && <SearchBar data={data} setResults={setFilteredOffers} />}
+      {!personal && !disableSearch && <SearchBar data={data} setResults={setFilteredOffers} />}
 
       {filteredOffers.length === 0 && <ContentPlaceholderMessage message={t('label.noOffersFound')} />}
 

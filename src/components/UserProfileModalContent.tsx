@@ -2,8 +2,8 @@ import { IonAvatar, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHead
 import { checkmarkCircleSharp } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { trpc } from '../api/trpc';
-import { Divider } from './Divider';
 import { OfferList } from './OfferList';
+import { Rating } from './Rating';
 
 type Props = {
   id: string;
@@ -19,7 +19,7 @@ export function UserProfileModalContent({ id }: Props) {
   if (isPending) {
     return (
       <IonContent>
-        <IonLoading isOpen />
+        <IonLoading isOpen showBackdrop={false} />
       </IonContent>
     );
   }
@@ -40,6 +40,14 @@ export function UserProfileModalContent({ id }: Props) {
 
       <IonList lines="full">
         <IonListHeader>{person.name}</IonListHeader>
+
+        <IonItem>
+          <IonLabel style={{ alignItems: 'center', display: 'flex', justifyContent: 'start' }}>
+            <b>{t('label.rating')}:</b>
+
+            <Rating style={{ marginLeft: '0.25rem' }} userId={id} />
+          </IonLabel>
+        </IonItem>
 
         <IonItem>
           <IonLabel style={{ alignItems: 'center', display: 'flex' }}>
@@ -69,13 +77,11 @@ export function UserProfileModalContent({ id }: Props) {
         )}
       </IonList>
 
-      <Divider />
-
       <IonList>
         <IonListHeader>{t('label.offers')}</IonListHeader>
       </IonList>
 
-      <OfferList data={offers} disableItemClick />
+      <OfferList data={offers} disableItemClick disableSearch />
     </IonContent>
   );
 }

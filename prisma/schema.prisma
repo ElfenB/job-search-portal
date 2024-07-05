@@ -31,3 +31,9 @@ model Offer {
   views       Int?     @default(0)
   location    String?  @db.VarChar(255)
 }
+
+model Rating {
+  userId      String @id @db.VarChar(255)
+  numRatings  Int    @default(0)
+  ratingScore Float? @db.DoublePrecision
+}

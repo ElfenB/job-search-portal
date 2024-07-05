@@ -41,7 +41,7 @@ export function OfferDetails() {
   }, [mutateAsync, offerId]);
 
   if (isPending) {
-    return <IonLoading isOpen />;
+    return <IonLoading isOpen showBackdrop={false} />;
   }
 
   if (error !== null || !data) {
@@ -63,8 +63,7 @@ export function OfferDetails() {
       <IonContent fullscreen>
         <OfferDetailsView offer={data} onDelete={handleDeleteOffer} />
 
-        <IonLoading isOpen={isPendingMutate} />
-        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+        <IonLoading isOpen={isPendingMutate} showBackdrop={false} />
       </IonContent>
     </IonPage>
   );
