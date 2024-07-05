@@ -1,3 +1,10 @@
+# [1.28.0](https://github.com/ElfenB/job-search-portal/compare/v1.27.0...v1.28.0) (2024-07-05)
+
+
+### Features
+
+* added manifest and necessary icons for pwa ([9b81b19](https://github.com/ElfenB/job-search-portal/commit/9b81b1992f582b72b039509f70818368b997bcce))
+
 # [1.27.0](https://github.com/ElfenB/job-search-portal/compare/v1.26.0...v1.27.0) (2024-07-05)
 
 
