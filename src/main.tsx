@@ -28,12 +28,10 @@ root.render(
 // TODO: Double-check translations
 // TODO: Add translation for India
 // TODO: Lottie animations for launch screen
-// TODO: Simple wireframe drawings for the app (with screen-recording)
+// TODO: Simple wire frame drawings for the app (with screen-recording)
 
 // Weiterhin ist mir aufgefallen:
 // •⁠ Job bearbeiten klappt nicht
-
-// Bewertungssystem für User
 
 // USER FEEDBACK:
 // - Categories to search for offers
