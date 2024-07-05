@@ -1,3 +1,22 @@
+# [1.30.0](https://github.com/ElfenB/job-search-portal/compare/v1.29.0...v1.30.0) (2024-07-05)
+
+
+### Bug Fixes
+
+* change folder ([6ea5277](https://github.com/ElfenB/job-search-portal/commit/6ea5277fb04c5b40ed54c445a34709b16efad6dd))
+* updated chart and therefore database version to match production ([fd7cbaf](https://github.com/ElfenB/job-search-portal/commit/fd7cbafe2680a9439d4020eb9bb25a807a6426f5))
+* wait did break it ([0e8c84d](https://github.com/ElfenB/job-search-portal/commit/0e8c84d2b75e123c0fd7153cd1673f390c65e4e5))
+
+
+### Features
+
+* fix database version and persist storage ([0c9d5dc](https://github.com/ElfenB/job-search-portal/commit/0c9d5dcef191474ed9ae1bb18dea95c0860ed798))
+
+
+### Reverts
+
+* put tsconfig for node back in ([d723d3a](https://github.com/ElfenB/job-search-portal/commit/d723d3a5257ac4ced658e85aea28f55ed56fbf56))
+
 # [1.29.0](https://github.com/ElfenB/job-search-portal/compare/v1.28.0...v1.29.0) (2024-07-05)
 
 
