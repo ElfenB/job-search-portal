@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/ElfenB/job-search-portal/compare/v1.28.0...v1.29.0) (2024-07-05)
+
+
+### Features
+
+* added simple contact feature ([4a4835b](https://github.com/ElfenB/job-search-portal/commit/4a4835bcbb5ad05c6fe7aba54f2f794285e87e6c))
+
 # [1.28.0](https://github.com/ElfenB/job-search-portal/compare/v1.27.0...v1.28.0) (2024-07-05)
 
 
