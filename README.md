@@ -1,11 +1,10 @@
-
 # job-search-portal (Jobber)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
 This project is a job search portal that allows users to search for jobs and apply for them.
 
-The generic name *job-search-portal* was the initial project name. During development, the more brand-ready name *Jobber* was born.
+The generic name _job-search-portal_ was the initial project name. During development, the more brand-ready name _Jobber_ was born.
 
 ## Demo
 

@@ -11,7 +11,7 @@ tasks:
     deps: [prepare]
     cmds:
       - kubectl create ns postgres || true
-      - helm upgrade --install --namespace postgres --set global.postgresql.auth.postgresPassword=adminpass --version 12.1.6 -f values.yaml  postgres bitnami/postgresql
+      - helm upgrade --install --wait --namespace postgres --set global.postgresql.auth.postgresPassword=adminpass --version 12.1.6 -f values.yaml  postgres bitnami/postgresql
 
   get-pass:
     desc: 'Get postgres password'
