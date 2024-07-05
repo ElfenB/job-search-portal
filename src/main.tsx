@@ -23,9 +23,6 @@ root.render(
   </StrictMode>,
 );
 
-// FOCUS:
-// - Add possibility to accept jobs
-
 // TODO: Add chat functionality (BE and FE) ==> Look for libraries
 // TODO: Enable image upload for offers
 // TODO: Double-check translations

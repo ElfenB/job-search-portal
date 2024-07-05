@@ -22,7 +22,7 @@ export function UserAvatarWithText({ style, userId }: Props) {
     <>
       <div
         role="button"
-        style={{ display: 'flex', ...style, alignItems: 'center', ...style }}
+        style={{ display: 'flex', ...style, alignItems: 'center' }}
         tabIndex={0}
         onClick={() => {
           setIsModalOpen(true);

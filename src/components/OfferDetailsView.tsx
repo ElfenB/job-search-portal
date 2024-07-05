@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import type { Offer } from '@prisma/client';
 import { calendarOutline, eye, locationOutline } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
+import { ContactUserButton } from './ContactUserButton';
 import { DangerZone } from './DangerZone';
 import { Divider } from './Divider';
 import { InfoItem } from './InfoItem';
@@ -64,6 +65,10 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
           </div>
         )}
       </OfferDetailsSection>
+
+      <Divider />
+
+      <ContactUserButton subject={title} userId={authorId} />
 
       <Divider />
 
