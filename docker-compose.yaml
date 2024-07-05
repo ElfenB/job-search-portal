@@ -12,13 +12,15 @@ services:
       VITE_AUTH0_DOMAIN: ${VITE_AUTH0_DOMAIN}
 
   db:
-    image: postgres
+    image: postgres:16.3-bookworm
     container_name: jobber-postgres
     restart: always
     # set shared memory limit when using docker-compose (default: 128mb)
     shm_size: 265mb
     ports:
       - 5432:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
