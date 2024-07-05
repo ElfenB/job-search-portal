@@ -43,9 +43,6 @@ cp .env.example .env
 Setup database if required
 
 ```bash
-# Install Postgres Helm Chart
-task -d postgres prepare
-
 # Deploy database to K8s cluster (e.g. with Docker Desktop or Minikube)
 task -d postgres deploy
 
