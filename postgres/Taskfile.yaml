@@ -12,7 +12,7 @@ tasks:
     cmds:
       - kubectl create ns postgres || true
       # Helm Chart: https://artifacthub.io/packages/helm/bitnami/postgresql
-      - helm upgrade --install --wait --namespace postgres --set global.postgresql.auth.postgresPassword=adminpass --version 15.5.13 -f values.yaml  postgres bitnami/postgresql
+      - helm upgrade --install --namespace postgres --set global.postgresql.auth.postgresPassword=adminpass --version 15.5.13 -f values.yaml  postgres bitnami/postgresql
 
   get-pass:
     desc: "Get postgres password"
