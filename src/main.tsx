@@ -24,7 +24,6 @@ root.render(
 );
 
 // FOCUS:
-// - Add feedback button inside app (e.g. mailto:dev@benelfen.com ==> check mail settings)
 // - Add possibility to accept jobs
 
 // TODO: Add chat functionality (BE and FE) ==> Look for libraries

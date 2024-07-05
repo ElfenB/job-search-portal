@@ -1,3 +1,5 @@
+/* eslint-disable camelcase -- Manifest naming convention */
+
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
@@ -11,6 +13,25 @@ export default defineConfig({
   plugins: [react(), legacy(), VitePWA({
     devOptions: {
       enabled: true
-    }, registerType: 'autoUpdate'
+    },
+    manifest: {
+      description: 'Job Search Portal',
+      icons: [
+        {
+          sizes: '192x192',
+          src: 'android-chrome-192x192.png',
+          type: 'image/png'
+        },
+        {
+          sizes: '512x512',
+          src: 'android-chrome-512x512.png',
+          type: 'image/png'
+        }
+      ],
+      name: 'Jobber',
+      short_name: 'Jobber',
+      theme_color: '#038260'
+    },
+    registerType: 'autoUpdate'
   })],
 });

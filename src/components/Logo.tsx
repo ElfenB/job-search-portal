@@ -36,7 +36,7 @@ export function Logo({ slot, style }: Props) {
     >
       <img
         alt="Jobber logo"
-        src={darkMode ? '/jobber-dark.svg' : '/jobber.svg'}
+        src={darkMode ? '/assets/jobber-dark.svg' : '/assets/jobber.svg'}
         style={{ height: '3rem', rotate: rotate ? '30deg' : undefined, transition: 'rotate 0.25s ease', ...style }}
       />
     </span>

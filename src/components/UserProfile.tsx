@@ -14,6 +14,7 @@ import {
   IonListHeader,
 } from '@ionic/react';
 import { useTranslation } from 'react-i18next';
+import { fallbackUserImage } from './ChatList.consts';
 import { Rating } from './Rating';
 
 export function UserProfile() {
@@ -21,10 +22,7 @@ export function UserProfile() {
   const { isLoading, user } = useAuth0();
 
   const userImage = useMemo(
-    () =>
-      !user?.picture || user.picture.length === 0
-        ? 'https://ionicframework.com/docs/img/demos/avatar.svg'
-        : user.picture,
+    () => (!user?.picture || user.picture.length === 0 ? fallbackUserImage : user.picture),
     [user?.picture],
   );
 
