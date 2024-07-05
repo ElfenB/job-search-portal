@@ -10,7 +10,7 @@ import { ToastProvider } from './components/ToastBarContext';
 import './i18n';
 
 const container = document.getElementById('root');
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- We know that the container is not null
 const root = createRoot(container!);
 
 root.render(
