@@ -2,3 +2,6 @@
 /ios
 /dist
 /dev-dist
+
+# Temporary workaround
+vite.config.ts
