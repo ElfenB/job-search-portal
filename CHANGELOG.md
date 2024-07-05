@@ -1,3 +1,11 @@
+# [1.27.0](https://github.com/ElfenB/job-search-portal/compare/v1.26.0...v1.27.0) (2024-07-05)
+
+
+### Features
+
+* added basic pwa support ([3d81d4c](https://github.com/ElfenB/job-search-portal/commit/3d81d4c294824393c51d211d6383e122d5d891c7))
+* added feedback button with mailto link ([cd7c566](https://github.com/ElfenB/job-search-portal/commit/cd7c566cdbbb5aa89fecc17c2af066682aa1d868))
+
 # [1.26.0](https://github.com/ElfenB/job-search-portal/compare/v1.25.2...v1.26.0) (2024-07-05)
 
 
