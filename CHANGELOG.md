@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/ElfenB/job-search-portal/compare/v1.25.2...v1.26.0) (2024-07-05)
+
+
+### Features
+
+* implemented rating system ([ec98a1d](https://github.com/ElfenB/job-search-portal/commit/ec98a1db959336036289a673fc70fa1c89f4f324))
+
 ## [1.25.2](https://github.com/ElfenB/job-search-portal/compare/v1.25.1...v1.25.2) (2024-07-03)
 
 
