@@ -20,6 +20,7 @@
   "label.email": "E-Mail",
   "label.error": "Error",
   "label.errormessage": "Whoops ... something is wrong.",
+  "label.feedback": "App Feedback",
   "label.fillAllFields": "Please fill out all fields.",
   "label.formErrorEmptyValues": "Please fill out all fields.",
   "label.formValidationError": "Invalid input",
