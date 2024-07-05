@@ -1,5 +1,22 @@
 {
     "recommendations": [
-        "ionic.ionic"
+        "ionic.ionic",
+        "streetsidesoftware.code-spell-checker",
+        "aaron-bond.better-comments",
+        "vivaxy.vscode-conventional-commits",
+        "mikestead.dotenv",
+        "editorconfig.editorconfig",
+        "usernamehw.errorlens",
+        "dbaeumer.vscode-eslint",
+        "kisstkondoros.vscode-gutter-preview",
+        "wix.vscode-import-cost",
+        "yzhang.markdown-all-in-one",
+        "davidanson.vscode-markdownlint",
+        "ahmadalli.vscode-nginx-conf",
+        "codeandstuff.package-json-upgrade",
+        "esbenp.prettier-vscode",
+        "prisma.prisma",
+        "foxundermoon.shell-format",
+        "wayou.vscode-todo-highlight"
     ]
 }
