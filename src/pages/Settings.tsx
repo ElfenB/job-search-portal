@@ -16,6 +16,7 @@ import { logoGithub } from 'ionicons/icons';
 import { useTranslation } from 'react-i18next';
 import { BackButton } from '../components/BackButton';
 import { Feedback } from '../components/Feedback';
+import { SettingsList } from '../components/SettingsList';
 import { UserProfile } from '../components/UserProfile';
 import { isNative } from '../utils/isNative';
 
@@ -66,6 +67,8 @@ export function Settings() {
 
       <IonContent>
         <UserProfile />
+
+        <SettingsList style={{ marginBottom: '2rem' }} />
 
         <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
           <Feedback />
