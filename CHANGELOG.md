@@ -1,3 +1,11 @@
+# [1.31.0](https://github.com/ElfenB/job-search-portal/compare/v1.30.0...v1.31.0) (2024-07-06)
+
+
+### Features
+
+* added language switcher ([0755985](https://github.com/ElfenB/job-search-portal/commit/07559857e78bb1fba19d00df4748ed4de6d58128))
+* small styling improvements ([231cda2](https://github.com/ElfenB/job-search-portal/commit/231cda28b6c07b45fcd84fb531217d808205559b))
+
 # [1.30.0](https://github.com/ElfenB/job-search-portal/compare/v1.29.0...v1.30.0) (2024-07-05)
 
 
