@@ -1,3 +1,10 @@
+## [1.31.1](https://github.com/ElfenB/job-search-portal/compare/v1.31.0...v1.31.1) (2024-07-06)
+
+
+### Bug Fixes
+
+* logout uris ([6b950a9](https://github.com/ElfenB/job-search-portal/commit/6b950a9e314244b63a8595cab31c99a74cb45cc2))
+
 # [1.31.0](https://github.com/ElfenB/job-search-portal/compare/v1.30.0...v1.31.0) (2024-07-06)
 
 
