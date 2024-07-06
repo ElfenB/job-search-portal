@@ -13,8 +13,8 @@ export function CreateOfferCard() {
       <IonCardHeader>
         {/* <IonCardTitle>{t("label.createEntry")}</IonCardTitle> */}
         <IonButton
+          expand="block"
           fill="outline"
-          style={{ width: '100%' }}
           onClick={() => {
             setCreating(!creating);
           }}

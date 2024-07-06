@@ -208,15 +208,15 @@ export function CreateOfferForm({ onClose }: Props) {
         </form>
       </IonList>
 
-      <IonButton disabled={isPending || !isFormValid} type="submit" onClick={handleSubmit}>
-        {t('label.submit')}
-      </IonButton>
-
       {!isFormValid && (
-        <IonText color="warning">
-          <p style={{ marginTop: '1rem' }}>{t('label.fillAllFields')}</p>
+        <IonText color="warning" style={{ textAlign: 'center' }}>
+          <p style={{ margin: '1rem 0' }}>{t('label.fillAllFields')}</p>
         </IonText>
       )}
+
+      <IonButton disabled={isPending || !isFormValid} expand="block" type="submit" onClick={handleSubmit}>
+        {t('label.submit')}
+      </IonButton>
     </>
   );
 }
