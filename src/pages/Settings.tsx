@@ -20,15 +20,21 @@ import { SettingsList } from '../components/SettingsList';
 import { UserProfile } from '../components/UserProfile';
 import { isNative } from '../utils/isNative';
 
-// This should reflect the URL added earlier to your "Allowed Logout URLs" setting
-// in the Auth0 dashboard.
-const logoutUri =
-  'com.benelfen.jobsearchportal://elfenben.eu.auth0.com/capacitor/com.benelfen.jobsearchportal/callback';
-
 export function Settings() {
   const { t } = useTranslation();
 
   const { logout } = useAuth0();
+
+  const auth0Domain = import.meta.env.VITE_AUTH0_DOMAIN;
+
+  // This should reflect the URL added to the "Allowed Logout URLs" setting in the Auth0 dashboard.
+  const logoutUri = useMemo(() => {
+    if (isNative) {
+      return `com.benelfen.jobsearchportal://${auth0Domain}/capacitor/com.benelfen.jobsearchportal/callback`;
+    }
+
+    return window.location.origin;
+  }, [auth0Domain]);
 
   const handleLogout = async () => {
     await logout({
