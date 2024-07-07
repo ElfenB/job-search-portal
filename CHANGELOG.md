@@ -1,3 +1,10 @@
+## [1.31.2](https://github.com/ElfenB/job-search-portal/compare/v1.31.1...v1.31.2) (2024-07-07)
+
+
+### Bug Fixes
+
+* tsconfig to include config file ([393084c](https://github.com/ElfenB/job-search-portal/commit/393084c4807afad69b1583f20799ee8c39bd6597))
+
 ## [1.31.1](https://github.com/ElfenB/job-search-portal/compare/v1.31.0...v1.31.1) (2024-07-06)
 
 
