@@ -68,9 +68,13 @@ export function OfferDetailsView({ offer, onDelete }: Props) {
 
       <Divider />
 
-      <ContactUserButton subject={title} userId={authorId} />
+      {user?.sub !== authorId && (
+        <>
+          <ContactUserButton subject={title} userId={authorId} />
 
-      <Divider />
+          <Divider />
+        </>
+      )}
 
       <OfferDetailsSection>
         <UserAvatarWithText userId={authorId} />
