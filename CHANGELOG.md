@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/ElfenB/job-search-portal/compare/v1.31.2...v1.32.0) (2024-07-07)
+
+
+### Features
+
+* only show contact user button when not your own ([07d615f](https://github.com/ElfenB/job-search-portal/commit/07d615f6bda413c30993c15ae085e670e277e19d))
+
 ## [1.31.2](https://github.com/ElfenB/job-search-portal/compare/v1.31.1...v1.31.2) (2024-07-07)
 
 
